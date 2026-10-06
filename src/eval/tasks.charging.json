@@ -28,8 +28,7 @@
         "input": {
           "lat": -27.4981423,
           "lon": 153.0111536,
-          "max_results": 1,
-          "explain": false
+          "max_results": 1
         }
       }
     ],
