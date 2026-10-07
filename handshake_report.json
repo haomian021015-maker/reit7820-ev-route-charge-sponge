@@ -1,0 +1,171 @@
+{
+  "harness_version": "1.0.1",
+  "url": "http://localhost:8000/mcp",
+  "agent": "smac-charging-tripfeasibility",
+  "tested_at": "2026-10-07T17:26:05.684602+00:00",
+  "passed": true,
+  "checks": [
+    {
+      "number": 1,
+      "name": "Initialise",
+      "status": "PASS",
+      "findings": [
+        {
+          "level": "INFO",
+          "message": "Connected over Streamable HTTP to http://localhost:8000/mcp"
+        },
+        {
+          "level": "INFO",
+          "message": "Protocol 2025-11-25"
+        },
+        {
+          "level": "INFO",
+          "message": "Agent name smac-charging-tripfeasibility"
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "name": "health tool",
+      "status": "PASS",
+      "findings": [
+        {
+          "level": "INFO",
+          "message": "health OK: {\"status\": \"ok\", \"agent\": \"smac-charging-tripfeasibility\", \"version\": \"0.1.0\", \"data_sources\": [\"Queensland Government (TMR) via data.qld.gov.au, CC BY 4.0\", \"\\"
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "name": "Tool schemas",
+      "status": "PASS",
+      "findings": [
+        {
+          "level": "INFO",
+          "message": "3 domain tool(s): geocode_place, find_nearest_charger, assess_ev_trip_feasibility"
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "name": "Data conventions",
+      "status": "PASS",
+      "findings": [
+        {
+          "level": "INFO",
+          "message": "`geocode_place` OK (generated from schema)"
+        },
+        {
+          "level": "INFO",
+          "message": "`find_nearest_charger` OK (generated from schema)"
+        },
+        {
+          "level": "INFO",
+          "message": "`assess_ev_trip_feasibility` OK (generated from schema)"
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "name": "Malformed input",
+      "status": "PASS",
+      "findings": [
+        {
+          "level": "INFO",
+          "message": "7 malformed calls handled; agent still healthy afterwards"
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "name": "Response time",
+      "status": "PASS",
+      "findings": [
+        {
+          "level": "INFO",
+          "message": "13 calls, slowest `assess_ev_trip_feasibility` at 1.73s (limit 45s)"
+        }
+      ]
+    }
+  ],
+  "calls": [
+    {
+      "tool": "(initialize)",
+      "purpose": "initialize",
+      "seconds": 0.029,
+      "outcome": "ok"
+    },
+    {
+      "tool": "health",
+      "purpose": "health",
+      "seconds": 0.014,
+      "outcome": "ok"
+    },
+    {
+      "tool": "geocode_place",
+      "purpose": "valid call",
+      "seconds": 0.872,
+      "outcome": "ok"
+    },
+    {
+      "tool": "find_nearest_charger",
+      "purpose": "valid call",
+      "seconds": 0.022,
+      "outcome": "ok"
+    },
+    {
+      "tool": "assess_ev_trip_feasibility",
+      "purpose": "valid call",
+      "seconds": 1.727,
+      "outcome": "ok"
+    },
+    {
+      "tool": "geocode_place",
+      "purpose": "malformed: missing required arguments",
+      "seconds": 0.024,
+      "outcome": "tool_error"
+    },
+    {
+      "tool": "geocode_place",
+      "purpose": "malformed: wrong type for `place`",
+      "seconds": 0.019,
+      "outcome": "tool_error"
+    },
+    {
+      "tool": "find_nearest_charger",
+      "purpose": "malformed: missing required arguments",
+      "seconds": 0.012,
+      "outcome": "tool_error"
+    },
+    {
+      "tool": "find_nearest_charger",
+      "purpose": "malformed: wrong type for `lat`",
+      "seconds": 0.017,
+      "outcome": "tool_error"
+    },
+    {
+      "tool": "assess_ev_trip_feasibility",
+      "purpose": "malformed: missing required arguments",
+      "seconds": 0.016,
+      "outcome": "tool_error"
+    },
+    {
+      "tool": "assess_ev_trip_feasibility",
+      "purpose": "malformed: wrong type for `origin_lat`",
+      "seconds": 0.011,
+      "outcome": "tool_error"
+    },
+    {
+      "tool": "smac_tool_that_does_not_exist",
+      "purpose": "malformed: unknown tool name",
+      "seconds": 0.013,
+      "outcome": "tool_error"
+    },
+    {
+      "tool": "health",
+      "purpose": "liveness after malformed calls",
+      "seconds": 0.011,
+      "outcome": "ok"
+    }
+  ]
+}
