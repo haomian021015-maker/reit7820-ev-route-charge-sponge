@@ -24,10 +24,6 @@ import time
 from pathlib import Path
 from typing import Any
 
-import csv
-import io
-import zipfile
-
 import httpx
 
 CACHE_DIR = Path(__file__).with_name(".cache")
@@ -136,73 +132,3 @@ def geocode(place: str, ttl_seconds: int = 30 * 24 * 3600) -> dict | None:
         # and the caller deserves to know which it got.
         "match_kind": f"{hit.get('class', '?')}/{hit.get('type', '?')}",
     }
-
-
-# Translink GTFS, used by the public transport agent.
-# data.qld.gov.au dataset: general-transit-feed-specification-gtfs-translink
-GTFS_URL = "https://gtfsrt.api.translink.com.au/GTFS/SEQ_GTFS.zip"
-GTFS_LICENCE = "Translink SEQ GTFS via data.qld.gov.au, CC BY 4.0"
-
-_GTFS_CACHE: dict[str, list[dict]] = {}
-
-
-def gtfs_table(filename: str, ttl_seconds: int = 24 * 3600) -> list[dict]:
-    """Read one file out of the SEQ GTFS archive.
-
-    The archive is 28 MB compressed. Only ask for the small members:
-    stops.txt is 1.6 MB and routes.txt is 0.13 MB, but **stop_times.txt is
-    164 MB uncompressed** and must never be parsed inside a tool call - you
-    would blow the 45-second budget many times over. If you need
-    timetables, index that file once at startup into your own structure.
-    """
-    if filename in _GTFS_CACHE:
-        return _GTFS_CACHE[filename]
-
-    archive = CACHE_DIR / "seq_gtfs.zip"
-    if not archive.exists() or time.time() - archive.stat().st_mtime > ttl_seconds:
-        with httpx.stream("GET", GTFS_URL, timeout=180.0, follow_redirects=True) as response:
-            response.raise_for_status()
-            with archive.open("wb") as fh:
-                for chunk in response.iter_bytes():
-                    fh.write(chunk)
-
-    with zipfile.ZipFile(archive) as z, z.open(filename) as member:
-        rows = list(csv.DictReader(io.TextIOWrapper(member, encoding="utf-8-sig")))
-
-    # GTFS values arrive space-padded in this feed: ' -27.467834'.
-    _GTFS_CACHE[filename] = [{k: (v.strip() if isinstance(v, str) else v) for k, v in r.items()} for r in rows]
-    return _GTFS_CACHE[filename]
-
-
-# Translink patronage, used by the policy agent.
-PATRONAGE_SEQ_ID = "c49df919-5c0d-4bd2-9e43-776509b95ef6"
-PATRONAGE_LICENCE = "Translink monthly performance data via data.qld.gov.au, CC BY 3.0"
-
-
-def patronage_seq(ttl_seconds: int = 24 * 3600) -> list[dict]:
-    """Monthly SEQ passenger trips by mode.
-
-    Returns records with `month` (ISO 8601 date), `mode` and `trips` (int).
-    The published fields are 'Month-Year' ("Dec-2023") and 'Passenger trips'
-    (a string) - both normalised here so tools never repeat the parsing.
-    """
-    def fetch():
-        response = httpx.get(
-            QLD_API,
-            params={"resource_id": PATRONAGE_SEQ_ID, "limit": 1000},
-            timeout=30.0,
-        )
-        response.raise_for_status()
-        return response.json()["result"]["records"]
-
-    from datetime import datetime
-
-    records = []
-    for row in _cached(f"patronage:{PATRONAGE_SEQ_ID}", ttl_seconds, fetch):
-        try:
-            month = datetime.strptime(str(row["Month-Year"]).strip(), "%b-%Y")
-            trips = int(float(row["Passenger trips"]))
-        except (KeyError, TypeError, ValueError):
-            continue  # skip malformed rows rather than crashing
-        records.append({"month": month.strftime("%Y-%m-01"), "mode": str(row["Mode"]).strip(), "trips": trips})
-    return sorted(records, key=lambda r: (r["month"], r["mode"]))

@@ -94,7 +94,6 @@ def find_nearest_charger(
     lat: Annotated[float, Field(description="WGS84 latitude of the trip origin, in South East Queensland.")],
     lon: Annotated[float, Field(description="WGS84 longitude of the trip origin, in South East Queensland.")],
     max_results: Annotated[int, Field(description="How many of the closest stations to return, 1 to 5.")] = 3,
-    explain: Annotated[bool, Field(description="Include short written range-planning advice.")] = True,
 ) -> dict:
     """Find the closest Queensland Electric Super Highway charging stations to a point.
 
@@ -133,25 +132,6 @@ def find_nearest_charger(
         # on every row, so reporting it would look like real detail.
         "data_gaps": ["plug_and_connector_types", "live_availability", "pricing"],
     }
-
-    # The model only writes prose about numbers already computed above, and is
-    # told plainly which fields do not exist so it cannot fill them in.
-    if explain and nearest:
-        closest = nearest[0]
-        payload["advice"] = llm.ask(
-            system=(
-                "You advise electric vehicle drivers on range planning in Queensland. "
-                "Use only the facts you are given. Never invent plug types, prices or "
-                "availability; if something is missing, say it is not published. "
-                "At most three sentences."
-            ),
-            user=(
-                f"Closest station: {closest['name']}, {closest['distance_m'] / 1000:.1f} km away, "
-                f"at {closest['address']}. Host: {closest['host']}. Status: {closest['status']}. "
-                f"Onward from there: {closest['onward_stations'] or 'not published'}. "
-                "Plug types, live availability and pricing are not published."
-            ),
-        )
 
     return respond(payload, sources=[data.QLD_LICENCE])
 
