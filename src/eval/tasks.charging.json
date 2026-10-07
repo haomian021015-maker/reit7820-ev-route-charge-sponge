@@ -44,5 +44,188 @@
         "Queensland Government"
       ]
     }
+  },
+  {
+    "prompt": "I'm at UQ St Lucia with 80 km of range left in a car that does 400 km on a full battery, and I need to reach Toowoomba. Can I make it, and if not where should I charge?",
+    "tools": [
+      {
+        "name": "geocode_place",
+        "input": {
+          "place": "University of Queensland St Lucia"
+        }
+      },
+      {
+        "name": "geocode_place",
+        "input": {
+          "place": "Toowoomba"
+        }
+      },
+      {
+        "name": "assess_ev_trip_feasibility",
+        "input": {
+          "origin_lat": -27.4981423,
+          "origin_lon": 153.0111536,
+          "dest_lat": -27.5610193,
+          "dest_lon": 151.953351,
+          "remaining_range_km": 80,
+          "full_range_km": 400,
+          "max_results": 2,
+          "explain": false
+        }
+      }
+    ],
+    "output": {
+      "feasibility": "requires_charging",
+      "trip": {
+        "straight_line_m": 104538,
+        "estimated_road_m": 135899,
+        "usable_range_m": 72000,
+        "shortfall_m": 63899
+      },
+      "recommended_stops": [
+        {
+          "name": "Springfield",
+          "distance_from_origin_m": 30161,
+          "distance_to_destination_m": 122464,
+          "detour_m": 16726,
+          "completes_trip_after_stop": true
+        }
+      ],
+      "sources": [
+        "Queensland Government"
+      ]
+    }
+  },
+  {
+    "prompt": "Same trip from UQ St Lucia to Toowoomba, but the battery shows 250 km of range. Do I need to stop and charge?",
+    "tools": [
+      {
+        "name": "assess_ev_trip_feasibility",
+        "input": {
+          "origin_lat": -27.4981423,
+          "origin_lon": 153.0111536,
+          "dest_lat": -27.5610193,
+          "dest_lon": 151.953351,
+          "remaining_range_km": 250,
+          "full_range_km": 400,
+          "explain": false
+        }
+      }
+    ],
+    "output": {
+      "feasibility": "feasible",
+      "trip": {
+        "estimated_road_m": 135899,
+        "usable_range_m": 225000,
+        "shortfall_m": 0
+      },
+      "recommended_stops": [],
+      "sources": [
+        "Queensland Government"
+      ]
+    }
+  },
+  {
+    "prompt": "I'm at UQ St Lucia with only 5 km of range left and I want to drive to Toowoomba.",
+    "tools": [
+      {
+        "name": "assess_ev_trip_feasibility",
+        "input": {
+          "origin_lat": -27.4981423,
+          "origin_lon": 153.0111536,
+          "dest_lat": -27.5610193,
+          "dest_lon": 151.953351,
+          "remaining_range_km": 5,
+          "full_range_km": 400,
+          "explain": false
+        }
+      }
+    ],
+    "output": {
+      "feasibility": "infeasible",
+      "reason": "No charging station is reachable",
+      "trip": {
+        "shortfall_m": 131399
+      },
+      "recommended_stops": [],
+      "sources": [
+        "Queensland Government"
+      ]
+    }
+  },
+  {
+    "prompt": "Can I drive from UQ St Lucia to Melbourne on the 200 km of range I have left?",
+    "tools": [
+      {
+        "name": "assess_ev_trip_feasibility",
+        "input": {
+          "origin_lat": -27.4981423,
+          "origin_lon": 153.0111536,
+          "dest_lat": -37.8136,
+          "dest_lon": 144.9631,
+          "remaining_range_km": 200,
+          "explain": false
+        }
+      }
+    ],
+    "output": {
+      "status": "out_of_scope",
+      "reason": "destinations in Queensland"
+    }
+  },
+  {
+    "prompt": "Malformed call: the vehicle reports a negative remaining range of -50 km for a UQ St Lucia to Toowoomba trip.",
+    "tools": [
+      {
+        "name": "assess_ev_trip_feasibility",
+        "input": {
+          "origin_lat": -27.4981423,
+          "origin_lon": 153.0111536,
+          "dest_lat": -27.5610193,
+          "dest_lon": 151.953351,
+          "remaining_range_km": -50,
+          "explain": false
+        }
+      }
+    ],
+    "output": {
+      "status": "invalid_input",
+      "feasibility": null,
+      "reason": "must be a positive number of kilometres",
+      "sources": [
+        "Queensland Government"
+      ]
+    }
+  },
+  {
+    "prompt": "UQ St Lucia to Toowoomba with 80 km of range, but I never said how big the battery is or what plug the car takes.",
+    "tools": [
+      {
+        "name": "assess_ev_trip_feasibility",
+        "input": {
+          "origin_lat": -27.4981423,
+          "origin_lon": 153.0111536,
+          "dest_lat": -27.5610193,
+          "dest_lon": 151.953351,
+          "remaining_range_km": 80,
+          "max_results": 1,
+          "explain": false
+        }
+      }
+    ],
+    "output": {
+      "feasibility": "requires_charging",
+      "recommended_stops": [
+        {
+          "name": "Springfield",
+          "completes_trip_after_stop": null
+        }
+      ],
+      "data_gaps": [
+        "plug_and_connector_types",
+        "charging_speed_kw",
+        "estimated_charging_time"
+      ]
+    }
   }
 ]
