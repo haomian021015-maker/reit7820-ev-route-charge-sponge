@@ -1,0 +1,20 @@
+{
+  "geocode_place": {
+    "place": "University of Queensland St Lucia"
+  },
+  "find_nearest_charger": {
+    "lat": -27.4981423,
+    "lon": 153.0111536,
+    "max_results": 3
+  },
+  "assess_ev_trip_feasibility": {
+    "origin_lat": -27.4981423,
+    "origin_lon": 153.0111536,
+    "dest_lat": -27.5610193,
+    "dest_lon": 151.953351,
+    "remaining_range_km": 80,
+    "full_range_km": 400,
+    "max_results": 3,
+    "explain": true
+  }
+}

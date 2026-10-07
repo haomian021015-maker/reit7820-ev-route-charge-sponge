@@ -139,12 +139,12 @@ def find_nearest_charger(
 @mcp.tool()
 @guard
 def assess_ev_trip_feasibility(
-    origin_lat: Annotated[float, Field(description="WGS84 latitude of where the trip starts. Must be in South East Queensland.")],
-    origin_lon: Annotated[float, Field(description="WGS84 longitude of where the trip starts. Must be in South East Queensland.")],
-    dest_lat: Annotated[float, Field(description="WGS84 latitude of the destination. May be anywhere in Queensland.")],
-    dest_lon: Annotated[float, Field(description="WGS84 longitude of the destination. May be anywhere in Queensland.")],
-    remaining_range_km: Annotated[float, Field(description="Range left in the battery right now, in kilometres, as the vehicle reports it. Must be greater than zero.")],
-    full_range_km: Annotated[float | None, Field(description="Range in kilometres on a full battery. Optional; supply it to learn whether one charging stop is enough to finish the trip.")] = None,
+    origin_lat: Annotated[float, Field(description="WGS84 latitude of where the trip starts. Must be in South East Queensland.", examples=[-27.4981423])],
+    origin_lon: Annotated[float, Field(description="WGS84 longitude of where the trip starts. Must be in South East Queensland.", examples=[153.0111536])],
+    dest_lat: Annotated[float, Field(description="WGS84 latitude of the destination. May be anywhere in Queensland.", examples=[-27.5610193])],
+    dest_lon: Annotated[float, Field(description="WGS84 longitude of the destination. May be anywhere in Queensland.", examples=[151.953351])],
+    remaining_range_km: Annotated[float, Field(description="Range left in the battery right now, in kilometres, as the vehicle reports it. Must be greater than zero.", examples=[80.0])],
+    full_range_km: Annotated[float | None, Field(description="Range in kilometres on a full battery. Optional; supply it to learn whether one charging stop is enough to finish the trip.", examples=[400.0])] = None,
     safety_margin_pct: Annotated[int, Field(description="Percentage of range held back as a reserve rather than planned for, 0 to 50. Defaults to 10.")] = DEFAULT_SAFETY_MARGIN_PCT,
     max_results: Annotated[int, Field(description="How many charging stops to return when the trip needs one, 1 to 5.")] = 3,
     explain: Annotated[bool, Field(description="Include a short written explanation of the verdict alongside the computed figures.")] = True,
