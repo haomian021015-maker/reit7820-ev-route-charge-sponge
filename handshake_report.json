@@ -1,8 +1,8 @@
 {
   "harness_version": "1.0.1",
-  "url": "http://localhost:8000/mcp",
+  "url": "http://charging:8000/mcp",
   "agent": "smac-charging-tripfeasibility",
-  "tested_at": "2026-10-07T17:26:05.684602+00:00",
+  "tested_at": "2026-10-07T17:28:23.405585+00:00",
   "passed": true,
   "checks": [
     {
@@ -12,7 +12,7 @@
       "findings": [
         {
           "level": "INFO",
-          "message": "Connected over Streamable HTTP to http://localhost:8000/mcp"
+          "message": "Connected over Streamable HTTP to http://charging:8000/mcp"
         },
         {
           "level": "INFO",
@@ -83,7 +83,7 @@
       "findings": [
         {
           "level": "INFO",
-          "message": "13 calls, slowest `assess_ev_trip_feasibility` at 1.73s (limit 45s)"
+          "message": "13 calls, slowest `assess_ev_trip_feasibility` at 1.92s (limit 45s)"
         }
       ]
     }
@@ -92,79 +92,79 @@
     {
       "tool": "(initialize)",
       "purpose": "initialize",
-      "seconds": 0.029,
+      "seconds": 0.011,
       "outcome": "ok"
     },
     {
       "tool": "health",
       "purpose": "health",
-      "seconds": 0.014,
+      "seconds": 0.006,
       "outcome": "ok"
     },
     {
       "tool": "geocode_place",
       "purpose": "valid call",
-      "seconds": 0.872,
+      "seconds": 0.006,
       "outcome": "ok"
     },
     {
       "tool": "find_nearest_charger",
       "purpose": "valid call",
-      "seconds": 0.022,
+      "seconds": 0.006,
       "outcome": "ok"
     },
     {
       "tool": "assess_ev_trip_feasibility",
       "purpose": "valid call",
-      "seconds": 1.727,
+      "seconds": 1.918,
       "outcome": "ok"
     },
     {
       "tool": "geocode_place",
-      "purpose": "malformed: missing required arguments",
-      "seconds": 0.024,
-      "outcome": "tool_error"
-    },
-    {
-      "tool": "geocode_place",
-      "purpose": "malformed: wrong type for `place`",
-      "seconds": 0.019,
-      "outcome": "tool_error"
-    },
-    {
-      "tool": "find_nearest_charger",
-      "purpose": "malformed: missing required arguments",
-      "seconds": 0.012,
-      "outcome": "tool_error"
-    },
-    {
-      "tool": "find_nearest_charger",
-      "purpose": "malformed: wrong type for `lat`",
-      "seconds": 0.017,
-      "outcome": "tool_error"
-    },
-    {
-      "tool": "assess_ev_trip_feasibility",
       "purpose": "malformed: missing required arguments",
       "seconds": 0.016,
       "outcome": "tool_error"
     },
     {
+      "tool": "geocode_place",
+      "purpose": "malformed: wrong type for `place`",
+      "seconds": 0.009,
+      "outcome": "tool_error"
+    },
+    {
+      "tool": "find_nearest_charger",
+      "purpose": "malformed: missing required arguments",
+      "seconds": 0.009,
+      "outcome": "tool_error"
+    },
+    {
+      "tool": "find_nearest_charger",
+      "purpose": "malformed: wrong type for `lat`",
+      "seconds": 0.01,
+      "outcome": "tool_error"
+    },
+    {
+      "tool": "assess_ev_trip_feasibility",
+      "purpose": "malformed: missing required arguments",
+      "seconds": 0.007,
+      "outcome": "tool_error"
+    },
+    {
       "tool": "assess_ev_trip_feasibility",
       "purpose": "malformed: wrong type for `origin_lat`",
-      "seconds": 0.011,
+      "seconds": 0.006,
       "outcome": "tool_error"
     },
     {
       "tool": "smac_tool_that_does_not_exist",
       "purpose": "malformed: unknown tool name",
-      "seconds": 0.013,
+      "seconds": 0.005,
       "outcome": "tool_error"
     },
     {
       "tool": "health",
       "purpose": "liveness after malformed calls",
-      "seconds": 0.011,
+      "seconds": 0.006,
       "outcome": "ok"
     }
   ]
