@@ -102,5 +102,6 @@ def find_nearest_charger(
 
 
 if __name__ == "__main__":
-    mcp.run(transport="streamable-http", host="0.0.0.0",
+    # 127.0.0.1 on your UQCloud zone. Docker sets HOST=0.0.0.0 so the port reaches your laptop.
+    mcp.run(transport="streamable-http", host=os.environ.get("HOST", "127.0.0.1"),
             port=int(os.environ.get("PORT", "8000")))

@@ -35,6 +35,8 @@ services:
       start_period: 5s
     environment:
       <<: *keys
+      # Inside a container the agent must listen on every interface to be reachable.
+      HOST: "0.0.0.0"
       PORT: "8000"
       USAGE_LOG: /app/logs/usage.jsonl
       WANDB_DIR: /app/logs
