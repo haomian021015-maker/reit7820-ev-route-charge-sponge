@@ -104,7 +104,8 @@ sudo mcp-deploy git@github.com:<owner>/<repo>.git
 systemctl status mcp-agent            # look for: active (running)
 ```
 
-After the first time, `sudo mcp-deploy` on its own pulls your latest commit.
+After the first deploy that succeeds, `sudo mcp-deploy` on its own pulls your
+latest commit. Until then, give it the full address every time.
 If a deploy fails, the previous version keeps running.
 
 ## 7. Test it from your laptop
@@ -153,7 +154,8 @@ Do the whole loop once before the Showcase, so you know it works.
 | What you see | What to do |
 |---|---|
 | `git clone failed` with `Repository not found` | The deploy key is not on this repo. Run the `ssh -T` check in step 5: it names the repo the key is on. Use the `git@github.com:` address |
-| Deploy says `ANTHROPIC_API_KEY` is not set or was rejected | `sudo mcp-env set ANTHROPIC_API_KEY` with a working key, then deploy again |
+| Deploy says `ANTHROPIC_API_KEY` is not set or was rejected | `sudo mcp-env set ANTHROPIC_API_KEY` with a working key, then deploy again. If sudo asks for your password first, paste the key only at the second prompt |
+| `no repository has been deployed yet` | No deploy has succeeded yet. Run `sudo mcp-deploy git@github.com:<owner>/<repo>.git` with the full address |
 | Deploy rolls back and mentions `0.0.0.0` | Your agent still binds `0.0.0.0`. Fix the `mcp.run(` line (step 1), push, deploy |
 | Deploy says a file such as `server.py` is missing | `mcp-agent.toml` is missing from the default branch |
 | Deploy says files were edited on the zone | `sudo git -C /opt/mcp-agent checkout -- .` then `sudo mcp-deploy`. Change code on GitHub only |
