@@ -25,8 +25,8 @@ import llm                                 # llm.ask() writes prose about your r
 from smac import check_identity, guard, haversine_m, in_seq, out_of_scope, respond
 
 # Change {slot} to your approved capability slot.
-AGENT_NAME = "smac-charging-nearest"
-VERSION = "1.0.0"
+AGENT_NAME = "smac-charging-changeme"
+VERSION = "0.1.0"
 
 check_identity(AGENT_NAME, VERSION)
 mcp = MCPServer(name=AGENT_NAME, version=VERSION)
