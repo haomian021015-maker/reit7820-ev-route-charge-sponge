@@ -133,6 +133,9 @@ docker compose run --rm handshake
 It ends with `HANDSHAKE PASSED`, or tells you what to fix. It also writes
 `handshake_report.json`, which you commit as your proof.
 
+Once your agent is on your zone, run the same test against its public address
+with your token: see step 7 of [DEPLOY.md](DEPLOY.md).
+
 ## Deploy to your zone
 
 Your agent goes online on your own UQCloud zone, which is where the

@@ -104,31 +104,53 @@ sudo mcp-deploy git@github.com:<owner>/<repo>.git
 systemctl status mcp-agent            # look for: active (running)
 ```
 
+A deploy that worked ends like this, with your own agent name:
+
+```
+Deployed    : dfe36cd ...
+Runtime     : Python (mcp-agent.toml), service runs: python src/agents/charging.py
+Public URL  : https://reit7820-xxxxxxxx.uqcloud.net/mcp
+Local check : OK, http://127.0.0.1:8000/mcp answered initialize: smac-charging-nearest 1.0.0 (protocol 2025-11-25)
+```
+
+If it says it rolled back, the lines above that message say why. The usual
+cause on a first deploy is the API key: see Troubleshooting.
+
 After the first deploy that succeeds, `sudo mcp-deploy` on its own pulls your
 latest commit. Until then, give it the full address every time.
 If a deploy fails, the previous version keeps running.
 
 ## 7. Test it from your laptop
 
-Read your token on the zone. Keep it secret and never commit it:
-
-```bash
-cat /opt/mcp-agent/TOKEN.txt
-```
-
-Then, on your laptop, run the handshake test against the public address. It
-needs its own virtual environment on Python 3.10 or newer:
+The handshake test needs its own virtual environment on Python 3.10 or newer.
+Set it up once, on your laptop:
 
 ```bash
 cd smac-handshake-test
 python3 -m venv .venv-handshake
 source .venv-handshake/bin/activate   # Windows: .venv-handshake\Scripts\activate
 pip install -r requirements.txt
-MCP_TOKEN=<your-token> python handshake.py https://reit7820-xxxxxxxx.uqcloud.net/mcp
 ```
 
-The run ends with `HANDSHAKE PASSED`. Give your token to your tutor through
-the setup form (choose **Access token**), so the Orchestrator can call you.
+Then run it against your public address with your token. On macOS or Linux
+this reads the token over ssh, so it never appears on screen (it asks for your
+UQ password once):
+
+```bash
+MCP_TOKEN=$(ssh <uq-username>@reit7820-xxxxxxxx.zones.eait.uq.edu.au cat /opt/mcp-agent/TOKEN.txt) \
+  python handshake.py https://reit7820-xxxxxxxx.uqcloud.net/mcp --json ../handshake_report.json
+```
+
+On Windows, read the token on the zone with `cat /opt/mcp-agent/TOKEN.txt`,
+then set it before running `python handshake.py ...`: `set MCP_TOKEN=<token>` in
+Command Prompt, or `$env:MCP_TOKEN="<token>"` in PowerShell.
+
+The run ends with `HANDSHAKE PASSED` and writes `handshake_report.json` at the
+top of the repo.
+Commit that report as your proof. Never commit the token itself.
+
+Last, give your token to your tutor through the setup form (choose
+**Access token**), so the Orchestrator can call you.
 
 ## 8. Change something
 
