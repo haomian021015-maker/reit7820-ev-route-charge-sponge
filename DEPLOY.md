@@ -37,8 +37,37 @@ This repo is already set up. If you started from an older copy, check both:
   agent file's `mcp.run(` line passes `host=os.environ.get("HOST", "127.0.0.1")`. Docker sets
   `HOST=0.0.0.0` in `compose.yml`, so your laptop setup keeps working.
 
-Set `AGENT_NAME` and `VERSION` in your agent file, then commit and push. Only
-what is on GitHub is deployed, and only from the default branch.
+### Name your agent
+
+Open `src/agents/charging.py` and set the two lines near the top:
+
+```python
+AGENT_NAME = "smac-charging-nearest"
+VERSION = "1.0.0"
+```
+
+- `AGENT_NAME` is `smac-charging-<slot>`. Use lowercase letters and digits only,
+  with words joined by hyphens: no spaces, underscores or capitals.
+- `charging` is the domain for this branch. Keep it as it is.
+- `<slot>` is your approved capability slot: a word or two that says what your
+  agent does, such as `nearest`.
+- `VERSION` is three numbers, such as `1.0.0`. Raise it when you change your tools.
+- Replace `changeme`. The Orchestrator, the handshake report and your tutor all
+  know your agent by this name.
+
+Your agent checks both when it starts and refuses to run if either is wrong,
+with a message that says why. Check on your laptop before you push:
+
+```bash
+docker compose up -d --build charging
+docker compose logs charging         # a bad name shows here
+```
+
+After a deploy, the zone's `Local check` line and the handshake test's
+`Agent:` line both show the name.
+
+Then commit and push. Only what is on GitHub is deployed, and only from the
+default branch.
 
 ## 2. Check your zone is up
 
@@ -178,6 +207,7 @@ Do the whole loop once before the Showcase, so you know it works.
 | `git clone failed` with `Repository not found` | The deploy key is not on this repo. Run the `ssh -T` check in step 5: it names the repo the key is on. Use the `git@github.com:` address |
 | Deploy says `ANTHROPIC_API_KEY` is not set or was rejected | `sudo mcp-env set ANTHROPIC_API_KEY` with a working key, then deploy again. If sudo asks for your password first, paste the key only at the second prompt |
 | `no repository has been deployed yet` | No deploy has succeeded yet. Run `sudo mcp-deploy git@github.com:<owner>/<repo>.git` with the full address |
+| Deploy rolls back and the log says `AGENT_NAME ... does not match` or `VERSION ... must be semantic` | Fix the name as in step 1, for example `smac-charging-nearest` and `1.0.0`. Push, deploy again |
 | Deploy rolls back and mentions `0.0.0.0` | Your agent still binds `0.0.0.0`. Fix the `mcp.run(` line (step 1), push, deploy |
 | Deploy says a file such as `server.py` is missing | `mcp-agent.toml` is missing from the default branch |
 | Deploy says files were edited on the zone | `sudo git -C /opt/mcp-agent checkout -- .` then `sudo mcp-deploy`. Change code on GitHub only |
