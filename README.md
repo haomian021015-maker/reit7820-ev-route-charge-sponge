@@ -141,6 +141,33 @@ with your token: see step 7 of [DEPLOY.md](DEPLOY.md).
 Your agent goes online on your own UQCloud zone, which is where the
 Orchestrator calls it at the Showcase. Follow [DEPLOY.md](DEPLOY.md).
 
+Find your zone name, `reit7820-xxxxxxxx`, on
+[coursemgr](https://coursemgr.uqcloud.net/reit7820). Then:
+
+```bash
+# 1. Log in with your UQ username and password (nothing shows as you type it)
+ssh <uq-username>@reit7820-xxxxxxxx.zones.eait.uq.edu.au
+
+# 2. On the zone: save your Claude API key (sudo asks for your password first,
+#    then the key)
+sudo mcp-env set ANTHROPIC_API_KEY
+
+# 3. Make the zone's deploy key. Paste the ssh-ed25519 line into the setup form
+#    (choose Deploy key) and wait for confirmation
+sudo mcp-deploy --keygen
+
+# 4. Deploy from your repo's default branch, with the git@ address
+sudo mcp-deploy git@github.com:<owner>/<repo>.git
+systemctl status mcp-agent              # look for: active (running)
+
+# 5. Leave the zone
+exit
+```
+
+Then test from your laptop with your token (step 7 of DEPLOY.md). After the
+first deploy that succeeds, `sudo mcp-deploy` on its own deploys your latest
+commit.
+
 ## Choose the model
 
 Your agent runs on `claude-haiku-4-5` unless you choose another tier:

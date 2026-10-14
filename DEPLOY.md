@@ -77,11 +77,22 @@ token.
 
 ## 3. Log in
 
+Use your UQ username, the one you log in to my.UQ with (for students, `s`
+followed by 7 digits, such as `s4512345`), and your zone name from coursemgr:
+
 ```bash
 ssh <uq-username>@reit7820-xxxxxxxx.zones.eait.uq.edu.au
 ```
 
-Nothing shows while you type your password. That is normal. Type it and press Enter.
+- The first time, ssh asks `Are you sure you want to continue connecting?`.
+  Type `yes`.
+- At `password:`, type your UQ password and press Enter. Nothing shows while
+  you type. That is normal.
+- You are in when you see the UQ banner and a prompt like
+  `s4512345@reit7820-xxxxxxxx:~$`.
+- `exit` logs you out. Your agent keeps running.
+
+If the password is refused, do not keep guessing: tell your tutor.
 
 ## 4. Save your API key
 
