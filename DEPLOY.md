@@ -162,8 +162,13 @@ If a deploy fails, the previous version keeps running.
 
 ## 7. Test it from your laptop
 
+> **Run this step on your laptop, not on the zone.** Type `exit` to leave the
+> zone first. Your prompt should be your own computer's, not
+> `...@reit7820-xxxxxxxx:~$`. The zone does not have this repo's files, so
+> `cd smac-handshake-test` fails there with `No such file or directory`.
+
 The handshake test needs its own virtual environment on Python 3.10 or newer.
-Set it up once, on your laptop:
+Set it up once, from the top folder of this repo on your laptop:
 
 ```bash
 cd smac-handshake-test
@@ -225,6 +230,7 @@ Do the whole loop once before the Showcase, so you know it works.
 | `systemctl status` is not `active (running)` | Read `sudo journalctl -u mcp-agent -n 50`. Usually a missing key, or a crash in your own code |
 | 401 in a browser | Normal without a token |
 | 502 in a browser | The agent is not running, or you used the ssh address. The web address ends in `uqcloud.net/mcp` |
+| `cd: smac-handshake-test: No such file or directory` | You are on the zone. Type `exit`, then run step 7 on your laptop, from the top folder of this repo. If you made a venv on the zone, remove it first: `deactivate` then `rm -rf ~/.venv-handshake` |
 | Handshake says the token was rejected | Copy the whole token from `/opt/mcp-agent/TOKEN.txt` again |
 | Handshake says it needs the 1.x MCP SDK, or `pip` cannot find `mcp>=1.27` | Recreate the handshake venv with Python 3.10 or newer |
 | On Windows, curl reports `CRYPT_E_NO_REVOCATION_CHECK` | Add `--ssl-no-revoke` |

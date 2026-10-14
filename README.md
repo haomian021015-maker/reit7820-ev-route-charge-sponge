@@ -164,7 +164,7 @@ systemctl status mcp-agent              # look for: active (running)
 exit
 ```
 
-Then test from your laptop with your token (step 7 of DEPLOY.md). After the
+Then test from your laptop, not the zone, with your token (step 7 of DEPLOY.md). After the
 first deploy that succeeds, `sudo mcp-deploy` on its own deploys your latest
 commit.
 
