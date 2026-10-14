@@ -160,15 +160,45 @@ After the first deploy that succeeds, `sudo mcp-deploy` on its own pulls your
 latest commit. Until then, give it the full address every time.
 If a deploy fails, the previous version keeps running.
 
-## 7. Test it from your laptop
+## 7. Run the handshake test
 
-> **Run this step on your laptop, not on the zone.** Type `exit` to leave the
-> zone first. Your prompt should be your own computer's, not
-> `...@reit7820-xxxxxxxx:~$`. The zone does not have this repo's files, so
-> `cd smac-handshake-test` fails there with `No such file or directory`.
+The test calls your public address with your token, the way the Orchestrator
+will. Run it on your zone (A) or on your laptop (B). Both test the same thing.
 
-The handshake test needs its own virtual environment on Python 3.10 or newer.
-Set it up once, from the top folder of this repo on your laptop:
+### A. On your zone
+
+Logged in to your zone, download the test once. It is a public repo, separate
+from yours:
+
+```bash
+cd ~
+git clone https://github.com/uq-smart-mobility-collective/smac-handshake-test.git
+cd smac-handshake-test
+python3 -m venv .venv-handshake
+source .venv-handshake/bin/activate
+pip install -r requirements.txt
+```
+
+Then run it. The token is read from its file, so it never appears on screen:
+
+```bash
+MCP_TOKEN=$(cat /opt/mcp-agent/TOKEN.txt) python handshake.py https://reit7820-xxxxxxxx.uqcloud.net/mcp --json handshake_report.json
+```
+
+To run it again later, `cd ~/smac-handshake-test`, then
+`source .venv-handshake/bin/activate` and the line above. The report is on the
+zone. To commit it, copy it to the top folder of your repo on your laptop:
+
+```bash
+scp <uq-username>@reit7820-xxxxxxxx.zones.eait.uq.edu.au:smac-handshake-test/handshake_report.json .
+```
+
+### B. On your laptop
+
+Use the `smac-handshake-test` folder in this repo, in a terminal on your own
+computer, not on the zone (type `exit` first if you are logged in). Set up a
+virtual environment once, on Python 3.10 or newer, from the top folder of this
+repo:
 
 ```bash
 cd smac-handshake-test
@@ -177,9 +207,8 @@ source .venv-handshake/bin/activate   # Windows: .venv-handshake\Scripts\activat
 pip install -r requirements.txt
 ```
 
-Then run it against your public address with your token. On macOS or Linux
-this reads the token over ssh, so it never appears on screen (it asks for your
-UQ password once):
+Then run it. On macOS or Linux this reads the token over ssh, so it never
+appears on screen (it asks for your UQ password once):
 
 ```bash
 MCP_TOKEN=$(ssh <uq-username>@reit7820-xxxxxxxx.zones.eait.uq.edu.au cat /opt/mcp-agent/TOKEN.txt) \
@@ -190,9 +219,10 @@ On Windows, read the token on the zone with `cat /opt/mcp-agent/TOKEN.txt`,
 then set it before running `python handshake.py ...`: `set MCP_TOKEN=<token>` in
 Command Prompt, or `$env:MCP_TOKEN="<token>"` in PowerShell.
 
-The run ends with `HANDSHAKE PASSED` and writes `handshake_report.json` at the
-top of the repo.
-Commit that report as your proof. Never commit the token itself.
+### Either way
+
+The run ends with `HANDSHAKE PASSED`. Commit `handshake_report.json` at the top
+of your repo as your proof. Never commit the token itself.
 
 Last, give your token to your tutor through the setup form (choose
 **Access token**), so the Orchestrator can call you.
@@ -230,7 +260,7 @@ Do the whole loop once before the Showcase, so you know it works.
 | `systemctl status` is not `active (running)` | Read `sudo journalctl -u mcp-agent -n 50`. Usually a missing key, or a crash in your own code |
 | 401 in a browser | Normal without a token |
 | 502 in a browser | The agent is not running, or you used the ssh address. The web address ends in `uqcloud.net/mcp` |
-| `cd: smac-handshake-test: No such file or directory` | You are on the zone. Type `exit`, then run step 7 on your laptop, from the top folder of this repo. If you made a venv on the zone, remove it first: `deactivate` then `rm -rf ~/.venv-handshake` |
+| `cd: smac-handshake-test: No such file or directory` | On the zone, download the test first (step 7A). On your laptop, start from the top folder of this repo (step 7B) |
 | Handshake says the token was rejected | Copy the whole token from `/opt/mcp-agent/TOKEN.txt` again |
 | Handshake says it needs the 1.x MCP SDK, or `pip` cannot find `mcp>=1.27` | Recreate the handshake venv with Python 3.10 or newer |
 | On Windows, curl reports `CRYPT_E_NO_REVOCATION_CHECK` | Add `--ssl-no-revoke` |
