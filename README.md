@@ -16,6 +16,8 @@ application/                   the console, which calls your agent the way the O
 .env                           your keys - git-ignored, never commit it
 logs/                          usage.jsonl (every Claude call) and W&B files
 REIT7820_mcp_spec_v1.0.1.md    the contract your agent must satisfy
+mcp-agent.toml                 how your UQCloud zone runs your agent
+DEPLOY.md                      putting your agent online on your zone
 ```
 
 ## Setup
@@ -130,6 +132,11 @@ docker compose run --rm handshake
 
 It ends with `HANDSHAKE PASSED`, or tells you what to fix. It also writes
 `handshake_report.json`, which you commit as your proof.
+
+## Deploy to your zone
+
+Your agent goes online on your own UQCloud zone, which is where the
+Orchestrator calls it at the Showcase. Follow [DEPLOY.md](DEPLOY.md).
 
 ## Choose the model
 
