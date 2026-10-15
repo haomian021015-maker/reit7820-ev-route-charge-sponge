@@ -2,6 +2,7 @@
 src/.env.example
 __pycache__/
 .venv/
+.venv-handshake/
 .cache/
 *.pyc
 usage*.jsonl
@@ -11,9 +12,6 @@ usage*.jsonl
 /*.html
 orchestrator_trace.jsonl
 wandb/
-
-# The handshake test's own virtual environment (its SDK differs from the agent's)
-.venv-handshake/
 
 # Cost log and W&B files, kept locally for the report
 logs/

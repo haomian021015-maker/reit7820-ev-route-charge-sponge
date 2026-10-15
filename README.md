@@ -16,6 +16,8 @@ application/                   the console, which calls your agent the way the O
 .env                           your keys - git-ignored, never commit it
 logs/                          usage.jsonl (every Claude call) and W&B files
 REIT7820_mcp_spec_v1.0.1.md    the contract your agent must satisfy
+mcp-agent.toml                 how your UQCloud zone runs your agent
+DEPLOY.md                      putting your agent online on your zone
 ```
 
 ## Setup
@@ -130,6 +132,42 @@ docker compose run --rm handshake
 
 It ends with `HANDSHAKE PASSED`, or tells you what to fix. It also writes
 `handshake_report.json`, which you commit as your proof.
+
+Once your agent is on your zone, run the same test against its public address
+with your token: see step 7 of [DEPLOY.md](DEPLOY.md).
+
+## Deploy to your zone
+
+Your agent goes online on your own UQCloud zone, which is where the
+Orchestrator calls it at the Showcase. Follow [DEPLOY.md](DEPLOY.md).
+
+Find your zone name, `reit7820-xxxxxxxx`, on
+[coursemgr](https://coursemgr.uqcloud.net/reit7820). Then:
+
+```bash
+# 1. Log in with your UQ username and password (nothing shows as you type it)
+ssh <uq-username>@reit7820-xxxxxxxx.zones.eait.uq.edu.au
+
+# 2. On the zone: save your Claude API key (sudo asks for your password first,
+#    then the key)
+sudo mcp-env set ANTHROPIC_API_KEY
+
+# 3. Make the zone's deploy key. Paste the ssh-ed25519 line into the setup form
+#    (choose Deploy key) and wait for confirmation
+sudo mcp-deploy --keygen
+
+# 4. Deploy from your repo's default branch, with the git@ address
+sudo mcp-deploy git@github.com:<owner>/<repo>.git
+systemctl status mcp-agent              # look for: active (running)
+
+# 5. Leave the zone
+exit
+```
+
+Then run the handshake test with your token, on the zone or your laptop
+(step 7 of DEPLOY.md). After the
+first deploy that succeeds, `sudo mcp-deploy` on its own deploys your latest
+commit.
 
 ## Choose the model
 
