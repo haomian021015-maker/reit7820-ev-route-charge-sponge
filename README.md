@@ -195,3 +195,29 @@ docker compose up -d charging              # back to the .env setting
 
 Every Claude call your agent makes is appended to `logs/usage.jsonl`, with its
 model, tokens and latency.
+
+## Station data (EV-RouteCharge)
+
+`assess_ev_trip_feasibility` draws on two openly licensed sources:
+
+| Source | What it gives | Licence |
+|---|---|---|
+| Open Charge Map, pinned in `src/snapshots/ocm_qld.json` | Stations in and around Queensland, with rated power, connector types and access | CC BY 4.0 |
+| Queensland Government Electric Super Highway list (TMR) | The state's designated corridor sites, used to flag OCM records (`is_qesh`) | CC BY 4.0 |
+
+The agent reads the OCM snapshot rather than calling the API, so it needs no OCM
+key to run, and the dataset stays fixed across evaluation runs. The snapshot's
+date is reported in every response. To refresh it, put `OCM_API_KEY` in `.env`
+and, from the repository root:
+
+```bash
+python src/data.py refresh-ocm
+```
+
+A refresh can change which station ranks first, so re-derive the evaluation's
+expected values afterwards. This checks every trip case in
+`src/eval/tasks.charging.json` against the data, without consulting the agent:
+
+```bash
+python src/eval/derive_ground_truth.py
+```
