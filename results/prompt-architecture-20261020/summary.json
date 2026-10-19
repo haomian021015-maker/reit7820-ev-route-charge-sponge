@@ -1,0 +1,174 @@
+{
+  "meta": {
+    "stamp": "20261020-053044-rescored",
+    "router_model": "claude-haiku-4-5",
+    "judge_model": "claude-opus-5-5",
+    "repeats": 3,
+    "cases": 12,
+    "seed": 20261020,
+    "snapshot": "2026-10-15T18:30:22+10:00",
+    "conditions": [
+      "zero_shot",
+      "few_shot",
+      "scaffold"
+    ],
+    "max_steps": 4,
+    "rejudged_from": null,
+    "rescored_from": "/app/logs/experiments/20261020-053044"
+  },
+  "summary": {
+    "zero_shot": {
+      "runs": 36,
+      "tool_ok": {
+        "rate": 0.889,
+        "n": 36
+      },
+      "args_ok": {
+        "rate": 0.952,
+        "n": 21
+      },
+      "coords_ok": {
+        "rate": 0.571,
+        "n": 21
+      },
+      "stop_ok": {
+        "rate": 0.8,
+        "n": 15
+      },
+      "verdict_ok": {
+        "rate": 0.917,
+        "n": 36
+      },
+      "faithful": {
+        "rate": 0.5,
+        "n": 36
+      },
+      "all_ok": {
+        "rate": 0.417,
+        "n": 36
+      },
+      "step_limit_hits": 0,
+      "errors": 0,
+      "latency_s_median": 8.03,
+      "router_usd_per_run": 0.007063,
+      "router_input_tokens_per_run": 5072,
+      "router_output_tokens_per_run": 398,
+      "per_case_all_ok": {
+        "2": 0.333,
+        "5": 1.0,
+        "7": 1.0,
+        "8": 0.0,
+        "4": 0.333,
+        "11": 0.667,
+        "9": 0.333,
+        "6": 0.0,
+        "12": 0.0,
+        "3": 0.333,
+        "1": 0.667,
+        "10": 0.333
+      }
+    },
+    "few_shot": {
+      "runs": 36,
+      "tool_ok": {
+        "rate": 0.833,
+        "n": 36
+      },
+      "args_ok": {
+        "rate": 0.833,
+        "n": 18
+      },
+      "coords_ok": {
+        "rate": 1.0,
+        "n": 18
+      },
+      "stop_ok": {
+        "rate": 0.867,
+        "n": 15
+      },
+      "verdict_ok": {
+        "rate": 0.917,
+        "n": 36
+      },
+      "faithful": {
+        "rate": 0.583,
+        "n": 36
+      },
+      "all_ok": {
+        "rate": 0.5,
+        "n": 36
+      },
+      "step_limit_hits": 0,
+      "errors": 0,
+      "latency_s_median": 7.9750000000000005,
+      "router_usd_per_run": 0.011082,
+      "router_input_tokens_per_run": 9477,
+      "router_output_tokens_per_run": 321,
+      "per_case_all_ok": {
+        "1": 0.0,
+        "5": 1.0,
+        "8": 0.0,
+        "6": 1.0,
+        "4": 1.0,
+        "10": 0.333,
+        "2": 0.667,
+        "7": 1.0,
+        "12": 0.0,
+        "9": 0.0,
+        "3": 1.0,
+        "11": 0.0
+      }
+    },
+    "scaffold": {
+      "runs": 36,
+      "tool_ok": {
+        "rate": 0.917,
+        "n": 36
+      },
+      "args_ok": {
+        "rate": 1.0,
+        "n": 20
+      },
+      "coords_ok": {
+        "rate": 1.0,
+        "n": 20
+      },
+      "stop_ok": {
+        "rate": 0.882,
+        "n": 17
+      },
+      "verdict_ok": {
+        "rate": 0.972,
+        "n": 36
+      },
+      "faithful": {
+        "rate": 0.694,
+        "n": 36
+      },
+      "all_ok": {
+        "rate": 0.667,
+        "n": 36
+      },
+      "step_limit_hits": 0,
+      "errors": 0,
+      "latency_s_median": 9.965,
+      "router_usd_per_run": 0.009241,
+      "router_input_tokens_per_run": 6638,
+      "router_output_tokens_per_run": 520,
+      "per_case_all_ok": {
+        "9": 0.667,
+        "6": 1.0,
+        "5": 1.0,
+        "11": 1.0,
+        "2": 0.667,
+        "4": 1.0,
+        "1": 0.333,
+        "3": 0.333,
+        "8": 0.333,
+        "10": 0.667,
+        "12": 0.333,
+        "7": 0.667
+      }
+    }
+  }
+}
