@@ -19,11 +19,82 @@ DOMAINS = [
     {
         "id": "charging",
         "name": "EV Charging",
-        "blurb": "Queensland Electric Super Highway stations, from the Department of Transport and Main Roads.",
+        "blurb": "Trip feasibility and charging stops across Queensland: Open Charge Map stations, cross-checked against the state's Electric Super Highway list.",
     },
 ]
 
 QUERIES = [
+    {
+        "id": "chg-trip-stop",
+        "domain": "charging",
+        "text": "I'm at the University of Queensland in St Lucia with 80 km of range left and want to drive to Toowoomba. Can I make it, and if not, where should I charge?",
+        "why": "Three calls the model plans for itself: look up both places, then check the trip. The verdict, the shortfall and each stop's added time are arithmetic on the station data; the model only puts them into words.",
+        "plan": [
+            {"agent": "charging", "tool": "geocode_place", "arguments": {"place": "University of Queensland St Lucia"}},
+            {"agent": "charging", "tool": "geocode_place", "arguments": {"place": "Toowoomba"}},
+            {"agent": "charging", "tool": "assess_ev_trip_feasibility",
+             "arguments": {"origin_lat": "$0.lat", "origin_lon": "$0.lon", "dest_lat": "$1.lat", "dest_lon": "$1.lon", "remaining_range_km": 80}},
+        ],
+    },
+    {
+        "id": "chg-trip-direct",
+        "domain": "charging",
+        "text": "I'm at the University of Queensland with 250 km of range. Can I drive to Toowoomba without stopping to charge?",
+        "why": "Enough range, so the answer is a plain yes, with the road distance and the safety reserve behind it.",
+        "plan": [
+            {"agent": "charging", "tool": "geocode_place", "arguments": {"place": "University of Queensland St Lucia"}},
+            {"agent": "charging", "tool": "geocode_place", "arguments": {"place": "Toowoomba"}},
+            {"agent": "charging", "tool": "assess_ev_trip_feasibility",
+             "arguments": {"origin_lat": "$0.lat", "origin_lon": "$0.lon", "dest_lat": "$1.lat", "dest_lon": "$1.lon", "remaining_range_km": 250}},
+        ],
+    },
+    {
+        "id": "chg-trip-stranded",
+        "domain": "charging",
+        "text": "I'm in Kilcoy with only 20 km of range left and need to get to the University of Queensland. What should I do?",
+        "why": "The nearest public charger is over 45 km away, so no stop is reachable. 'Infeasible' is a computed answer, not a failure: the tool reports how many stations were out of reach.",
+        "plan": [
+            {"agent": "charging", "tool": "geocode_place", "arguments": {"place": "Kilcoy, Queensland"}},
+            {"agent": "charging", "tool": "geocode_place", "arguments": {"place": "University of Queensland St Lucia"}},
+            {"agent": "charging", "tool": "assess_ev_trip_feasibility",
+             "arguments": {"origin_lat": "$0.lat", "origin_lon": "$0.lon", "dest_lat": "$1.lat", "dest_lon": "$1.lon", "remaining_range_km": 20}},
+        ],
+    },
+    {
+        "id": "chg-trip-chademo",
+        "domain": "charging",
+        "text": "I drive an older Nissan Leaf: CHAdeMO plug, 50 kW charging at most, 150 km on a full battery. I'm at the University of Queensland with 80 km left, heading to Toowoomba. Where should I charge?",
+        "why": "The first trip again, for a car that can only use CHAdeMO chargers and draw 50 kW. Capped at 50 kW, the 350 kW charger loses its edge and the stop with almost no detour comes first.",
+        "plan": [
+            {"agent": "charging", "tool": "geocode_place", "arguments": {"place": "University of Queensland St Lucia"}},
+            {"agent": "charging", "tool": "geocode_place", "arguments": {"place": "Toowoomba"}},
+            {"agent": "charging", "tool": "assess_ev_trip_feasibility",
+             "arguments": {"origin_lat": "$0.lat", "origin_lon": "$0.lon", "dest_lat": "$1.lat", "dest_lon": "$1.lon", "remaining_range_km": 80, "full_range_km": 150, "connector_type": "CHAdeMO", "vehicle_max_charge_kw": 50}},
+        ],
+    },
+    {
+        "id": "chg-trip-unpublished",
+        "domain": "charging",
+        "text": "I'm at the University of Queensland with 80 km of range, driving to Toowoomba. Is the charger you'd recommend free right now, and what will it cost me?",
+        "why": "No open dataset publishes live availability or prices. The tool lists both as data gaps, and a faithful answer says so instead of guessing.",
+        "plan": [
+            {"agent": "charging", "tool": "geocode_place", "arguments": {"place": "University of Queensland St Lucia"}},
+            {"agent": "charging", "tool": "geocode_place", "arguments": {"place": "Toowoomba"}},
+            {"agent": "charging", "tool": "assess_ev_trip_feasibility",
+             "arguments": {"origin_lat": "$0.lat", "origin_lon": "$0.lon", "dest_lat": "$1.lat", "dest_lon": "$1.lon", "remaining_range_km": 80}},
+        ],
+    },
+    {
+        "id": "chg-trip-interstate",
+        "domain": "charging",
+        "text": "Can I drive from the University of Queensland to the Sydney Opera House on 200 km of range?",
+        "why": "The destination is in New South Wales. The trip tool covers destinations in Queensland only, so it declines and says why, rather than estimating a route its data does not cover.",
+        "plan": [
+            {"agent": "charging", "tool": "geocode_place", "arguments": {"place": "University of Queensland St Lucia"}},
+            {"agent": "charging", "tool": "assess_ev_trip_feasibility",
+             "arguments": {"origin_lat": "$0.lat", "origin_lon": "$0.lon", "dest_lat": -33.8568, "dest_lon": 151.2153, "remaining_range_km": 200}},
+        ],
+    },
     {
         "id": "chg-nearest-named-place",
         "domain": "charging",
