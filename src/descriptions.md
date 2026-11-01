@@ -52,9 +52,10 @@ My own tool, and the capability this agent is built around: given an origin, a
 destination and the range left in the battery, decide whether the trip can be
 completed and, if not, which real charging station to stop at.
 
-The specification asks for a v1 and a v2. This tool has been refined twice -
-once against the Queensland Government data, and again when Open Charge Map was
-added - so all three are recorded. **v3 is the version served live.**
+The specification asks for a v1 and a v2. This tool has been refined three
+times - against the Queensland Government data, when Open Charge Map was added,
+and after the prompt experiment showed how calling models misread it - so all
+four are recorded. **v3 was served at the Showcase; v4 is the current version.**
 
 ### v1 - initial draft
 > Check whether an EV can complete a trip on its remaining range, and recommend
@@ -99,7 +100,7 @@ it was checked against the dataset. Three of the fields it promises do not exist
 | 5 | Stated the x 1.3 road-distance approximation in the description rather than only in the response body | Local testing: the UQ St Lucia to Toowoomba estimate comes out at 135,899 m from a 104,538 m straight line. It is a flat correction, not a routed distance, and a caller told only "estimated road distance" could quote it as a driving distance |
 | 6 | Added "Plans a single stop, not a multi-stop itinerary" | Design limit, stated so it is not discovered at the Showcase: the ranking picks one station, and `completes_trip_after_stop` reports whether that one stop is enough rather than planning a second |
 
-### v3 - Open Charge Map added (this is what's served live)
+### v3 - Open Charge Map added (served at the Showcase)
 > Decide whether an electric vehicle can finish a trip on the range it has left, and where to charge if it cannot.
 >
 > Takes an origin, a destination and the range remaining in the battery. Estimates
@@ -144,9 +145,62 @@ called it and misread it. Both came from the `final_response` column the
 evaluation runner records for every case. The rest come from dataset
 measurement and local testing.
 
+### v4 - fixes from the prompt experiment (current)
+
+v3's text is kept, with one paragraph added before the "Takes coordinates" line:
+
+> Only the four coordinates and remaining_range_km are required. Call it even when
+> the driver gives nothing else - do not ask for battery size, plug type or
+> consumption first; the verdict and the stops do not depend on them. Without
+> full_range_km, completes_trip_after_stop is null, which means unknown, not no.
+
+and the `consumption_kwh_per_100km` parameter now says "Must be greater than
+zero: zero or a negative value is rejected as invalid_input."
+
+#### What changed from v3 to v4, and why
+
+Every row comes from the 108-run prompt experiment of 2026-10-20
+(`results/prompt-architecture-20261020/`), in which a model saw only these
+descriptions and the tool results.
+
+| # | Change | Evidence that prompted it |
+|---|---|---|
+| 1 | `consumption_kwh_per_100km` says it must be greater than zero and what happens otherwise | The tool already rejected zero, but the description did not say so; in every prompt condition the router guessed at what a zero would do instead of reporting the rejection, and in one run the answer claimed the tool "would produce meaningless results" |
+| 2 | The description says what `completes_trip_after_stop: null` means, the response states it in `assumptions`, and `full_battery_range` joins `data_gaps` when it applies | With no battery size given, the field is null - unknown. In all three prompt conditions the router reported it as "no, one stop is not enough" |
+| 3 | The description says which inputs are required and that the tool should be called even when the driver gives nothing else | Asked a question that admits the battery size and plug are unknown, the router declined to call the tool in 3/3 runs with the rules-only and few-shot prompts and 1/3 with the scaffold, although v3 already said the verdict did not need them |
+| 4 | The response leads with `feasibility`, `reason`, `explanation`, `data_gaps` and `trip`; the station counts and assumptions now follow the stops | The console the Orchestrator mirrors shows a calling model only the first 2,500 characters of a tool result. In v3, `data_gaps` and the agent's own explanation sat after the stop list, so the caller never saw them |
+
+v4 changes no figure the tool computes; all 12 evaluation cases and the 24
+held-out cases give the same values, and the handshake test passes.
+
+#### Measured effect of v4 (`results/descriptions-v4-comparison/`)
+
+The zero-shot router was re-run against v4 on both question sets (108 runs) and
+compared with its v3 runs on the same questions:
+
+| Metric | v3 | v4 | p |
+|---|---|---|---|
+| Verdict right | 92% | 95% | 0.049 |
+| Answer names the tool's first stop | 77% | 92% | 0.016 |
+| Coordinates looked up, not recalled | 88% | 76% | 0.192 |
+| Passed every check | 44% | 38% | 0.367 |
+
+The targeted fix worked: the question that admits the battery size is unknown
+went from 0/3 right verdicts to 3/3, because the router now calls the tool
+instead of declining. But the sentence that did it - "Call it even when the
+driver gives nothing else" - had a side effect. On three questions that never
+failed on coordinates under v3 (Sydney and Canberra as destinations, Gatton to
+Cleveland), the router now called the tool at once with recalled coordinates,
+skipping the place lookup, in 9 of 9 runs. A description is part of a tool's
+interface in this sense too: a change that fixes one misreading can introduce
+another, so description changes need the same regression testing as code.
+The v4 runs were made in a separate session from the v3 runs (20 October and
+earlier on 2 November) rather than interleaved with them, so drift in the API
+between sessions is not ruled out.
+
 ### Parameter descriptions
 
-| Parameter | v1 | v3 (served live; v2 where unchanged) |
+| Parameter | v1 | v4 (current; v2 or v3 where unchanged) |
 |---|---|---|
 | `origin_lat` | Origin latitude | WGS84 latitude of where the trip starts. Must be in South East Queensland. |
 | `origin_lon` | Origin longitude | WGS84 longitude of where the trip starts. Must be in South East Queensland. |
@@ -155,7 +209,7 @@ measurement and local testing.
 | `remaining_range_km` | Current remaining range in km | Range left in the battery right now, in kilometres, as the vehicle reports it. Must be greater than zero. |
 | `full_range_km` | Full battery range in km | Range in kilometres on a full battery. Optional: the verdict and the recommended stops do not need it. Supply it to learn whether one stop is enough to finish the trip (completes_trip_after_stop), and to cap the charge a stop asks for at a full battery. |
 | `connector_type` | Optional connector-type preference | Only recommend chargers that have this connector. Optional; omit it to consider every connector. CCS2 and CHAdeMO are DC fast-charging plugs; Type2 is the AC plug most Australian EVs use. |
-| `consumption_kwh_per_100km` | *(not in v1)* | The vehicle's energy use in kWh per 100 km, which turns the range a stop must add into energy and so into charging time. Defaults to 18, typical of a mid-size EV. |
+| `consumption_kwh_per_100km` | *(not in v1)* | The vehicle's energy use in kWh per 100 km, which turns the range a stop must add into energy and so into charging time. Must be greater than zero: zero or a negative value is rejected as invalid_input. Defaults to 18, typical of a mid-size EV. |
 | `vehicle_max_charge_kw` | *(not in v1)* | The most power the vehicle can accept while charging, in kW. Optional; without it each charger's full rated power is assumed, so charging times are minimums and the most powerful chargers rank first even for a car that cannot use that power. |
 | `safety_margin_pct` | *(not in v1)* | Percentage of range held back as a reserve rather than planned for, 0 to 50. Defaults to 10. |
 | `max_results` | *(not in v1)* | How many charging stops to return when the trip needs one, 1 to 5. |

@@ -1,0 +1,67 @@
+AGENT charging (smac-charging-tripfeasibility) - EV Charging
+  geocode_place: Convert a South East Queensland place name or address into WGS84 coordinates.
+
+Use this before any tool that needs a lat/lon when you were given a place name
+instead of numbers. Do not guess coordinates - a recalled coordinate has no
+source and cannot be cited. Returns the matched address and the OpenStreetMap
+feature type, so you can judge how precise the match is.
+
+Covers South East Queensland; a place resolving outside SEQ is reported as out
+of scope. Returns the single best match and does not disambiguate between
+places sharing a name.
+      place: Place name, landmark, suburb or address to locate, e.g. 'Toowong Village Brisbane'.
+  find_nearest_charger: Find the closest Queensland Electric Super Highway charging stations to a point.
+
+Answers range-planning questions for electric vehicle trips starting in South
+East Queensland - where the next public charging site is, how far away, and
+which sites lie onward along the highway network. Uses the Queensland
+Government's published station list, so it covers intercity corridors rather
+than every kerbside charger in a suburb.
+
+Origin must be in South East Queensland; returned stations may be anywhere in
+Queensland, since onward stations matter on long trips. Plug and connector
+types are NOT available - the source publishes that column empty. Does not
+report live availability or pricing, and does not plan a route.
+      lat: WGS84 latitude of the trip origin, in South East Queensland.
+      lon: WGS84 longitude of the trip origin, in South East Queensland.
+      max_results: How many of the closest stations to return, 1 to 5.
+  assess_ev_trip_feasibility: Decide whether an electric vehicle can finish a trip on the range it has left, and where to charge if it cannot.
+
+Takes an origin, a destination and the range remaining in the battery. Estimates
+the road distance, holds back a safety reserve, and returns one of three verdicts:
+`feasible` (drive straight there), `requires_charging` (a stop is needed) or
+`infeasible` (no public charger is reachable on the range left). When a stop is
+needed, public chargers that are reachable and close to the direct line are ranked
+by the time they add to the trip - the detour plus the charging needed to finish -
+and each reports its rated power, connector types, the range and energy to add,
+and whether a full charge there completes the trip. An optional connector type
+limits the stops to chargers the vehicle can use.
+
+The origin must be in South East Queensland; the destination may be anywhere in
+Queensland. Stations come from a pinned Open Charge Map snapshot of Queensland,
+dated in every response, cross-checked against the Queensland Government's
+Electric Super Highway list, which flags the state's designated corridor sites.
+
+Only the four coordinates and remaining_range_km are required. Call it even when
+the driver gives nothing else - do not ask for battery size, plug type or
+consumption first; the verdict and the stops do not depend on them. Without
+full_range_km, completes_trip_after_stop is null, which means unknown, not no.
+
+Takes coordinates, not place names: call `geocode_place` first. Road distance is
+straight-line distance x 1.3, not a routed path. Charging time is a minimum: it
+assumes the charger's rated power, capped at the vehicle's limit if one is given,
+and charging slows past about 80%. Does NOT report live availability or
+occupancy - no open source publishes it, and most station records were last
+verified years ago - nor pricing. Plans a single stop, not a multi-stop itinerary.
+      origin_lat: WGS84 latitude of where the trip starts. Must be in South East Queensland.
+      origin_lon: WGS84 longitude of where the trip starts. Must be in South East Queensland.
+      dest_lat: WGS84 latitude of the destination. May be anywhere in Queensland.
+      dest_lon: WGS84 longitude of the destination. May be anywhere in Queensland.
+      remaining_range_km: Range left in the battery right now, in kilometres, as the vehicle reports it. Must be greater than zero.
+      full_range_km: Range in kilometres on a full battery. Optional: the verdict and the recommended stops do not need it. Supply it to learn whether one stop is enough to finish the trip (completes_trip_after_stop), and to cap the charge a stop asks for at a full battery.
+      connector_type: Only recommend chargers that have this connector. Optional; omit it to consider every connector. CCS2 and CHAdeMO are DC fast-charging plugs; Type2 is the AC plug most Australian EVs use.
+      consumption_kwh_per_100km: The vehicle's energy use in kWh per 100 km, which turns the range a stop must add into energy and so into charging time. Must be greater than zero: zero or a negative value is rejected as invalid_input. Defaults to 18, typical of a mid-size EV.
+      vehicle_max_charge_kw: The most power the vehicle can accept while charging, in kW. Optional; without it each charger's full rated power is assumed, so charging times are minimums and the most powerful chargers rank first even for a car that cannot use that power.
+      safety_margin_pct: Percentage of range held back as a reserve rather than planned for, 0 to 50. Defaults to 10.
+      max_results: How many charging stops to return when the trip needs one, 1 to 5.
+      explain: Include a short written explanation of the verdict alongside the computed figures.

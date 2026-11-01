@@ -1,0 +1,146 @@
+{
+  "meta": {
+    "stamp": "20261102-043628",
+    "router_model": "claude-sonnet-5-5",
+    "judge_model": "claude-opus-5-5",
+    "repeats": 3,
+    "cases": 24,
+    "seed": 20261102,
+    "snapshot": "2026-10-15T18:30:22+10:00",
+    "conditions": [
+      "zero_shot",
+      "few_shot"
+    ],
+    "max_steps": 4,
+    "rejudged_from": null,
+    "tasks": "tasks.heldout.json"
+  },
+  "summary": {
+    "zero_shot": {
+      "runs": 72,
+      "tool_ok": {
+        "rate": 0.875,
+        "n": 72
+      },
+      "args_ok": {
+        "rate": 0.938,
+        "n": 48
+      },
+      "coords_ok": {
+        "rate": 1.0,
+        "n": 48
+      },
+      "stop_ok": {
+        "rate": 0.97,
+        "n": 33
+      },
+      "verdict_ok": {
+        "rate": 0.958,
+        "n": 72
+      },
+      "faithful": {
+        "rate": 0.889,
+        "n": 72
+      },
+      "all_ok": {
+        "rate": 0.819,
+        "n": 72
+      },
+      "step_limit_hits": 0,
+      "errors": 0,
+      "latency_s_median": 10.885,
+      "router_usd_per_run": 0.022938,
+      "router_input_tokens_per_run": 8415,
+      "router_output_tokens_per_run": 611,
+      "per_case_all_ok": {
+        "2": 0.0,
+        "1": 0.0,
+        "24": 1.0,
+        "10": 1.0,
+        "22": 1.0,
+        "12": 1.0,
+        "7": 1.0,
+        "16": 1.0,
+        "14": 1.0,
+        "4": 0.333,
+        "15": 1.0,
+        "20": 1.0,
+        "21": 1.0,
+        "13": 1.0,
+        "8": 1.0,
+        "3": 0.667,
+        "17": 1.0,
+        "23": 1.0,
+        "18": 0.667,
+        "6": 0.0,
+        "11": 1.0,
+        "5": 1.0,
+        "19": 1.0,
+        "9": 1.0
+      }
+    },
+    "few_shot": {
+      "runs": 72,
+      "tool_ok": {
+        "rate": 1.0,
+        "n": 72
+      },
+      "args_ok": {
+        "rate": 0.938,
+        "n": 48
+      },
+      "coords_ok": {
+        "rate": 1.0,
+        "n": 48
+      },
+      "stop_ok": {
+        "rate": 0.97,
+        "n": 33
+      },
+      "verdict_ok": {
+        "rate": 0.944,
+        "n": 72
+      },
+      "faithful": {
+        "rate": 0.986,
+        "n": 72
+      },
+      "all_ok": {
+        "rate": 0.931,
+        "n": 72
+      },
+      "step_limit_hits": 1,
+      "errors": 0,
+      "latency_s_median": 9.33,
+      "router_usd_per_run": 0.021689,
+      "router_input_tokens_per_run": 15015,
+      "router_output_tokens_per_run": 556,
+      "per_case_all_ok": {
+        "13": 1.0,
+        "23": 1.0,
+        "6": 0.0,
+        "8": 1.0,
+        "2": 1.0,
+        "4": 0.667,
+        "20": 1.0,
+        "16": 1.0,
+        "5": 1.0,
+        "9": 1.0,
+        "14": 1.0,
+        "1": 1.0,
+        "18": 1.0,
+        "10": 1.0,
+        "12": 1.0,
+        "3": 1.0,
+        "15": 1.0,
+        "11": 1.0,
+        "21": 0.667,
+        "19": 1.0,
+        "24": 1.0,
+        "17": 1.0,
+        "22": 1.0,
+        "7": 1.0
+      }
+    }
+  }
+}

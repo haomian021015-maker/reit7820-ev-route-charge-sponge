@@ -36,4 +36,4 @@
 | all_ok | scaffold vs zero_shot | +20.8 pts | 0.008 |
 | all_ok | scaffold vs few_shot | -6.9 pts | 0.390 |
 
-Three pairwise comparisons per metric: at a family-wise 0.05, a difference needs p < 0.017 (Bonferroni) to be read as more than suggestive.
+3 pairwise comparisons per metric: at a family-wise 0.05, a difference needs p < 0.017 (Bonferroni) to be read as more than suggestive.

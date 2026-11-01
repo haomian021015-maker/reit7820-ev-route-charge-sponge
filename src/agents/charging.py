@@ -26,7 +26,7 @@ import llm                                 # llm.ask() writes prose about your r
 from smac import check_identity, guard, haversine_m, in_seq, metres, out_of_scope, respond, seconds
 
 AGENT_NAME = "smac-charging-tripfeasibility"
-VERSION = "0.2.0"
+VERSION = "0.3.0"
 
 check_identity(AGENT_NAME, VERSION)
 mcp = MCPServer(name=AGENT_NAME, version=VERSION)
@@ -208,7 +208,7 @@ def assess_ev_trip_feasibility(
     remaining_range_km: Annotated[float, Field(description="Range left in the battery right now, in kilometres, as the vehicle reports it. Must be greater than zero.", examples=[80.0])],
     full_range_km: Annotated[float | None, Field(description="Range in kilometres on a full battery. Optional: the verdict and the recommended stops do not need it. Supply it to learn whether one stop is enough to finish the trip (completes_trip_after_stop), and to cap the charge a stop asks for at a full battery.", examples=[400.0])] = None,
     connector_type: Annotated[Literal["CCS2", "CHAdeMO", "Type2", "Type1"] | None, Field(description="Only recommend chargers that have this connector. Optional; omit it to consider every connector. CCS2 and CHAdeMO are DC fast-charging plugs; Type2 is the AC plug most Australian EVs use.")] = None,
-    consumption_kwh_per_100km: Annotated[float, Field(description="The vehicle's energy use in kWh per 100 km, which turns the range a stop must add into energy and so into charging time. Defaults to 18, typical of a mid-size EV.")] = DEFAULT_CONSUMPTION_KWH_PER_100KM,
+    consumption_kwh_per_100km: Annotated[float, Field(description="The vehicle's energy use in kWh per 100 km, which turns the range a stop must add into energy and so into charging time. Must be greater than zero: zero or a negative value is rejected as invalid_input. Defaults to 18, typical of a mid-size EV.")] = DEFAULT_CONSUMPTION_KWH_PER_100KM,
     vehicle_max_charge_kw: Annotated[float | None, Field(description="The most power the vehicle can accept while charging, in kW. Optional; without it each charger's full rated power is assumed, so charging times are minimums and the most powerful chargers rank first even for a car that cannot use that power.")] = None,
     safety_margin_pct: Annotated[int, Field(description="Percentage of range held back as a reserve rather than planned for, 0 to 50. Defaults to 10.")] = DEFAULT_SAFETY_MARGIN_PCT,
     max_results: Annotated[int, Field(description="How many charging stops to return when the trip needs one, 1 to 5.")] = 3,
@@ -230,6 +230,11 @@ def assess_ev_trip_feasibility(
     Queensland. Stations come from a pinned Open Charge Map snapshot of Queensland,
     dated in every response, cross-checked against the Queensland Government's
     Electric Super Highway list, which flags the state's designated corridor sites.
+
+    Only the four coordinates and remaining_range_km are required. Call it even when
+    the driver gives nothing else - do not ask for battery size, plug type or
+    consumption first; the verdict and the stops do not depend on them. Without
+    full_range_km, completes_trip_after_stop is null, which means unknown, not no.
 
     Takes coordinates, not place names: call `geocode_place` first. Road distance is
     straight-line distance x 1.3, not a routed path. Charging time is a minimum: it
@@ -402,6 +407,9 @@ def assess_ev_trip_feasibility(
         assumptions.append(
             f"Stations come from an Open Charge Map snapshot taken {pool_info['snapshot_taken'][:10]}; "
             "each stop's last_updated shows how old its record is.")
+    if stops and not full_range_km:
+        assumptions.append("completes_trip_after_stop is null because full_range_km was not given: "
+                           "whether one stop is enough is unknown, not false.")
     if connector_type:
         assumptions.append(f"Only chargers listing a {connector_type} connector are considered; "
                            "sites whose connectors are unpublished are left out.")
@@ -411,6 +419,8 @@ def assess_ev_trip_feasibility(
     data_gaps = ["live_availability", "pricing", "road_network_routing"]
     if not vehicle_max_charge_kw:
         data_gaps.append("vehicle_charge_rate_limit")
+    if stops and not full_range_km:
+        data_gaps.append("full_battery_range")
     if not have_ocm:
         data_gaps = ["plug_and_connector_types", "charging_speed_kw", "estimated_charging_time"] + data_gaps
 
@@ -496,6 +506,11 @@ def assess_ev_trip_feasibility(
             payload["explanation"] = None
             payload["explanation_error"] = f"{type(exc).__name__}: {exc}"
 
+    # Verdict, reason, explanation and gaps first, the bulky detail last: a caller
+    # that reads only the first part of the response still gets what matters.
+    first_fields = ("feasibility", "reason", "explanation", "explanation_error", "data_gaps", "trip")
+    payload = {**{k: payload[k] for k in first_fields if k in payload},
+               **{k: v for k, v in payload.items() if k not in first_fields}}
     sources = [data.OCM_LICENCE, data.QLD_LICENCE] if have_ocm else [data.QLD_LICENCE]
     return respond(payload, sources=sources)
 
