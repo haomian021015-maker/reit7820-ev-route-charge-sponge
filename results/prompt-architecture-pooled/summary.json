@@ -1,0 +1,19 @@
+{
+  "meta": {
+    "stamp": "pooled (prompt-architecture-20261020, prompt-architecture-heldout-20261102)",
+    "sources": [
+      {
+        "folder": "prompt-architecture-20261020",
+        "router_model": "claude-haiku-4-5",
+        "tasks": null,
+        "runs": 108
+      },
+      {
+        "folder": "prompt-architecture-heldout-20261102",
+        "router_model": "claude-haiku-4-5",
+        "tasks": "tasks.heldout.json",
+        "runs": 216
+      }
+    ]
+  }
+}

@@ -70,7 +70,10 @@ BRISBANE = timezone(timedelta(hours=10))
 # longer few-shot prompt can incur, so router usage is read from each response.
 ROUTER_PRICES = {"claude-haiku-4-5": {"input_tokens": 1.00, "output_tokens": 5.00,
                                       "cache_creation_input_tokens": 1.25,
-                                      "cache_read_input_tokens": 0.10}}
+                                      "cache_read_input_tokens": 0.10},
+                 "claude-sonnet-5-5": {"input_tokens": 2.00, "output_tokens": 10.00,
+                                       "cache_creation_input_tokens": 2.50,
+                                       "cache_read_input_tokens": 0.20}}
 JUDGE_MODEL = "claude-opus-5-5"
 JUDGE_PRICE = {"input_tokens": 4.00, "output_tokens": 20.00}
 
