@@ -1,0 +1,861 @@
+from,to,remaining_range_km,estimated_road_m,osrm_road_m,verdict,first_stop
+University of Queensland St Lucia,Toowoomba,40.8,135899,122356,requires_charging,Bundamba
+University of Queensland St Lucia,Toowoomba,67.9,135899,122356,requires_charging,Bundamba
+University of Queensland St Lucia,Toowoomba,95.1,135899,122356,requires_charging,Bundamba
+University of Queensland St Lucia,Toowoomba,122.3,135899,122356,requires_charging,Bundamba
+University of Queensland St Lucia,Toowoomba,163.1,135899,122356,feasible,
+University of Queensland St Lucia,Gatton,28.3,94280,87251,requires_charging,Indooroopilly
+University of Queensland St Lucia,Gatton,47.1,94280,87251,requires_charging,Bundamba
+University of Queensland St Lucia,Gatton,66.0,94280,87251,requires_charging,Bundamba
+University of Queensland St Lucia,Gatton,84.9,94280,87251,requires_charging,Bundamba
+University of Queensland St Lucia,Gatton,113.1,94280,87251,feasible,
+University of Queensland St Lucia,Surfers Paradise,26.9,89614,82909,requires_charging,Springwood [bp pulse]
+University of Queensland St Lucia,Surfers Paradise,44.8,89614,82909,requires_charging,bp pulse Loganholme
+University of Queensland St Lucia,Surfers Paradise,62.7,89614,82909,requires_charging,Woolworths Ormeau (underground carpark)
+University of Queensland St Lucia,Surfers Paradise,80.7,89614,82909,requires_charging,Coles Express Coomera
+University of Queensland St Lucia,Surfers Paradise,107.5,89614,82909,feasible,
+University of Queensland St Lucia,Coolangatta,35.4,118037,108000,requires_charging,27 - 49 Browns Plains Road
+University of Queensland St Lucia,Coolangatta,59.0,118037,108000,requires_charging,Woolworths Ormeau (underground carpark)
+University of Queensland St Lucia,Coolangatta,82.6,118037,108000,requires_charging,Coles Express Coomera
+University of Queensland St Lucia,Coolangatta,106.2,118037,108000,requires_charging,Coles Express Coomera
+University of Queensland St Lucia,Coolangatta,141.6,118037,108000,feasible,
+University of Queensland St Lucia,Beenleigh,12.0,39879,40862,requires_charging,Bus Stop Sales - Rocklea
+University of Queensland St Lucia,Beenleigh,19.9,39879,40862,requires_charging,Bus Stop Sales - Rocklea
+University of Queensland St Lucia,Beenleigh,27.9,39879,40862,requires_charging,Springwood [bp pulse]
+University of Queensland St Lucia,Beenleigh,35.9,39879,40862,requires_charging,Springwood [bp pulse]
+University of Queensland St Lucia,Beenleigh,47.9,39879,40862,feasible,
+University of Queensland St Lucia,"Redcliffe, Queensland",12.4,41335,40165,requires_charging,Brisbane-Fortitude Valley
+University of Queensland St Lucia,"Redcliffe, Queensland",20.7,41335,40165,requires_charging,Brisbane-Fortitude Valley
+University of Queensland St Lucia,"Redcliffe, Queensland",28.9,41335,40165,requires_charging,Brisbane-Fortitude Valley
+University of Queensland St Lucia,"Redcliffe, Queensland",37.2,41335,40165,requires_charging,Brisbane-Fortitude Valley
+University of Queensland St Lucia,"Redcliffe, Queensland",49.6,41335,40165,feasible,
+University of Queensland St Lucia,Caboolture,18.1,60371,54026,requires_charging,Brisbane-Fortitude Valley
+University of Queensland St Lucia,Caboolture,30.2,60371,54026,requires_charging,Gympie Road
+University of Queensland St Lucia,Caboolture,42.3,60371,54026,requires_charging,Gympie Road
+University of Queensland St Lucia,Caboolture,54.3,60371,54026,requires_charging,Gympie Road
+University of Queensland St Lucia,Caboolture,72.4,60371,54026,feasible,
+University of Queensland St Lucia,Caloundra,30.7,102440,98218,requires_charging,Gympie Road
+University of Queensland St Lucia,Caloundra,51.2,102440,98218,requires_charging,Gympie Road
+University of Queensland St Lucia,Caloundra,71.7,102440,98218,requires_charging,Gympie Road
+University of Queensland St Lucia,Caloundra,92.2,102440,98218,requires_charging,Gympie Road
+University of Queensland St Lucia,Caloundra,122.9,102440,98218,feasible,
+University of Queensland St Lucia,Maroochydore,36.7,122258,106317,requires_charging,Gympie Road
+University of Queensland St Lucia,Maroochydore,61.1,122258,106317,requires_charging,Gympie Road
+University of Queensland St Lucia,Maroochydore,85.6,122258,106317,requires_charging,Gympie Road
+University of Queensland St Lucia,Maroochydore,110.0,122258,106317,requires_charging,Gympie Road
+University of Queensland St Lucia,Maroochydore,146.7,122258,106317,feasible,
+University of Queensland St Lucia,Noosa Heads,47.7,159054,144565,requires_charging,Gympie Road
+University of Queensland St Lucia,Noosa Heads,79.5,159054,144565,requires_charging,Gympie Road
+University of Queensland St Lucia,Noosa Heads,111.3,159054,144565,requires_charging,Evie Networks Coochin Creek
+University of Queensland St Lucia,Noosa Heads,143.1,159054,144565,requires_charging,Evie Networks Coochin Creek
+University of Queensland St Lucia,Noosa Heads,190.9,159054,144565,feasible,
+University of Queensland St Lucia,Nambour,37.9,126282,110088,requires_charging,Gympie Road
+University of Queensland St Lucia,Nambour,63.1,126282,110088,requires_charging,Gympie Road
+University of Queensland St Lucia,Nambour,88.4,126282,110088,requires_charging,Gympie Road
+University of Queensland St Lucia,Nambour,113.7,126282,110088,requires_charging,Evie Networks Coochin Creek
+University of Queensland St Lucia,Nambour,151.5,126282,110088,feasible,
+University of Queensland St Lucia,"Kilcoy, Queensland",29.7,99073,103943,requires_charging,BP Pulse Ferny Grove
+University of Queensland St Lucia,"Kilcoy, Queensland",49.5,99073,103943,requires_charging,BP Pulse Ferny Grove
+University of Queensland St Lucia,"Kilcoy, Queensland",69.4,99073,103943,requires_charging,BP Pulse Ferny Grove
+University of Queensland St Lucia,"Kilcoy, Queensland",89.2,99073,103943,requires_charging,BP Pulse Ferny Grove
+University of Queensland St Lucia,"Kilcoy, Queensland",118.9,99073,103943,feasible,
+University of Queensland St Lucia,"Esk, Queensland",25.3,84341,96832,requires_charging,BP Pulse Ferny Grove
+University of Queensland St Lucia,"Esk, Queensland",42.2,84341,96832,requires_charging,BP Pulse Ferny Grove
+University of Queensland St Lucia,"Esk, Queensland",59.0,84341,96832,requires_charging,BP Pulse Ferny Grove
+University of Queensland St Lucia,"Esk, Queensland",75.9,84341,96832,requires_charging,Montague Markets
+University of Queensland St Lucia,"Esk, Queensland",101.2,84341,96832,feasible,
+University of Queensland St Lucia,Boonah,24.6,81858,81091,requires_charging,Bus Stop Sales - Rocklea
+University of Queensland St Lucia,Boonah,40.9,81858,81091,requires_charging,Bundamba
+University of Queensland St Lucia,Boonah,57.3,81858,81091,requires_charging,Bus Stop Sales - Rocklea
+University of Queensland St Lucia,Boonah,73.7,81858,81091,requires_charging,Springfield QESH
+University of Queensland St Lucia,Boonah,98.2,81858,81091,feasible,
+University of Queensland St Lucia,Beaudesert,21.3,70918,74151,requires_charging,Bus Stop Sales - Rocklea
+University of Queensland St Lucia,Beaudesert,35.5,70918,74151,requires_charging,27 - 49 Browns Plains Road
+University of Queensland St Lucia,Beaudesert,49.6,70918,74151,requires_charging,27 - 49 Browns Plains Road
+University of Queensland St Lucia,Beaudesert,63.8,70918,74151,requires_charging,27 - 49 Browns Plains Road
+University of Queensland St Lucia,Beaudesert,85.1,70918,74151,feasible,
+Brisbane City,Toowoomba,41.4,138116,126370,requires_charging,Bundamba
+Brisbane City,Toowoomba,69.1,138116,126370,requires_charging,Bundamba
+Brisbane City,Toowoomba,96.7,138116,126370,requires_charging,Bundamba
+Brisbane City,Toowoomba,124.3,138116,126370,requires_charging,QESH Lawes (Gatton)
+Brisbane City,Toowoomba,165.7,138116,126370,feasible,
+Brisbane City,Ipswich,12.0,39966,40077,requires_charging,Indooroopilly
+Brisbane City,Ipswich,20.0,39966,40077,requires_charging,Indooroopilly
+Brisbane City,Ipswich,28.0,39966,40077,requires_charging,Indooroopilly
+Brisbane City,Ipswich,36.0,39966,40077,requires_charging,Bundamba
+Brisbane City,Ipswich,48.0,39966,40077,feasible,
+Brisbane City,Gatton,29.0,96630,91266,requires_charging,Brisbane-Fortitude Valley
+Brisbane City,Gatton,48.3,96630,91266,requires_charging,Bundamba
+Brisbane City,Gatton,67.6,96630,91266,requires_charging,Bundamba
+Brisbane City,Gatton,87.0,96630,91266,requires_charging,bp pulse Blacksoil
+Brisbane City,Gatton,116.0,96630,91266,feasible,
+Brisbane City,Surfers Paradise,27.6,91846,76647,requires_charging,East Brisbane [bp pulse]
+Brisbane City,Surfers Paradise,45.9,91846,76647,requires_charging,bp pulse Loganholme
+Brisbane City,Surfers Paradise,64.3,91846,76647,requires_charging,Woolworths Ormeau (underground carpark)
+Brisbane City,Surfers Paradise,82.7,91846,76647,requires_charging,Coles Express Coomera
+Brisbane City,Surfers Paradise,110.2,91846,76647,feasible,
+Brisbane City,Coolangatta,36.1,120334,101738,requires_charging,27 - 49 Browns Plains Road
+Brisbane City,Coolangatta,60.2,120334,101738,requires_charging,Woolworths Ormeau (underground carpark)
+Brisbane City,Coolangatta,84.2,120334,101738,requires_charging,Coles Express Coomera
+Brisbane City,Coolangatta,108.3,120334,101738,requires_charging,Coles Express Coomera
+Brisbane City,Coolangatta,144.4,120334,101738,feasible,
+Brisbane City,Beenleigh,12.6,42091,34600,requires_charging,East Brisbane [bp pulse]
+Brisbane City,Beenleigh,21.0,42091,34600,requires_charging,East Brisbane [bp pulse]
+Brisbane City,Beenleigh,29.5,42091,34600,requires_charging,Springwood [bp pulse]
+Brisbane City,Beenleigh,37.9,42091,34600,requires_charging,Springwood [bp pulse]
+Brisbane City,Beenleigh,50.5,42091,34600,feasible,
+Brisbane City,Caboolture,17.0,56670,47851,requires_charging,Brisbane-Fortitude Valley
+Brisbane City,Caboolture,28.3,56670,47851,requires_charging,Gympie Road
+Brisbane City,Caboolture,39.7,56670,47851,requires_charging,Gympie Road
+Brisbane City,Caboolture,51.0,56670,47851,requires_charging,Gympie Road
+Brisbane City,Caboolture,68.0,56670,47851,feasible,
+Brisbane City,Caloundra,29.5,98177,92044,requires_charging,Gympie Road
+Brisbane City,Caloundra,49.1,98177,92044,requires_charging,Gympie Road
+Brisbane City,Caloundra,68.7,98177,92044,requires_charging,Gympie Road
+Brisbane City,Caloundra,88.4,98177,92044,requires_charging,Gympie Road
+Brisbane City,Caloundra,117.8,98177,92044,feasible,
+Brisbane City,Maroochydore,35.4,118093,100142,requires_charging,Gympie Road
+Brisbane City,Maroochydore,59.0,118093,100142,requires_charging,Gympie Road
+Brisbane City,Maroochydore,82.7,118093,100142,requires_charging,Gympie Road
+Brisbane City,Maroochydore,106.3,118093,100142,requires_charging,Gympie Road
+Brisbane City,Maroochydore,141.7,118093,100142,feasible,
+Brisbane City,Noosa Heads,46.5,154924,138390,requires_charging,Gympie Road
+Brisbane City,Noosa Heads,77.5,154924,138390,requires_charging,Gympie Road
+Brisbane City,Noosa Heads,108.4,154924,138390,requires_charging,Evie Networks Coochin Creek
+Brisbane City,Noosa Heads,139.4,154924,138390,requires_charging,Evie Networks Coochin Creek
+Brisbane City,Noosa Heads,185.9,154924,138390,feasible,
+Brisbane City,Nambour,36.7,122379,103913,requires_charging,Gympie Road
+Brisbane City,Nambour,61.2,122379,103913,requires_charging,Gympie Road
+Brisbane City,Nambour,85.7,122379,103913,requires_charging,Gympie Road
+Brisbane City,Nambour,110.1,122379,103913,requires_charging,Evie Networks Coochin Creek
+Brisbane City,Nambour,146.9,122379,103913,feasible,
+Brisbane City,"Kilcoy, Queensland",29.1,96989,97768,requires_charging,Gympie Road
+Brisbane City,"Kilcoy, Queensland",48.5,96989,97768,requires_charging,Gympie Road
+Brisbane City,"Kilcoy, Queensland",67.9,96989,97768,requires_charging,BP Pulse Ferny Grove
+Brisbane City,"Kilcoy, Queensland",87.3,96989,97768,requires_charging,BP Pulse Ferny Grove
+Brisbane City,"Kilcoy, Queensland",116.4,96989,97768,feasible,
+Brisbane City,"Esk, Queensland",25.3,84374,100846,requires_charging,Brisbane-Fortitude Valley
+Brisbane City,"Esk, Queensland",42.2,84374,100846,requires_charging,BP Pulse Ferny Grove
+Brisbane City,"Esk, Queensland",59.1,84374,100846,requires_charging,BP Pulse Ferny Grove
+Brisbane City,"Esk, Queensland",75.9,84374,100846,requires_charging,BP Pulse Ferny Grove
+Brisbane City,"Esk, Queensland",101.2,84374,100846,feasible,
+Brisbane City,Boonah,25.9,86289,85106,requires_charging,Bus Stop Sales - Rocklea
+Brisbane City,Boonah,43.1,86289,85106,requires_charging,Bundamba
+Brisbane City,Boonah,60.4,86289,85106,requires_charging,Bus Stop Sales - Rocklea
+Brisbane City,Boonah,77.7,86289,85106,requires_charging,Springfield QESH
+Brisbane City,Boonah,103.5,86289,85106,feasible,
+Brisbane City,Beaudesert,22.5,75013,69698,requires_charging,Bus Stop Sales - Rocklea
+Brisbane City,Beaudesert,37.5,75013,69698,requires_charging,27 - 49 Browns Plains Road
+Brisbane City,Beaudesert,52.5,75013,69698,requires_charging,27 - 49 Browns Plains Road
+Brisbane City,Beaudesert,67.5,75013,69698,requires_charging,27 - 49 Browns Plains Road
+Brisbane City,Beaudesert,90.0,75013,69698,feasible,
+Toowoomba,Ipswich,31.1,103757,89571,requires_charging,Northpoint Shopping Centre
+Toowoomba,Ipswich,51.9,103757,89571,requires_charging,Northpoint Shopping Centre
+Toowoomba,Ipswich,72.6,103757,89571,requires_charging,Northpoint Shopping Centre
+Toowoomba,Ipswich,93.4,103757,89571,requires_charging,Northpoint Shopping Centre
+Toowoomba,Ipswich,124.5,103757,89571,feasible,
+Toowoomba,Gatton,12.5,41750,36754,requires_charging,Northpoint Shopping Centre
+Toowoomba,Gatton,20.9,41750,36754,requires_charging,Northpoint Shopping Centre
+Toowoomba,Gatton,29.2,41750,36754,requires_charging,Northpoint Shopping Centre
+Toowoomba,Gatton,37.6,41750,36754,requires_charging,Northpoint Shopping Centre
+Toowoomba,Gatton,50.1,41750,36754,feasible,
+Toowoomba,Surfers Paradise,59.5,198450,178941,requires_charging,Northpoint Shopping Centre
+Toowoomba,Surfers Paradise,99.2,198450,178941,requires_charging,Northpoint Shopping Centre
+Toowoomba,Surfers Paradise,138.9,198450,178941,requires_charging,Willowbank Raceway
+Toowoomba,Surfers Paradise,178.6,198450,178941,requires_charging,Willowbank Raceway
+Toowoomba,Surfers Paradise,238.1,198450,178941,feasible,
+Toowoomba,Coolangatta,66.2,220800,204032,requires_charging,Northpoint Shopping Centre
+Toowoomba,Coolangatta,110.4,220800,204032,requires_charging,Willowbank Raceway
+Toowoomba,Coolangatta,154.6,220800,204032,requires_charging,Willowbank Raceway
+Toowoomba,Coolangatta,198.7,220800,204032,requires_charging,Willowbank Raceway
+Toowoomba,Coolangatta,265.0,220800,204032,feasible,
+Toowoomba,Beenleigh,48.4,161490,136894,requires_charging,Northpoint Shopping Centre
+Toowoomba,Beenleigh,80.7,161490,136894,requires_charging,Northpoint Shopping Centre
+Toowoomba,Beenleigh,113.0,161490,136894,requires_charging,Willowbank Raceway
+Toowoomba,Beenleigh,145.3,161490,136894,requires_charging,Willowbank Raceway
+Toowoomba,Beenleigh,193.8,161490,136894,feasible,
+Toowoomba,"Cleveland, Queensland",50.5,168410,148950,requires_charging,Northpoint Shopping Centre
+Toowoomba,"Cleveland, Queensland",84.2,168410,148950,requires_charging,Northpoint Shopping Centre
+Toowoomba,"Cleveland, Queensland",117.9,168410,148950,requires_charging,Northpoint Shopping Centre
+Toowoomba,"Cleveland, Queensland",151.6,168410,148950,requires_charging,Bundamba
+Toowoomba,"Cleveland, Queensland",202.1,168410,148950,feasible,
+Toowoomba,"Redcliffe, Queensland",46.9,156474,156880,requires_charging,Northpoint Shopping Centre
+Toowoomba,"Redcliffe, Queensland",78.2,156474,156880,requires_charging,Northpoint Shopping Centre
+Toowoomba,"Redcliffe, Queensland",109.5,156474,156880,requires_charging,Northpoint Shopping Centre
+Toowoomba,"Redcliffe, Queensland",140.8,156474,156880,requires_charging,Northpoint Shopping Centre
+Toowoomba,"Redcliffe, Queensland",187.8,156474,156880,feasible,
+Toowoomba,Caboolture,43.7,145516,170741,requires_charging,Northpoint Shopping Centre
+Toowoomba,Caboolture,72.8,145516,170741,requires_charging,Northpoint Shopping Centre
+Toowoomba,Caboolture,101.9,145516,170741,requires_charging,Northpoint Shopping Centre
+Toowoomba,Caboolture,131.0,145516,170741,requires_charging,Northpoint Shopping Centre
+Toowoomba,Caboolture,174.6,145516,170741,feasible,
+Toowoomba,Caloundra,56.3,187792,214933,requires_charging,Northpoint Shopping Centre
+Toowoomba,Caloundra,93.9,187792,214933,requires_charging,Northpoint Shopping Centre
+Toowoomba,Caloundra,131.5,187792,214933,requires_charging,Northpoint Shopping Centre
+Toowoomba,Caloundra,169.0,187792,214933,requires_charging,Northpoint Shopping Centre
+Toowoomba,Caloundra,225.4,187792,214933,feasible,
+Toowoomba,Maroochydore,59.0,196708,223032,requires_charging,Northpoint Shopping Centre
+Toowoomba,Maroochydore,98.4,196708,223032,requires_charging,Northpoint Shopping Centre
+Toowoomba,Maroochydore,137.7,196708,223032,requires_charging,Northpoint Shopping Centre
+Toowoomba,Maroochydore,177.0,196708,223032,requires_charging,Northpoint Shopping Centre
+Toowoomba,Maroochydore,236.1,196708,223032,feasible,
+Toowoomba,Noosa Heads,66.8,222795,261280,requires_charging,Northpoint Shopping Centre
+Toowoomba,Noosa Heads,111.4,222795,261280,requires_charging,Northpoint Shopping Centre
+Toowoomba,Noosa Heads,156.0,222795,261280,requires_charging,Northpoint Shopping Centre
+Toowoomba,Noosa Heads,200.5,222795,261280,requires_charging,Northpoint Shopping Centre
+Toowoomba,Noosa Heads,267.4,222795,261280,feasible,
+Toowoomba,Nambour,56.2,187240,226803,requires_charging,Northpoint Shopping Centre
+Toowoomba,Nambour,93.6,187240,226803,requires_charging,Northpoint Shopping Centre
+Toowoomba,Nambour,131.1,187240,226803,requires_charging,Northpoint Shopping Centre
+Toowoomba,Nambour,168.5,187240,226803,requires_charging,Northpoint Shopping Centre
+Toowoomba,Nambour,224.7,187240,226803,feasible,
+Toowoomba,"Kilcoy, Queensland",35.6,118807,138249,requires_charging,Northpoint Shopping Centre
+Toowoomba,"Kilcoy, Queensland",59.4,118807,138249,requires_charging,Northpoint Shopping Centre
+Toowoomba,"Kilcoy, Queensland",83.2,118807,138249,requires_charging,Northpoint Shopping Centre
+Toowoomba,"Kilcoy, Queensland",106.9,118807,138249,requires_charging,Northpoint Shopping Centre
+Toowoomba,"Kilcoy, Queensland",142.6,118807,138249,feasible,
+Toowoomba,"Esk, Queensland",22.8,75978,79687,requires_charging,Northpoint Shopping Centre
+Toowoomba,"Esk, Queensland",38.0,75978,79687,requires_charging,Northpoint Shopping Centre
+Toowoomba,"Esk, Queensland",53.2,75978,79687,requires_charging,Northpoint Shopping Centre
+Toowoomba,"Esk, Queensland",68.4,75978,79687,requires_charging,Northpoint Shopping Centre
+Toowoomba,"Esk, Queensland",91.2,75978,79687,feasible,
+Toowoomba,Boonah,34.1,113542,132597,requires_charging,Northpoint Shopping Centre
+Toowoomba,Boonah,56.8,113542,132597,requires_charging,Northpoint Shopping Centre
+Toowoomba,Boonah,79.5,113542,132597,requires_charging,Northpoint Shopping Centre
+Toowoomba,Boonah,102.2,113542,132597,requires_charging,Toowoomba Supercharger
+Toowoomba,Boonah,136.3,113542,132597,feasible,
+Toowoomba,Beaudesert,44.1,146992,159382,requires_charging,Northpoint Shopping Centre
+Toowoomba,Beaudesert,73.5,146992,159382,requires_charging,Northpoint Shopping Centre
+Toowoomba,Beaudesert,102.9,146992,159382,requires_charging,Northpoint Shopping Centre
+Toowoomba,Beaudesert,132.3,146992,159382,requires_charging,Toowoomba Supercharger
+Toowoomba,Beaudesert,176.4,146992,159382,feasible,
+Toowoomba,Springfield Central,36.9,123063,109790,requires_charging,Northpoint Shopping Centre
+Toowoomba,Springfield Central,61.5,123063,109790,requires_charging,Northpoint Shopping Centre
+Toowoomba,Springfield Central,86.1,123063,109790,requires_charging,Northpoint Shopping Centre
+Toowoomba,Springfield Central,110.8,123063,109790,requires_charging,Willowbank Raceway
+Toowoomba,Springfield Central,147.7,123063,109790,feasible,
+Ipswich,Gatton,18.7,62214,54661,requires_charging,Hunter Street
+Ipswich,Gatton,31.1,62214,54661,requires_charging,Hunter Street
+Ipswich,Gatton,43.6,62214,54661,requires_charging,Hunter Street
+Ipswich,Gatton,56.0,62214,54661,requires_charging,Hunter Street
+Ipswich,Gatton,74.7,62214,54661,feasible,
+Ipswich,Surfers Paradise,30.4,101261,93118,requires_charging,Bundamba
+Ipswich,Surfers Paradise,50.6,101261,93118,requires_charging,Bundamba
+Ipswich,Surfers Paradise,70.9,101261,93118,requires_charging,Bundamba
+Ipswich,Surfers Paradise,91.1,101261,93118,requires_charging,Coles Express Coomera
+Ipswich,Surfers Paradise,121.5,101261,93118,feasible,
+Ipswich,Coolangatta,38.2,127478,118209,requires_charging,Bundamba
+Ipswich,Coolangatta,63.7,127478,118209,requires_charging,Bundamba
+Ipswich,Coolangatta,89.2,127478,118209,requires_charging,Coles Express Coomera
+Ipswich,Coolangatta,114.7,127478,118209,requires_charging,Gold Coast Sports & Leisure Centre
+Ipswich,Coolangatta,153.0,127478,118209,feasible,
+Ipswich,Beenleigh,17.5,58327,51071,requires_charging,Bundamba
+Ipswich,Beenleigh,29.2,58327,51071,requires_charging,Bundamba
+Ipswich,Beenleigh,40.8,58327,51071,requires_charging,27 - 49 Browns Plains Road
+Ipswich,Beenleigh,52.5,58327,51071,requires_charging,27 - 49 Browns Plains Road
+Ipswich,Beenleigh,70.0,58327,51071,feasible,
+Ipswich,"Cleveland, Queensland",19.8,66109,63126,requires_charging,Bundamba
+Ipswich,"Cleveland, Queensland",33.1,66109,63126,requires_charging,Bundamba
+Ipswich,"Cleveland, Queensland",46.3,66109,63126,requires_charging,Bundamba
+Ipswich,"Cleveland, Queensland",59.5,66109,63126,requires_charging,Bundamba
+Ipswich,"Cleveland, Queensland",79.3,66109,63126,feasible,
+Ipswich,"Redcliffe, Queensland",21.6,72154,71057,requires_charging,Bundamba
+Ipswich,"Redcliffe, Queensland",36.1,72154,71057,requires_charging,Bundamba
+Ipswich,"Redcliffe, Queensland",50.5,72154,71057,requires_charging,Bundamba
+Ipswich,"Redcliffe, Queensland",64.9,72154,71057,requires_charging,Gympie Road
+Ipswich,"Redcliffe, Queensland",86.6,72154,71057,feasible,
+Ipswich,Caboolture,24.2,80703,84918,requires_charging,Bundamba
+Ipswich,Caboolture,40.4,80703,84918,requires_charging,Bundamba
+Ipswich,Caboolture,56.5,80703,84918,requires_charging,Bundamba
+Ipswich,Caboolture,72.6,80703,84918,requires_charging,Hunter Street
+Ipswich,Caboolture,96.8,80703,84918,feasible,
+Ipswich,Caloundra,38.3,127659,129110,requires_charging,Bundamba
+Ipswich,Caloundra,63.8,127659,129110,requires_charging,Bundamba
+Ipswich,Caloundra,89.4,127659,129110,requires_charging,Bundamba
+Ipswich,Caloundra,114.9,127659,129110,requires_charging,BP Caboolture North
+Ipswich,Caloundra,153.2,127659,129110,feasible,
+Ipswich,Maroochydore,43.6,145317,137209,requires_charging,Bundamba
+Ipswich,Maroochydore,72.7,145317,137209,requires_charging,Bundamba
+Ipswich,Maroochydore,101.7,145317,137209,requires_charging,Bundamba
+Ipswich,Maroochydore,130.8,145317,137209,requires_charging,Evie Networks Coochin Creek
+Ipswich,Maroochydore,174.4,145317,137209,feasible,
+Ipswich,Noosa Heads,54.2,180833,175457,requires_charging,Bundamba
+Ipswich,Noosa Heads,90.4,180833,175457,requires_charging,Bundamba
+Ipswich,Noosa Heads,126.6,180833,175457,requires_charging,Evie Networks Coochin Creek
+Ipswich,Noosa Heads,162.7,180833,175457,requires_charging,Evie Networks Coochin Creek
+Ipswich,Noosa Heads,217.0,180833,175457,feasible,
+Ipswich,Nambour,43.6,145426,140980,requires_charging,Bundamba
+Ipswich,Nambour,72.7,145426,140980,requires_charging,Bundamba
+Ipswich,Nambour,101.8,145426,140980,requires_charging,Bundamba
+Ipswich,Nambour,130.9,145426,140980,requires_charging,Evie Networks Coochin Creek
+Ipswich,Nambour,174.5,145426,140980,feasible,
+Ipswich,"Kilcoy, Queensland",30.2,100794,98124,requires_charging,Hunter Street
+Ipswich,"Kilcoy, Queensland",50.4,100794,98124,requires_charging,Hunter Street
+Ipswich,"Kilcoy, Queensland",70.6,100794,98124,requires_charging,Hunter Street
+Ipswich,"Kilcoy, Queensland",90.7,100794,98124,requires_charging,Hunter Street
+Ipswich,"Kilcoy, Queensland",121.0,100794,98124,feasible,
+Ipswich,"Esk, Queensland",20.9,69616,64242,requires_charging,Hunter Street
+Ipswich,"Esk, Queensland",34.8,69616,64242,requires_charging,Hunter Street
+Ipswich,"Esk, Queensland",48.7,69616,64242,requires_charging,Hunter Street
+Ipswich,"Esk, Queensland",62.7,69616,64242,requires_charging,Hunter Street
+Ipswich,"Esk, Queensland",83.5,69616,64242,feasible,
+Ipswich,Boonah,16.5,54840,46550,requires_charging,Electric Highway - Ipswich
+Ipswich,Boonah,27.4,54840,46550,requires_charging,Electric Highway - Ipswich
+Ipswich,Boonah,38.4,54840,46550,requires_charging,Electric Highway - Ipswich
+Ipswich,Boonah,49.4,54840,46550,requires_charging,Electric Highway - Ipswich
+Ipswich,Boonah,65.8,54840,46550,feasible,
+Ipswich,Beaudesert,18.5,61685,73335,requires_charging,Bundamba
+Ipswich,Beaudesert,30.8,61685,73335,requires_charging,Electric Highway - Ipswich
+Ipswich,Beaudesert,43.2,61685,73335,requires_charging,Electric Highway - Ipswich
+Ipswich,Beaudesert,55.5,61685,73335,requires_charging,Electric Highway - Ipswich
+Ipswich,Beaudesert,74.0,61685,73335,feasible,
+Gatton,Surfers Paradise,47.8,159488,144298,requires_charging,QESH Lawes (Gatton)
+Gatton,Surfers Paradise,79.7,159488,144298,requires_charging,Willowbank Raceway
+Gatton,Surfers Paradise,111.6,159488,144298,requires_charging,Willowbank Raceway
+Gatton,Surfers Paradise,143.5,159488,144298,requires_charging,Willowbank Raceway
+Gatton,Surfers Paradise,191.4,159488,144298,feasible,
+Gatton,Coolangatta,55.0,183313,169389,requires_charging,QESH Lawes (Gatton)
+Gatton,Coolangatta,91.7,183313,169389,requires_charging,Willowbank Raceway
+Gatton,Coolangatta,128.3,183313,169389,requires_charging,Willowbank Raceway
+Gatton,Coolangatta,165.0,183313,169389,requires_charging,Willowbank Raceway
+Gatton,Coolangatta,220.0,183313,169389,feasible,
+Gatton,Beenleigh,36.1,120298,102251,requires_charging,QESH Lawes (Gatton)
+Gatton,Beenleigh,60.1,120298,102251,requires_charging,Willowbank Raceway
+Gatton,Beenleigh,84.2,120298,102251,requires_charging,Bundamba
+Gatton,Beenleigh,108.3,120298,102251,requires_charging,Bundamba
+Gatton,Beenleigh,144.4,120298,102251,feasible,
+Gatton,"Cleveland, Queensland",38.0,126681,114307,requires_charging,QESH Lawes (Gatton)
+Gatton,"Cleveland, Queensland",63.3,126681,114307,requires_charging,Willowbank Raceway
+Gatton,"Cleveland, Queensland",88.7,126681,114307,requires_charging,Bundamba
+Gatton,"Cleveland, Queensland",114.0,126681,114307,requires_charging,Bundamba
+Gatton,"Cleveland, Queensland",152.0,126681,114307,feasible,
+Gatton,"Redcliffe, Queensland",35.2,117446,122237,requires_charging,QESH Lawes (Gatton)
+Gatton,"Redcliffe, Queensland",58.7,117446,122237,requires_charging,QESH Lawes (Gatton)
+Gatton,"Redcliffe, Queensland",82.2,117446,122237,requires_charging,QESH Lawes (Gatton)
+Gatton,"Redcliffe, Queensland",105.7,117446,122237,requires_charging,bp pulse Albany Forrest
+Gatton,"Redcliffe, Queensland",140.9,117446,122237,feasible,
+Gatton,Caboolture,33.2,110513,136098,requires_charging,QESH Lawes (Gatton)
+Gatton,Caboolture,55.3,110513,136098,requires_charging,QESH Lawes (Gatton)
+Gatton,Caboolture,77.4,110513,136098,requires_charging,QESH Lawes (Gatton)
+Gatton,Caboolture,99.5,110513,136098,requires_charging,QESH Lawes (Gatton)
+Gatton,Caboolture,132.6,110513,136098,feasible,
+Gatton,Caloundra,46.8,155888,180290,requires_charging,QESH Lawes (Gatton)
+Gatton,Caloundra,77.9,155888,180290,requires_charging,Electric Highway - Esk
+Gatton,Caloundra,109.1,155888,180290,requires_charging,QESH Lawes (Gatton)
+Gatton,Caloundra,140.3,155888,180290,requires_charging,QESH Lawes (Gatton)
+Gatton,Caloundra,187.1,155888,180290,feasible,
+Gatton,Maroochydore,50.3,167805,188389,requires_charging,QESH Lawes (Gatton)
+Gatton,Maroochydore,83.9,167805,188389,requires_charging,Electric Highway - Esk
+Gatton,Maroochydore,117.5,167805,188389,requires_charging,Electric Highway - Esk
+Gatton,Maroochydore,151.0,167805,188389,requires_charging,Evie Networks Coochin Creek
+Gatton,Maroochydore,201.4,167805,188389,feasible,
+Gatton,Noosa Heads,59.3,197796,226637,requires_charging,Electric Highway - Esk
+Gatton,Noosa Heads,98.9,197796,226637,requires_charging,Electric Highway - Esk
+Gatton,Noosa Heads,138.5,197796,226637,requires_charging,Electric Highway - Esk
+Gatton,Noosa Heads,178.0,197796,226637,requires_charging,Electric Highway - Esk
+Gatton,Noosa Heads,237.4,197796,226637,feasible,
+Gatton,Nambour,48.4,161168,192160,requires_charging,QESH Lawes (Gatton)
+Gatton,Nambour,80.6,161168,192160,requires_charging,Electric Highway - Esk
+Gatton,Nambour,112.8,161168,192160,requires_charging,Electric Highway - Esk
+Gatton,Nambour,145.1,161168,192160,requires_charging,Electric Highway - Esk
+Gatton,Nambour,193.4,161168,192160,feasible,
+Gatton,"Kilcoy, Queensland",29.0,96648,103533,requires_charging,QESH Lawes (Gatton)
+Gatton,"Kilcoy, Queensland",48.3,96648,103533,requires_charging,QESH Lawes (Gatton)
+Gatton,"Kilcoy, Queensland",67.7,96648,103533,requires_charging,Electric Highway - Esk
+Gatton,"Kilcoy, Queensland",87.0,96648,103533,requires_charging,Electric Highway - Esk
+Gatton,"Kilcoy, Queensland",116.0,96648,103533,feasible,
+Gatton,"Esk, Queensland",15.0,49982,44972,requires_charging,QESH Lawes (Gatton)
+Gatton,"Esk, Queensland",25.0,49982,44972,requires_charging,QESH Lawes (Gatton)
+Gatton,"Esk, Queensland",35.0,49982,44972,requires_charging,QESH Lawes (Gatton)
+Gatton,"Esk, Queensland",45.0,49982,44972,requires_charging,QESH Lawes (Gatton)
+Gatton,"Esk, Queensland",60.0,49982,44972,feasible,
+Gatton,Boonah,24.6,81860,97954,requires_charging,QESH Lawes (Gatton)
+Gatton,Boonah,40.9,81860,97954,requires_charging,QESH Lawes (Gatton)
+Gatton,Boonah,57.3,81860,97954,requires_charging,QESH Lawes (Gatton)
+Gatton,Boonah,73.7,81860,97954,requires_charging,QESH Lawes (Gatton)
+Gatton,Boonah,98.2,81860,97954,feasible,
+Gatton,Beaudesert,33.2,110542,124739,requires_charging,QESH Lawes (Gatton)
+Gatton,Beaudesert,55.3,110542,124739,requires_charging,QESH Lawes (Gatton)
+Gatton,Beaudesert,77.4,110542,124739,requires_charging,Willowbank Raceway
+Gatton,Beaudesert,99.5,110542,124739,requires_charging,Willowbank Raceway
+Gatton,Beaudesert,132.7,110542,124739,feasible,
+Gatton,Springfield Central,24.6,82004,75147,requires_charging,QESH Lawes (Gatton)
+Gatton,Springfield Central,41.0,82004,75147,requires_charging,QESH Lawes (Gatton)
+Gatton,Springfield Central,57.4,82004,75147,requires_charging,Willowbank Raceway
+Gatton,Springfield Central,73.8,82004,75147,requires_charging,Willowbank Raceway
+Gatton,Springfield Central,98.4,82004,75147,feasible,
+Surfers Paradise,Beenleigh,14.9,49770,44534,requires_charging,Tesla Supercharger Runaway Bay
+Surfers Paradise,Beenleigh,24.9,49770,44534,requires_charging,Tesla Supercharger Runaway Bay
+Surfers Paradise,Beenleigh,34.8,49770,44534,requires_charging,Coles Express Coomera
+Surfers Paradise,Beenleigh,44.8,49770,44534,requires_charging,Coles Express Coomera
+Surfers Paradise,Beenleigh,59.7,49770,44534,feasible,
+Surfers Paradise,"Cleveland, Queensland",21.4,71228,72490,requires_charging,Tesla Supercharger Runaway Bay
+Surfers Paradise,"Cleveland, Queensland",35.6,71228,72490,requires_charging,Coles Express Coomera
+Surfers Paradise,"Cleveland, Queensland",49.9,71228,72490,requires_charging,Coles Express Coomera
+Surfers Paradise,"Cleveland, Queensland",64.1,71228,72490,requires_charging,Tesla Supercharger Runaway Bay
+Surfers Paradise,"Cleveland, Queensland",85.5,71228,72490,feasible,
+Surfers Paradise,"Redcliffe, Queensland",35.6,118507,109508,requires_charging,Coles Express Coomera
+Surfers Paradise,"Redcliffe, Queensland",59.3,118507,109508,requires_charging,Coles Express Coomera
+Surfers Paradise,"Redcliffe, Queensland",83.0,118507,109508,requires_charging,Coles Express Coomera
+Surfers Paradise,"Redcliffe, Queensland",106.7,118507,109508,requires_charging,Coles Express Coomera
+Surfers Paradise,"Redcliffe, Queensland",142.2,118507,109508,feasible,
+Surfers Paradise,Caboolture,43.6,145500,126752,requires_charging,Coles Express Coomera
+Surfers Paradise,Caboolture,72.8,145500,126752,requires_charging,Coles Express Coomera
+Surfers Paradise,Caboolture,101.8,145500,126752,requires_charging,Coles Express Coomera
+Surfers Paradise,Caboolture,131.0,145500,126752,requires_charging,Coles Express Coomera
+Surfers Paradise,Caboolture,174.6,145500,126752,feasible,
+Surfers Paradise,Caloundra,53.2,177489,170945,requires_charging,Coles Express Coomera
+Surfers Paradise,Caloundra,88.7,177489,170945,requires_charging,Coles Express Coomera
+Surfers Paradise,Caloundra,124.2,177489,170945,requires_charging,Coles Express Coomera
+Surfers Paradise,Caloundra,159.7,177489,170945,requires_charging,Coles Express Coomera
+Surfers Paradise,Caloundra,213.0,177489,170945,feasible,
+Surfers Paradise,Maroochydore,59.6,198735,179043,requires_charging,Coles Express Coomera
+Surfers Paradise,Maroochydore,99.4,198735,179043,requires_charging,Coles Express Coomera
+Surfers Paradise,Maroochydore,139.1,198735,179043,requires_charging,Coles Express Coomera
+Surfers Paradise,Maroochydore,178.9,198735,179043,requires_charging,Coles Express Coomera
+Surfers Paradise,Maroochydore,238.5,198735,179043,feasible,
+Surfers Paradise,Noosa Heads,70.5,235049,217291,requires_charging,Coles Express Coomera
+Surfers Paradise,Noosa Heads,117.5,235049,217291,requires_charging,Coles Express Coomera
+Surfers Paradise,Noosa Heads,164.5,235049,217291,requires_charging,Coles Express Coomera
+Surfers Paradise,Noosa Heads,211.5,235049,217291,requires_charging,Coles Express Coomera
+Surfers Paradise,Noosa Heads,282.1,235049,217291,feasible,
+Surfers Paradise,Nambour,62.2,207262,182814,requires_charging,Coles Express Coomera
+Surfers Paradise,Nambour,103.6,207262,182814,requires_charging,Coles Express Coomera
+Surfers Paradise,Nambour,145.1,207262,182814,requires_charging,Coles Express Coomera
+Surfers Paradise,Nambour,186.5,207262,182814,requires_charging,Evie Networks Coochin Creek
+Surfers Paradise,Nambour,248.7,207262,182814,feasible,
+Surfers Paradise,"Kilcoy, Queensland",56.6,188687,176669,requires_charging,Coles Express Coomera
+Surfers Paradise,"Kilcoy, Queensland",94.3,188687,176669,requires_charging,Coles Express Coomera
+Surfers Paradise,"Kilcoy, Queensland",132.1,188687,176669,requires_charging,Coles Express Coomera
+Surfers Paradise,"Kilcoy, Queensland",169.8,188687,176669,requires_charging,Coles Express Coomera
+Surfers Paradise,"Kilcoy, Queensland",226.4,188687,176669,feasible,
+Surfers Paradise,"Esk, Queensland",50.7,168849,153940,requires_charging,Coles Express Coomera
+Surfers Paradise,"Esk, Queensland",84.4,168849,153940,requires_charging,Coles Express Coomera
+Surfers Paradise,"Esk, Queensland",118.2,168849,153940,requires_charging,Bundamba
+Surfers Paradise,"Esk, Queensland",152.0,168849,153940,requires_charging,Bundamba
+Surfers Paradise,"Esk, Queensland",202.6,168849,153940,feasible,
+Surfers Paradise,Boonah,27.9,92898,102967,requires_charging,Gold Coast Sports & Leisure Centre
+Surfers Paradise,Boonah,46.4,92898,102967,requires_charging,Gold Coast Sports & Leisure Centre
+Surfers Paradise,Boonah,65.0,92898,102967,requires_charging,Gold Coast Sports & Leisure Centre
+Surfers Paradise,Boonah,83.6,92898,102967,requires_charging,Gold Coast Sports & Leisure Centre
+Surfers Paradise,Boonah,111.5,92898,102967,feasible,
+Surfers Paradise,Beaudesert,16.4,54634,65046,requires_charging,Gold Coast Sports & Leisure Centre
+Surfers Paradise,Beaudesert,27.3,54634,65046,requires_charging,Gold Coast Sports & Leisure Centre
+Surfers Paradise,Beaudesert,38.2,54634,65046,requires_charging,Gold Coast Sports & Leisure Centre
+Surfers Paradise,Beaudesert,49.2,54634,65046,requires_charging,Gold Coast Sports & Leisure Centre
+Surfers Paradise,Beaudesert,65.6,54634,65046,feasible,
+Surfers Paradise,Springfield Central,24.1,80414,81642,requires_charging,Bundall Chamers
+Surfers Paradise,Springfield Central,40.2,80414,81642,requires_charging,Coles Express Coomera
+Surfers Paradise,Springfield Central,56.3,80414,81642,requires_charging,Coles Express Coomera
+Surfers Paradise,Springfield Central,72.4,80414,81642,requires_charging,Coles Express Coomera
+Surfers Paradise,Springfield Central,96.5,80414,81642,feasible,
+Coolangatta,Beenleigh,23.5,78246,69550,requires_charging,Coolangatta Surf Club
+Coolangatta,Beenleigh,39.1,78246,69550,requires_charging,Gold Coast Supercharger
+Coolangatta,Beenleigh,54.8,78246,69550,requires_charging,Gold Coast Supercharger
+Coolangatta,Beenleigh,70.4,78246,69550,requires_charging,Coles Express Coomera
+Coolangatta,Beenleigh,93.9,78246,69550,feasible,
+Coolangatta,"Cleveland, Queensland",29.7,99102,97505,requires_charging,Gold Coast Supercharger
+Coolangatta,"Cleveland, Queensland",49.6,99102,97505,requires_charging,Tesla Supercharger Runaway Bay
+Coolangatta,"Cleveland, Queensland",69.4,99102,97505,requires_charging,Coles Express Coomera
+Coolangatta,"Cleveland, Queensland",89.2,99102,97505,requires_charging,Tesla Supercharger Runaway Bay
+Coolangatta,"Cleveland, Queensland",118.9,99102,97505,feasible,
+Coolangatta,"Redcliffe, Queensland",44.0,146589,134523,requires_charging,Gold Coast Supercharger
+Coolangatta,"Redcliffe, Queensland",73.3,146589,134523,requires_charging,Coles Express Coomera
+Coolangatta,"Redcliffe, Queensland",102.6,146589,134523,requires_charging,Coles Express Coomera
+Coolangatta,"Redcliffe, Queensland",131.9,146589,134523,requires_charging,Coles Express Coomera
+Coolangatta,"Redcliffe, Queensland",175.9,146589,134523,feasible,
+Coolangatta,Caboolture,52.2,173880,151768,requires_charging,Ampcharge Reedy Creek
+Coolangatta,Caboolture,86.9,173880,151768,requires_charging,Coles Express Coomera
+Coolangatta,Caboolture,121.7,173880,151768,requires_charging,Coles Express Coomera
+Coolangatta,Caboolture,156.5,173880,151768,requires_charging,Coles Express Coomera
+Coolangatta,Caboolture,208.7,173880,151768,feasible,
+Coolangatta,Caloundra,61.4,204698,195960,requires_charging,Coles Express Coomera
+Coolangatta,Caloundra,102.3,204698,195960,requires_charging,Coles Express Coomera
+Coolangatta,Caloundra,143.3,204698,195960,requires_charging,Coles Express Coomera
+Coolangatta,Caloundra,184.2,204698,195960,requires_charging,Coles Express Coomera
+Coolangatta,Caloundra,245.6,204698,195960,feasible,
+Coolangatta,Maroochydore,67.8,225961,204059,requires_charging,Coles Express Coomera
+Coolangatta,Maroochydore,113.0,225961,204059,requires_charging,Coles Express Coomera
+Coolangatta,Maroochydore,158.2,225961,204059,requires_charging,Coles Express Coomera
+Coolangatta,Maroochydore,203.4,225961,204059,requires_charging,Coles Express Coomera
+Coolangatta,Maroochydore,271.2,225961,204059,feasible,
+Coolangatta,Noosa Heads,78.6,261984,242307,requires_charging,Coles Express Coomera
+Coolangatta,Noosa Heads,131.0,261984,242307,requires_charging,Coles Express Coomera
+Coolangatta,Noosa Heads,183.4,261984,242307,requires_charging,Coles Express Coomera
+Coolangatta,Noosa Heads,235.8,261984,242307,requires_charging,Coles Express Coomera
+Coolangatta,Noosa Heads,314.4,261984,242307,feasible,
+Coolangatta,Nambour,70.5,235028,207830,requires_charging,Coles Express Coomera
+Coolangatta,Nambour,117.5,235028,207830,requires_charging,Coles Express Coomera
+Coolangatta,Nambour,164.5,235028,207830,requires_charging,Coles Express Coomera
+Coolangatta,Nambour,211.5,235028,207830,requires_charging,Coles Express Coomera
+Coolangatta,Nambour,282.0,235028,207830,feasible,
+Coolangatta,"Kilcoy, Queensland",65.1,217100,201685,requires_charging,Coles Express Coomera
+Coolangatta,"Kilcoy, Queensland",108.6,217100,201685,requires_charging,Coles Express Coomera
+Coolangatta,"Kilcoy, Queensland",152.0,217100,201685,requires_charging,Coles Express Coomera
+Coolangatta,"Kilcoy, Queensland",195.4,217100,201685,requires_charging,Coles Express Coomera
+Coolangatta,"Kilcoy, Queensland",260.5,217100,201685,feasible,
+Coolangatta,"Esk, Queensland",58.8,196054,178956,requires_charging,Ampcharge Reedy Creek
+Coolangatta,"Esk, Queensland",98.0,196054,178956,requires_charging,Coles Express Coomera
+Coolangatta,"Esk, Queensland",137.2,196054,178956,requires_charging,Coles Express Coomera
+Coolangatta,"Esk, Queensland",176.4,196054,178956,requires_charging,Bundamba
+Coolangatta,"Esk, Queensland",235.3,196054,178956,feasible,
+Coolangatta,Boonah,33.1,110468,124203,requires_charging,Ampcharge Reedy Creek
+Coolangatta,Boonah,55.2,110468,124203,requires_charging,Ampcharge Reedy Creek
+Coolangatta,Boonah,77.3,110468,124203,requires_charging,Ampcharge Reedy Creek
+Coolangatta,Boonah,99.4,110468,124203,requires_charging,Ampcharge Reedy Creek
+Coolangatta,Boonah,132.6,110468,124203,feasible,
+Coolangatta,Beaudesert,22.2,73923,86282,requires_charging,Coolangatta Surf Club
+Coolangatta,Beaudesert,37.0,73923,86282,requires_charging,Ampcharge Reedy Creek
+Coolangatta,Beaudesert,51.7,73923,86282,requires_charging,Ampcharge Reedy Creek
+Coolangatta,Beaudesert,66.5,73923,86282,requires_charging,Ampcharge Reedy Creek
+Coolangatta,Beaudesert,88.7,73923,86282,feasible,
+Coolangatta,Springfield Central,32.1,106934,106657,requires_charging,Ampcharge Reedy Creek
+Coolangatta,Springfield Central,53.5,106934,106657,requires_charging,Ampcharge Reedy Creek
+Coolangatta,Springfield Central,74.9,106934,106657,requires_charging,Ampcharge Reedy Creek
+Coolangatta,Springfield Central,96.2,106934,106657,requires_charging,Ampcharge Reedy Creek
+Coolangatta,Springfield Central,128.3,106934,106657,feasible,
+Beenleigh,"Redcliffe, Queensland",21.5,71617,67328,requires_charging,bp pulse Loganholme
+Beenleigh,"Redcliffe, Queensland",35.8,71617,67328,requires_charging,bp pulse Loganholme
+Beenleigh,"Redcliffe, Queensland",50.1,71617,67328,requires_charging,bp pulse Loganholme
+Beenleigh,"Redcliffe, Queensland",64.5,71617,67328,requires_charging,bp pulse Loganholme
+Beenleigh,"Redcliffe, Queensland",85.9,71617,67328,feasible,
+Beenleigh,Caboolture,29.1,96879,84572,requires_charging,bp pulse Loganholme
+Beenleigh,Caboolture,48.4,96879,84572,requires_charging,Brisbane-Fortitude Valley
+Beenleigh,Caboolture,67.8,96879,84572,requires_charging,Gympie Road
+Beenleigh,Caboolture,87.2,96879,84572,requires_charging,Gympie Road
+Beenleigh,Caboolture,116.3,96879,84572,feasible,
+Beenleigh,Caloundra,39.9,132946,128764,requires_charging,bp pulse Loganholme
+Beenleigh,Caloundra,66.5,132946,128764,requires_charging,bp pulse Loganholme
+Beenleigh,Caloundra,93.1,132946,128764,requires_charging,bp pulse Loganholme
+Beenleigh,Caloundra,119.7,132946,128764,requires_charging,bp pulse Loganholme
+Beenleigh,Caloundra,159.5,132946,128764,feasible,
+Beenleigh,Maroochydore,46.2,153893,136863,requires_charging,bp pulse Loganholme
+Beenleigh,Maroochydore,76.9,153893,136863,requires_charging,Gympie Road
+Beenleigh,Maroochydore,107.7,153893,136863,requires_charging,bp pulse Loganholme
+Beenleigh,Maroochydore,138.5,153893,136863,requires_charging,bp pulse Loganholme
+Beenleigh,Maroochydore,184.7,153893,136863,feasible,
+Beenleigh,Noosa Heads,57.2,190742,175111,requires_charging,Brisbane-Fortitude Valley
+Beenleigh,Noosa Heads,95.4,190742,175111,requires_charging,Gympie Road
+Beenleigh,Noosa Heads,133.5,190742,175111,requires_charging,Evie Networks Coochin Creek
+Beenleigh,Noosa Heads,171.7,190742,175111,requires_charging,Maroochydore Supercharger
+Beenleigh,Noosa Heads,228.9,190742,175111,feasible,
+Beenleigh,Nambour,48.2,160645,140634,requires_charging,bp pulse Loganholme
+Beenleigh,Nambour,80.3,160645,140634,requires_charging,Gympie Road
+Beenleigh,Nambour,112.5,160645,140634,requires_charging,Gympie Road
+Beenleigh,Nambour,144.6,160645,140634,requires_charging,Evie Networks Coochin Creek
+Beenleigh,Nambour,192.8,160645,140634,feasible,
+Beenleigh,"Kilcoy, Queensland",41.7,138935,134489,requires_charging,27 - 49 Browns Plains Road
+Beenleigh,"Kilcoy, Queensland",69.5,138935,134489,requires_charging,Brisbane-Fortitude Valley
+Beenleigh,"Kilcoy, Queensland",97.3,138935,134489,requires_charging,Brisbane-Fortitude Valley
+Beenleigh,"Kilcoy, Queensland",125.0,138935,134489,requires_charging,Brisbane-Fortitude Valley
+Beenleigh,"Kilcoy, Queensland",166.7,138935,134489,feasible,
+Beenleigh,"Esk, Queensland",36.4,121441,111760,requires_charging,27 - 49 Browns Plains Road
+Beenleigh,"Esk, Queensland",60.7,121441,111760,requires_charging,Bundamba
+Beenleigh,"Esk, Queensland",85.0,121441,111760,requires_charging,Bundamba
+Beenleigh,"Esk, Queensland",109.3,121441,111760,requires_charging,27 - 49 Browns Plains Road
+Beenleigh,"Esk, Queensland",145.7,121441,111760,feasible,
+Beenleigh,Boonah,22.8,75923,82388,requires_charging,Evie Beenleigh
+Beenleigh,Boonah,38.0,75923,82388,requires_charging,Evie Beenleigh
+Beenleigh,Boonah,53.1,75923,82388,requires_charging,Evie Beenleigh
+Beenleigh,Boonah,68.3,75923,82388,requires_charging,Evie Beenleigh
+Beenleigh,Boonah,91.1,75923,82388,feasible,
+Beenleigh,Beaudesert,14.2,47401,44467,requires_charging,Evie Beenleigh
+Beenleigh,Beaudesert,23.7,47401,44467,requires_charging,Evie Beenleigh
+Beenleigh,Beaudesert,33.2,47401,44467,requires_charging,Evie Beenleigh
+Beenleigh,Beaudesert,42.7,47401,44467,requires_charging,Evie Beenleigh
+Beenleigh,Beaudesert,56.9,47401,44467,feasible,
+"Cleveland, Queensland","Redcliffe, Queensland",14.3,47568,54155,requires_charging,Birkdale Fair
+"Cleveland, Queensland","Redcliffe, Queensland",23.8,47568,54155,requires_charging,Birkdale Fair
+"Cleveland, Queensland","Redcliffe, Queensland",33.3,47568,54155,requires_charging,Birkdale Fair
+"Cleveland, Queensland","Redcliffe, Queensland",42.8,47568,54155,requires_charging,Birkdale Fair
+"Cleveland, Queensland","Redcliffe, Queensland",57.1,47568,54155,feasible,
+"Cleveland, Queensland",Caboolture,22.7,75715,71399,requires_charging,Birkdale Fair
+"Cleveland, Queensland",Caboolture,37.9,75715,71399,requires_charging,Birkdale Fair
+"Cleveland, Queensland",Caboolture,53.0,75715,71399,requires_charging,Gympie Road
+"Cleveland, Queensland",Caboolture,68.1,75715,71399,requires_charging,Ikea North Lakes
+"Cleveland, Queensland",Caboolture,90.9,75715,71399,feasible,
+"Cleveland, Queensland",Caloundra,32.0,106600,115592,requires_charging,Birkdale Fair
+"Cleveland, Queensland",Caloundra,53.3,106600,115592,requires_charging,Birkdale Fair
+"Cleveland, Queensland",Caloundra,74.6,106600,115592,requires_charging,Birkdale Fair
+"Cleveland, Queensland",Caloundra,95.9,106600,115592,requires_charging,Birkdale Fair
+"Cleveland, Queensland",Caloundra,127.9,106600,115592,feasible,
+"Cleveland, Queensland",Maroochydore,38.3,127787,123690,requires_charging,Birkdale Fair
+"Cleveland, Queensland",Maroochydore,63.9,127787,123690,requires_charging,Birkdale Fair
+"Cleveland, Queensland",Maroochydore,89.5,127787,123690,requires_charging,Birkdale Fair
+"Cleveland, Queensland",Maroochydore,115.0,127787,123690,requires_charging,Evie Networks Coochin Creek
+"Cleveland, Queensland",Maroochydore,153.3,127787,123690,feasible,
+"Cleveland, Queensland",Noosa Heads,49.3,164356,161938,requires_charging,Gympie Road
+"Cleveland, Queensland",Noosa Heads,82.2,164356,161938,requires_charging,Gympie Road
+"Cleveland, Queensland",Noosa Heads,115.0,164356,161938,requires_charging,Evie Networks Coochin Creek
+"Cleveland, Queensland",Noosa Heads,147.9,164356,161938,requires_charging,Maroochydore Supercharger
+"Cleveland, Queensland",Noosa Heads,197.2,164356,161938,feasible,
+"Cleveland, Queensland",Nambour,40.8,136036,127461,requires_charging,Birkdale Fair
+"Cleveland, Queensland",Nambour,68.0,136036,127461,requires_charging,Gympie Road
+"Cleveland, Queensland",Nambour,95.2,136036,127461,requires_charging,BP Caboolture Southbound
+"Cleveland, Queensland",Nambour,122.4,136036,127461,requires_charging,Evie Networks Coochin Creek
+"Cleveland, Queensland",Nambour,163.2,136036,127461,feasible,
+"Cleveland, Queensland","Kilcoy, Queensland",37.2,123955,121316,requires_charging,Brisbane-Fortitude Valley
+"Cleveland, Queensland","Kilcoy, Queensland",62.0,123955,121316,requires_charging,Gympie Road
+"Cleveland, Queensland","Kilcoy, Queensland",86.8,123955,121316,requires_charging,Gympie Road
+"Cleveland, Queensland","Kilcoy, Queensland",111.6,123955,121316,requires_charging,Gympie Road
+"Cleveland, Queensland","Kilcoy, Queensland",148.7,123955,121316,feasible,
+"Cleveland, Queensland","Esk, Queensland",34.8,116060,123888,requires_charging,Brisbane-Fortitude Valley
+"Cleveland, Queensland","Esk, Queensland",58.0,116060,123888,requires_charging,Brisbane-Fortitude Valley
+"Cleveland, Queensland","Esk, Queensland",81.2,116060,123888,requires_charging,Brisbane-Fortitude Valley
+"Cleveland, Queensland","Esk, Queensland",104.5,116060,123888,requires_charging,Brisbane-Fortitude Valley
+"Cleveland, Queensland","Esk, Queensland",139.3,116060,123888,feasible,
+"Cleveland, Queensland",Boonah,29.8,99196,108148,requires_charging,Springwood [bp pulse]
+"Cleveland, Queensland",Boonah,49.6,99196,108148,requires_charging,27 - 49 Browns Plains Road
+"Cleveland, Queensland",Boonah,69.4,99196,108148,requires_charging,27 - 49 Browns Plains Road
+"Cleveland, Queensland",Boonah,89.3,99196,108148,requires_charging,27 - 49 Browns Plains Road
+"Cleveland, Queensland",Boonah,119.0,99196,108148,feasible,
+"Cleveland, Queensland",Beaudesert,22.6,75256,75318,requires_charging,Victoria Point
+"Cleveland, Queensland",Beaudesert,37.6,75256,75318,requires_charging,bp pulse Loganholme
+"Cleveland, Queensland",Beaudesert,52.7,75256,75318,requires_charging,bp pulse Loganholme
+"Cleveland, Queensland",Beaudesert,67.7,75256,75318,requires_charging,bp pulse Loganholme
+"Cleveland, Queensland",Beaudesert,90.3,75256,75318,feasible,
+"Cleveland, Queensland",Springfield Central,15.6,51916,51589,requires_charging,Birkdale Fair
+"Cleveland, Queensland",Springfield Central,26.0,51916,51589,requires_charging,Springwood [bp pulse]
+"Cleveland, Queensland",Springfield Central,36.3,51916,51589,requires_charging,Springwood [bp pulse]
+"Cleveland, Queensland",Springfield Central,46.7,51916,51589,requires_charging,Logan Motorway [bp pulse]
+"Cleveland, Queensland",Springfield Central,62.3,51916,51589,feasible,
+"Redcliffe, Queensland",Caloundra,18.6,62040,72632,requires_charging,Ikea North Lakes
+"Redcliffe, Queensland",Caloundra,31.0,62040,72632,requires_charging,BP Caboolture Southbound
+"Redcliffe, Queensland",Caloundra,43.4,62040,72632,requires_charging,BP Caboolture Southbound
+"Redcliffe, Queensland",Caloundra,55.8,62040,72632,requires_charging,Evie Networks Coochin Creek
+"Redcliffe, Queensland",Caloundra,74.4,62040,72632,feasible,
+"Redcliffe, Queensland",Maroochydore,24.8,82606,80731,requires_charging,Ikea North Lakes
+"Redcliffe, Queensland",Maroochydore,41.3,82606,80731,requires_charging,BP Caboolture Southbound
+"Redcliffe, Queensland",Maroochydore,57.8,82606,80731,requires_charging,Evie Networks Coochin Creek
+"Redcliffe, Queensland",Maroochydore,74.3,82606,80731,requires_charging,Caloundra Shopping Centre
+"Redcliffe, Queensland",Maroochydore,99.1,82606,80731,feasible,
+"Redcliffe, Queensland",Noosa Heads,35.9,119542,118979,requires_charging,BP Caboolture Southbound
+"Redcliffe, Queensland",Noosa Heads,59.8,119542,118979,requires_charging,Evie Networks Coochin Creek
+"Redcliffe, Queensland",Noosa Heads,83.7,119542,118979,requires_charging,Evie Networks Coochin Creek
+"Redcliffe, Queensland",Noosa Heads,107.6,119542,118979,requires_charging,Maroochydore Supercharger
+"Redcliffe, Queensland",Noosa Heads,143.5,119542,118979,feasible,
+"Redcliffe, Queensland",Nambour,26.7,89108,84502,requires_charging,BP Caboolture Southbound
+"Redcliffe, Queensland",Nambour,44.6,89108,84502,requires_charging,BP Caboolture Southbound
+"Redcliffe, Queensland",Nambour,62.4,89108,84502,requires_charging,Evie Networks Coochin Creek
+"Redcliffe, Queensland",Nambour,80.2,89108,84502,requires_charging,Evie Networks Coochin Creek
+"Redcliffe, Queensland",Nambour,106.9,89108,84502,feasible,
+"Redcliffe, Queensland","Kilcoy, Queensland",24.6,82118,78357,requires_charging,Ikea North Lakes
+"Redcliffe, Queensland","Kilcoy, Queensland",41.1,82118,78357,requires_charging,BP Caboolture North
+"Redcliffe, Queensland","Kilcoy, Queensland",57.5,82118,78357,requires_charging,BP Caboolture North
+"Redcliffe, Queensland","Kilcoy, Queensland",73.9,82118,78357,requires_charging,BP Caboolture North
+"Redcliffe, Queensland","Kilcoy, Queensland",98.5,82118,78357,feasible,
+"Redcliffe, Queensland","Esk, Queensland",26.6,88830,132094,requires_charging,Gympie Road
+"Redcliffe, Queensland","Esk, Queensland",44.4,88830,132094,requires_charging,Ikea North Lakes
+"Redcliffe, Queensland","Esk, Queensland",62.2,88830,132094,requires_charging,Ikea North Lakes
+"Redcliffe, Queensland","Esk, Queensland",79.9,88830,132094,requires_charging,Ikea North Lakes
+"Redcliffe, Queensland","Esk, Queensland",106.6,88830,132094,feasible,
+"Redcliffe, Queensland",Boonah,36.8,122693,116354,requires_charging,Gympie Road
+"Redcliffe, Queensland",Boonah,61.3,122693,116354,requires_charging,Gympie Road
+"Redcliffe, Queensland",Boonah,85.9,122693,116354,requires_charging,Bundamba
+"Redcliffe, Queensland",Boonah,110.4,122693,116354,requires_charging,Gympie Road
+"Redcliffe, Queensland",Boonah,147.2,122693,116354,feasible,
+"Redcliffe, Queensland",Beaudesert,33.3,111118,102300,requires_charging,Gympie Road
+"Redcliffe, Queensland",Beaudesert,55.6,111118,102300,requires_charging,Brisbane-Fortitude Valley
+"Redcliffe, Queensland",Beaudesert,77.8,111118,102300,requires_charging,27 - 49 Browns Plains Road
+"Redcliffe, Queensland",Beaudesert,100.0,111118,102300,requires_charging,27 - 49 Browns Plains Road
+"Redcliffe, Queensland",Beaudesert,133.3,111118,102300,feasible,
+"Redcliffe, Queensland",Springfield Central,21.5,71604,64513,requires_charging,Ikea North Lakes
+"Redcliffe, Queensland",Springfield Central,35.8,71604,64513,requires_charging,Gympie Road
+"Redcliffe, Queensland",Springfield Central,50.1,71604,64513,requires_charging,Brisbane-Fortitude Valley
+"Redcliffe, Queensland",Springfield Central,64.4,71604,64513,requires_charging,Brisbane-Fortitude Valley
+"Redcliffe, Queensland",Springfield Central,85.9,71604,64513,feasible,
+Caboolture,Caloundra,14.3,47653,49714,requires_charging,BP Caboolture North
+Caboolture,Caloundra,23.8,47653,49714,requires_charging,BP Caboolture North
+Caboolture,Caloundra,33.4,47653,49714,requires_charging,Evie Networks Coochin Creek
+Caboolture,Caloundra,42.9,47653,49714,requires_charging,Evie Networks Coochin Creek
+Caboolture,Caloundra,57.2,47653,49714,feasible,
+Caboolture,Maroochydore,19.4,64619,57813,requires_charging,BP Caboolture North
+Caboolture,Maroochydore,32.3,64619,57813,requires_charging,Evie Networks Coochin Creek
+Caboolture,Maroochydore,45.2,64619,57813,requires_charging,Evie Networks Coochin Creek
+Caboolture,Maroochydore,58.2,64619,57813,requires_charging,Evie Networks Coochin Creek
+Caboolture,Maroochydore,77.5,64619,57813,feasible,
+Caboolture,Noosa Heads,30.1,100482,96061,requires_charging,Evie Networks Coochin Creek
+Caboolture,Noosa Heads,50.2,100482,96061,requires_charging,Evie Networks Coochin Creek
+Caboolture,Noosa Heads,70.3,100482,96061,requires_charging,Evie Networks Coochin Creek
+Caboolture,Noosa Heads,90.4,100482,96061,requires_charging,Evie Networks Coochin Creek
+Caboolture,Noosa Heads,120.6,100482,96061,feasible,
+Caboolture,Nambour,19.9,66244,61584,requires_charging,BP Caboolture North
+Caboolture,Nambour,33.1,66244,61584,requires_charging,Evie Networks Coochin Creek
+Caboolture,Nambour,46.4,66244,61584,requires_charging,Evie Networks Coochin Creek
+Caboolture,Nambour,59.6,66244,61584,requires_charging,Evie Networks Coochin Creek
+Caboolture,Nambour,79.5,66244,61584,feasible,
+Caboolture,"Kilcoy, Queensland",16.3,54262,49706,requires_charging,BP Caboolture North
+Caboolture,"Kilcoy, Queensland",27.1,54262,49706,requires_charging,BP Caboolture North
+Caboolture,"Kilcoy, Queensland",38.0,54262,49706,requires_charging,BP Caboolture North
+Caboolture,"Kilcoy, Queensland",48.8,54262,49706,requires_charging,BP Caboolture North
+Caboolture,"Kilcoy, Queensland",65.1,54262,49706,feasible,
+Caboolture,"Esk, Queensland",21.5,71681,107806,requires_charging,BP Caboolture North
+Caboolture,"Esk, Queensland",35.8,71681,107806,requires_charging,BP Caboolture North
+Caboolture,"Esk, Queensland",50.2,71681,107806,requires_charging,BP Caboolture North
+Caboolture,"Esk, Queensland",64.5,71681,107806,requires_charging,BP Caboolture North
+Caboolture,"Esk, Queensland",86.0,71681,107806,feasible,
+Caboolture,Boonah,40.5,135140,130767,requires_charging,BP Caboolture North
+Caboolture,Boonah,67.6,135140,130767,requires_charging,Gympie Road
+Caboolture,Boonah,94.6,135140,130767,requires_charging,Bundamba
+Caboolture,Boonah,121.6,135140,130767,requires_charging,Bundamba
+Caboolture,Boonah,162.2,135140,130767,feasible,
+Caboolture,Beaudesert,39.3,130894,119927,requires_charging,BP Caboolture North
+Caboolture,Beaudesert,65.4,130894,119927,requires_charging,Gympie Road
+Caboolture,Beaudesert,91.6,130894,119927,requires_charging,Gympie Road
+Caboolture,Beaudesert,117.8,130894,119927,requires_charging,Gympie Road
+Caboolture,Beaudesert,157.1,130894,119927,feasible,
+Caboolture,Springfield Central,26.2,87259,78927,requires_charging,BP Caboolture North
+Caboolture,Springfield Central,43.6,87259,78927,requires_charging,Gympie Road
+Caboolture,Springfield Central,61.1,87259,78927,requires_charging,BP Pulse Ferny Grove
+Caboolture,Springfield Central,78.5,87259,78927,requires_charging,BP Pulse Ferny Grove
+Caboolture,Springfield Central,104.7,87259,78927,feasible,
+Caloundra,Noosa Heads,17.3,57821,58145,requires_charging,Caloundra Shopping Centre
+Caloundra,Noosa Heads,28.9,57821,58145,requires_charging,Maroochydore Supercharger
+Caloundra,Noosa Heads,40.5,57821,58145,requires_charging,Maroochydore Supercharger
+Caloundra,Noosa Heads,52.0,57821,58145,requires_charging,Maroochydore Supercharger
+Caloundra,Noosa Heads,69.4,57821,58145,feasible,
+Caloundra,"Kilcoy, Queensland",23.1,76905,73504,requires_charging,Caloundra Shopping Centre
+Caloundra,"Kilcoy, Queensland",38.5,76905,73504,requires_charging,Evie Networks Coochin Creek
+Caloundra,"Kilcoy, Queensland",53.8,76905,73504,requires_charging,Evie Networks Coochin Creek
+Caloundra,"Kilcoy, Queensland",69.2,76905,73504,requires_charging,Caloundra Shopping Centre
+Caloundra,"Kilcoy, Queensland",92.3,76905,73504,feasible,
+Caloundra,"Esk, Queensland",33.6,111881,131605,requires_charging,Evie Networks Coochin Creek
+Caloundra,"Esk, Queensland",55.9,111881,131605,requires_charging,Evie Networks Coochin Creek
+Caloundra,"Esk, Queensland",78.3,111881,131605,requires_charging,Evie Networks Coochin Creek
+Caloundra,"Esk, Queensland",100.7,111881,131605,requires_charging,Evie Networks Coochin Creek
+Caloundra,"Esk, Queensland",134.3,111881,131605,feasible,
+Caloundra,Boonah,54.4,181420,174039,requires_charging,Evie Networks Coochin Creek
+Caloundra,Boonah,90.7,181420,174039,requires_charging,Evie Networks Coochin Creek
+Caloundra,Boonah,127.0,181420,174039,requires_charging,Evie Networks Coochin Creek
+Caloundra,Boonah,163.3,181420,174039,requires_charging,Bundamba
+Caloundra,Boonah,217.7,181420,174039,feasible,
+Caloundra,Beaudesert,51.9,173003,163199,requires_charging,Evie Networks Coochin Creek
+Caloundra,Beaudesert,86.5,173003,163199,requires_charging,Evie Networks Coochin Creek
+Caloundra,Beaudesert,121.1,173003,163199,requires_charging,Gympie Road
+Caloundra,Beaudesert,155.7,173003,163199,requires_charging,27 - 49 Browns Plains Road
+Caloundra,Beaudesert,207.6,173003,163199,feasible,
+Caloundra,Springfield Central,39.5,131764,122198,requires_charging,Evie Networks Coochin Creek
+Caloundra,Springfield Central,65.9,131764,122198,requires_charging,Evie Networks Coochin Creek
+Caloundra,Springfield Central,92.2,131764,122198,requires_charging,Gympie Road
+Caloundra,Springfield Central,118.6,131764,122198,requires_charging,Gympie Road
+Caloundra,Springfield Central,158.1,131764,122198,feasible,
+Maroochydore,"Kilcoy, Queensland",24.1,80304,85754,requires_charging,Maroochydore Supercharger
+Maroochydore,"Kilcoy, Queensland",40.2,80304,85754,requires_charging,Maroochydore Supercharger
+Maroochydore,"Kilcoy, Queensland",56.2,80304,85754,requires_charging,Maroochydore Supercharger
+Maroochydore,"Kilcoy, Queensland",72.3,80304,85754,requires_charging,Maroochydore Supercharger
+Maroochydore,"Kilcoy, Queensland",96.4,80304,85754,feasible,
+Maroochydore,"Esk, Queensland",36.3,121014,143854,requires_charging,Maroochydore Supercharger
+Maroochydore,"Esk, Queensland",60.5,121014,143854,requires_charging,Maroochydore Supercharger
+Maroochydore,"Esk, Queensland",84.7,121014,143854,requires_charging,Maroochydore Supercharger
+Maroochydore,"Esk, Queensland",108.9,121014,143854,requires_charging,Maroochydore Supercharger
+Maroochydore,"Esk, Queensland",145.2,121014,143854,feasible,
+Maroochydore,Boonah,59.9,199707,183553,requires_charging,Evie Networks Coochin Creek
+Maroochydore,Boonah,99.9,199707,183553,requires_charging,Evie Networks Coochin Creek
+Maroochydore,Boonah,139.8,199707,183553,requires_charging,Evie Networks Coochin Creek
+Maroochydore,Boonah,179.7,199707,183553,requires_charging,Bundamba
+Maroochydore,Boonah,239.6,199707,183553,feasible,
+Maroochydore,Beaudesert,57.9,193092,172713,requires_charging,Evie Networks Coochin Creek
+Maroochydore,Beaudesert,96.5,193092,172713,requires_charging,Evie Networks Coochin Creek
+Maroochydore,Beaudesert,135.2,193092,172713,requires_charging,Evie Networks Coochin Creek
+Maroochydore,Beaudesert,173.8,193092,172713,requires_charging,27 - 49 Browns Plains Road
+Maroochydore,Beaudesert,231.7,193092,172713,feasible,
+Maroochydore,Springfield Central,45.3,150966,131712,requires_charging,Evie Networks Coochin Creek
+Maroochydore,Springfield Central,75.5,150966,131712,requires_charging,Evie Networks Coochin Creek
+Maroochydore,Springfield Central,105.7,150966,131712,requires_charging,Evie Networks Coochin Creek
+Maroochydore,Springfield Central,135.9,150966,131712,requires_charging,Evie Networks Coochin Creek
+Maroochydore,Springfield Central,181.2,150966,131712,feasible,
+Noosa Heads,"Kilcoy, Queensland",31.2,103990,122682,requires_charging,Noosa Village
+Noosa Heads,"Kilcoy, Queensland",52.0,103990,122682,requires_charging,bp pulse Nambour
+Noosa Heads,"Kilcoy, Queensland",72.8,103990,122682,requires_charging,bp pulse Nambour
+Noosa Heads,"Kilcoy, Queensland",93.6,103990,122682,requires_charging,bp pulse Nambour
+Noosa Heads,"Kilcoy, Queensland",124.8,103990,122682,feasible,
+Noosa Heads,"Esk, Queensland",44.7,148940,180782,requires_charging,bp pulse Nambour
+Noosa Heads,"Esk, Queensland",74.5,148940,180782,requires_charging,bp pulse Nambour
+Noosa Heads,"Esk, Queensland",104.3,148940,180782,requires_charging,bp pulse Nambour
+Noosa Heads,"Esk, Queensland",134.0,148940,180782,requires_charging,bp pulse Nambour
+Noosa Heads,"Esk, Queensland",178.7,148940,180782,feasible,
+Noosa Heads,Boonah,70.7,235512,220481,requires_charging,Maroochydore Supercharger
+Noosa Heads,Boonah,117.8,235512,220481,requires_charging,Evie Networks Coochin Creek
+Noosa Heads,Boonah,164.9,235512,220481,requires_charging,Evie Networks Coochin Creek
+Noosa Heads,Boonah,212.0,235512,220481,requires_charging,Bundamba
+Noosa Heads,Boonah,282.6,235512,220481,feasible,
+Noosa Heads,Beaudesert,69.0,229936,209641,requires_charging,Maroochydore Supercharger
+Noosa Heads,Beaudesert,115.0,229936,209641,requires_charging,Evie Networks Coochin Creek
+Noosa Heads,Beaudesert,161.0,229936,209641,requires_charging,Evie Networks Coochin Creek
+Noosa Heads,Beaudesert,206.9,229936,209641,requires_charging,Evie Networks Coochin Creek
+Noosa Heads,Beaudesert,275.9,229936,209641,feasible,
+Noosa Heads,Springfield Central,56.2,187450,168641,requires_charging,Maroochydore Supercharger
+Noosa Heads,Springfield Central,93.7,187450,168641,requires_charging,Evie Networks Coochin Creek
+Noosa Heads,Springfield Central,131.2,187450,168641,requires_charging,Evie Networks Coochin Creek
+Noosa Heads,Springfield Central,168.7,187450,168641,requires_charging,Evie Networks Coochin Creek
+Noosa Heads,Springfield Central,224.9,187450,168641,feasible,
+Nambour,"Kilcoy, Queensland",20.6,68809,88884,requires_charging,bp pulse Nambour
+Nambour,"Kilcoy, Queensland",34.4,68809,88884,requires_charging,bp pulse Nambour
+Nambour,"Kilcoy, Queensland",48.2,68809,88884,requires_charging,bp pulse Nambour
+Nambour,"Kilcoy, Queensland",61.9,68809,88884,requires_charging,bp pulse Nambour
+Nambour,"Kilcoy, Queensland",82.6,68809,88884,feasible,
+Nambour,"Esk, Queensland",33.8,112637,146984,requires_charging,bp pulse Nambour
+Nambour,"Esk, Queensland",56.3,112637,146984,requires_charging,bp pulse Nambour
+Nambour,"Esk, Queensland",78.8,112637,146984,requires_charging,bp pulse Nambour
+Nambour,"Esk, Queensland",101.4,112637,146984,requires_charging,bp pulse Nambour
+Nambour,"Esk, Queensland",135.2,112637,146984,feasible,
+Nambour,Boonah,60.1,200252,186683,requires_charging,Evie Networks Coochin Creek
+Nambour,Boonah,100.1,200252,186683,requires_charging,Evie Networks Coochin Creek
+Nambour,Boonah,140.2,200252,186683,requires_charging,Evie Networks Coochin Creek
+Nambour,Boonah,180.2,200252,186683,requires_charging,Bundamba
+Nambour,Boonah,240.3,200252,186683,feasible,
+Nambour,Beaudesert,59.1,197057,175843,requires_charging,Evie Networks Coochin Creek
+Nambour,Beaudesert,98.5,197057,175843,requires_charging,Evie Networks Coochin Creek
+Nambour,Beaudesert,137.9,197057,175843,requires_charging,Evie Networks Coochin Creek
+Nambour,Beaudesert,177.4,197057,175843,requires_charging,Evie Networks Coochin Creek
+Nambour,Beaudesert,236.5,197057,175843,feasible,
+Nambour,Springfield Central,46.0,153452,134842,requires_charging,bp pulse Nambour
+Nambour,Springfield Central,76.7,153452,134842,requires_charging,Evie Networks Coochin Creek
+Nambour,Springfield Central,107.4,153452,134842,requires_charging,Evie Networks Coochin Creek
+Nambour,Springfield Central,138.1,153452,134842,requires_charging,Evie Networks Coochin Creek
+Nambour,Springfield Central,184.1,153452,134842,feasible,
+"Kilcoy, Queensland","Esk, Queensland",14.0,46670,58663,infeasible,
+"Kilcoy, Queensland","Esk, Queensland",23.3,46670,58663,infeasible,
+"Kilcoy, Queensland","Esk, Queensland",32.7,46670,58663,infeasible,
+"Kilcoy, Queensland","Esk, Queensland",42.0,46670,58663,infeasible,
+"Kilcoy, Queensland","Esk, Queensland",56.0,46670,58663,feasible,
+"Kilcoy, Queensland",Boonah,45.8,152676,141855,infeasible,
+"Kilcoy, Queensland",Boonah,76.3,152676,141855,requires_charging,Electric Highway - Esk
+"Kilcoy, Queensland",Boonah,106.9,152676,141855,requires_charging,bp pulse Blacksoil
+"Kilcoy, Queensland",Boonah,137.4,152676,141855,requires_charging,Willowbank Raceway
+"Kilcoy, Queensland",Boonah,183.2,152676,141855,feasible,
+"Kilcoy, Queensland",Beaudesert,48.4,161281,169641,infeasible,
+"Kilcoy, Queensland",Beaudesert,80.6,161281,169641,requires_charging,Electric Highway - Esk
+"Kilcoy, Queensland",Beaudesert,112.9,161281,169641,requires_charging,Bundamba
+"Kilcoy, Queensland",Beaudesert,145.2,161281,169641,requires_charging,Bundamba
+"Kilcoy, Queensland",Beaudesert,193.5,161281,169641,feasible,
+"Kilcoy, Queensland",Springfield Central,34.9,116256,118074,infeasible,
+"Kilcoy, Queensland",Springfield Central,58.1,116256,118074,requires_charging,Electric Highway - Esk
+"Kilcoy, Queensland",Springfield Central,81.4,116256,118074,requires_charging,Electric Highway - Esk
+"Kilcoy, Queensland",Springfield Central,104.6,116256,118074,requires_charging,BP Pulse Ferny Grove
+"Kilcoy, Queensland",Springfield Central,139.5,116256,118074,feasible,
+"Esk, Queensland",Boonah,34.2,114128,107902,requires_charging,Electric Highway - Esk
+"Esk, Queensland",Boonah,57.1,114128,107902,requires_charging,Electric Highway - Esk
+"Esk, Queensland",Boonah,79.9,114128,107902,requires_charging,Willowbank Raceway
+"Esk, Queensland",Boonah,102.7,114128,107902,requires_charging,Willowbank Raceway
+"Esk, Queensland",Boonah,137.0,114128,107902,feasible,
+"Esk, Queensland",Beaudesert,39.3,130844,134465,requires_charging,Electric Highway - Esk
+"Esk, Queensland",Beaudesert,65.4,130844,134465,requires_charging,Electric Highway - Esk
+"Esk, Queensland",Beaudesert,91.6,130844,134465,requires_charging,Willowbank Raceway
+"Esk, Queensland",Beaudesert,117.8,130844,134465,requires_charging,Hunter Street
+"Esk, Queensland",Beaudesert,157.0,130844,134465,feasible,
+"Esk, Queensland",Springfield Central,26.8,89328,84120,requires_charging,Electric Highway - Esk
+"Esk, Queensland",Springfield Central,44.7,89328,84120,requires_charging,Electric Highway - Esk
+"Esk, Queensland",Springfield Central,62.5,89328,84120,requires_charging,Electric Highway - Esk
+"Esk, Queensland",Springfield Central,80.4,89328,84120,requires_charging,Bundamba
+"Esk, Queensland",Springfield Central,107.2,89328,84120,feasible,
+Boonah,Springfield Central,15.4,51453,60976,infeasible,
+Boonah,Springfield Central,25.7,51453,60976,infeasible,
+Boonah,Springfield Central,36.0,51453,60976,infeasible,
+Boonah,Springfield Central,46.3,51453,60976,requires_charging,EV Charging Australia
+Boonah,Springfield Central,61.7,51453,60976,feasible,
+Beaudesert,Springfield Central,13.6,45284,46794,requires_charging,Evie Beaudesart
+Beaudesert,Springfield Central,22.6,45284,46794,requires_charging,Evie Beaudesart
+Beaudesert,Springfield Central,31.7,45284,46794,requires_charging,Evie Beaudesart
+Beaudesert,Springfield Central,40.8,45284,46794,requires_charging,EV Charging Australia
+Beaudesert,Springfield Central,54.3,45284,46794,feasible,

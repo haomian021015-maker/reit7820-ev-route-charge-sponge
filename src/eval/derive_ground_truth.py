@@ -69,8 +69,9 @@ def candidate_stations() -> list[dict]:
     return out
 
 
-def derive(a: dict) -> dict:
-    """The expected response for one call's arguments, from the data alone."""
+def derive(a: dict, every_stop: bool = False) -> dict:
+    """The expected response for one call's arguments, from the data alone.
+    every_stop keeps the whole ranked candidate list instead of the top max_results."""
     keep = 1 - a.get("safety_margin_pct", 10) / 100
     origin, dest = (a["origin_lat"], a["origin_lon"]), (a["dest_lat"], a["dest_lon"])
     full_km, conn = a.get("full_range_km"), a.get("connector_type")
@@ -112,7 +113,7 @@ def derive(a: dict) -> dict:
         "feasibility": verdict,
         "trip": {"straight_line_m": great_circle_m(origin, dest), "estimated_road_m": trip,
                  "usable_range_m": usable, "shortfall_m": max(0, trip - usable)},
-        "recommended_stops": stops[:max(1, min(a.get("max_results", 3), 5))],
+        "recommended_stops": stops if every_stop else stops[:max(1, min(a.get("max_results", 3), 5))],
         "stations": {"considered": len(stations), "excluded_by_connector": len(pool) - len(stations)},
     }
 

@@ -100,6 +100,25 @@ SPEC = [
      {"consumption_kwh_per_100km": 0}),
     ("I'm at UQ St Lucia with only 5 km of range left", "requires_charging", TRIP, {"remaining_range_km": 5}),
 ]
+
+
+def labelled_spec(tasks: list[dict]) -> list[tuple]:
+    """SPEC for a task file whose cases carry their own "label" (tasks.heldout.json).
+    The hand-labelled SPEC above stays the one for tasks.charging.json."""
+    return [(t["prompt"][:40], t["label"]["verdict"], t["label"]["tool"], t["label"]["stated"]) for t in tasks]
+
+
+def use_tasks(path: Path) -> list[dict]:
+    """Load a task file and point SPEC at its labels; the default file keeps SPEC."""
+    global SPEC
+    tasks = json.loads(path.read_text(encoding="utf-8"))
+    if all("label" in t for t in tasks):
+        SPEC = labelled_spec(tasks)
+    elif len(tasks) != len(SPEC) or any(not t["prompt"].startswith(sp[0]) for t, sp in zip(tasks, SPEC)):
+        raise SystemExit(f"SPEC no longer lines up with {path.name}; relabel it.")
+    return tasks
+
+
 # Optional trip arguments and their defaults. Passing one the question never
 # stated, at anything but its default, is an invented value.
 OPTIONAL = {"full_range_km": None, "connector_type": None, "vehicle_max_charge_kw": None,
@@ -373,7 +392,8 @@ def markdown(summary: dict, meta: dict) -> str:
     pct = lambda v: "-" if v is None else f"{v * 100:.0f}%"  # noqa: E731
     lines = [f"# Prompt architecture experiment - {meta['stamp']}", "",
              f"Router `{meta['router_model']}`, judge `{meta['judge_model']}`, {meta['repeats']} repeat(s) "
-             f"of {meta['cases']} question(s) per condition, seed {meta['seed']}, OCM snapshot {meta['snapshot']}.", "",
+             f"of {meta['cases']} question(s) from `{meta.get('tasks', TASKS.name)}` per condition, seed {meta['seed']}, "
+             f"OCM snapshot {meta['snapshot']}.", "",
              "| Metric | " + " | ".join(conds) + " |", "|---|" + "---|" * len(conds)]
     for m in METRICS:
         lines.append(f"| {m} | " + " | ".join(
@@ -425,6 +445,8 @@ def log_wandb(rows, summary, meta, prompts) -> str | None:
 async def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     ap.add_argument("--repeats", type=int, default=3)
+    ap.add_argument("--tasks", default=str(TASKS),
+                    help="task file; tasks.heldout.json carries its own labels (default: tasks.charging.json)")
     ap.add_argument("--cases", help="comma-separated 1-based question numbers (default: all)")
     ap.add_argument("--conditions", default=",".join(CONDITIONS))
     ap.add_argument("--seed", type=int, default=20261020)
@@ -443,6 +465,7 @@ async def main() -> int:
         source = Path(a.rescore)
         rows = [json.loads(line) for line in (source / "runs.jsonl").read_text(encoding="utf-8").splitlines() if line.strip()]
         saved = json.loads((source / "summary.json").read_text(encoding="utf-8"))
+        use_tasks(HERE / saved["meta"].get("tasks", TASKS.name))
         for r in rows:
             score_rules(r)
             finish(r)
@@ -469,9 +492,8 @@ async def main() -> int:
     model = llm.model_name()
     if model not in ROUTER_PRICES:
         raise SystemExit(f"No prices recorded for router model {model}; add them to ROUTER_PRICES.")
-    tasks = json.loads(TASKS.read_text(encoding="utf-8"))
-    if len(tasks) != len(SPEC) or any(not t["prompt"].startswith(s[0]) for t, s in zip(tasks, SPEC)):
-        raise SystemExit("SPEC no longer lines up with tasks.charging.json; relabel it.")
+    tasks_path = Path(a.tasks)
+    tasks = use_tasks(tasks_path)
     prompts = load_prompts()
     conditions = [c for c in a.conditions.split(",") if c]
     cases = [int(x) - 1 for x in a.cases.split(",")] if a.cases else list(range(len(tasks)))
@@ -537,7 +559,8 @@ async def main() -> int:
     snapshot = json.loads((HERE.parent / "snapshots" / "ocm_qld.json").read_text(encoding="utf-8"))["fetched_at"]
     meta = {"stamp": stamp, "router_model": model, "judge_model": JUDGE_MODEL if client else None,
             "repeats": a.repeats, "cases": len(cases), "seed": a.seed, "snapshot": snapshot,
-            "conditions": conditions, "max_steps": ui.MAX_STEPS, "rejudged_from": a.rejudge}
+            "conditions": conditions, "max_steps": ui.MAX_STEPS, "rejudged_from": a.rejudge,
+            "tasks": tasks_path.name}
     summary = summarise(rows, conditions)
     folder = OUT / stamp
     folder.mkdir(parents=True, exist_ok=True)

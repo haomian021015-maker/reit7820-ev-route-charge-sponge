@@ -1,0 +1,191 @@
+from,to,straight_m,osrm_road_m,estimate_m,ratio,error_pct
+University of Queensland St Lucia,Brisbane City,3417,7505,4442,2.196,-40.8
+University of Queensland St Lucia,Toowoomba,104538,122356,135899,1.17,11.1
+University of Queensland St Lucia,Ipswich,27942,36063,36325,1.291,0.7
+University of Queensland St Lucia,Gatton,72524,87251,94281,1.203,8.1
+University of Queensland St Lucia,Surfers Paradise,68934,82909,89615,1.203,8.1
+University of Queensland St Lucia,Coolangatta,90798,108000,118037,1.189,9.3
+University of Queensland St Lucia,Beenleigh,30676,40862,39879,1.332,-2.4
+University of Queensland St Lucia,"Cleveland, Queensland",25399,33768,33018,1.33,-2.2
+University of Queensland St Lucia,"Redcliffe, Queensland",31796,40165,41335,1.263,2.9
+University of Queensland St Lucia,Caboolture,46439,54026,60371,1.163,11.7
+University of Queensland St Lucia,Caloundra,78800,98218,102440,1.246,4.3
+University of Queensland St Lucia,Maroochydore,94045,106317,122258,1.13,15.0
+University of Queensland St Lucia,Noosa Heads,122349,144565,159054,1.182,10.0
+University of Queensland St Lucia,Nambour,97140,110088,126282,1.133,14.7
+University of Queensland St Lucia,"Kilcoy, Queensland",76210,103943,99073,1.364,-4.7
+University of Queensland St Lucia,"Esk, Queensland",64878,96832,84342,1.493,-12.9
+University of Queensland St Lucia,Boonah,62968,81091,81859,1.288,0.9
+University of Queensland St Lucia,Beaudesert,54552,74151,70918,1.359,-4.4
+University of Queensland St Lucia,Springfield Central,23428,29251,30456,1.249,4.1
+Brisbane City,Toowoomba,106243,126370,138116,1.189,9.3
+Brisbane City,Ipswich,30743,40077,39966,1.304,-0.3
+Brisbane City,Gatton,74331,91266,96630,1.228,5.9
+Brisbane City,Surfers Paradise,70651,76647,91847,1.085,19.8
+Brisbane City,Coolangatta,92565,101738,120335,1.099,18.3
+Brisbane City,Beenleigh,32378,34600,42091,1.069,21.7
+Brisbane City,"Cleveland, Queensland",24564,27506,31933,1.12,16.1
+Brisbane City,"Redcliffe, Queensland",28404,33990,36925,1.197,8.6
+Brisbane City,Caboolture,43592,47851,56670,1.098,18.4
+Brisbane City,Caloundra,75522,92044,98178,1.219,6.7
+Brisbane City,Maroochydore,90841,100142,118093,1.102,17.9
+Brisbane City,Noosa Heads,119172,138390,154924,1.161,11.9
+Brisbane City,Nambour,94138,103913,122380,1.104,17.8
+Brisbane City,"Kilcoy, Queensland",74607,97768,96989,1.31,-0.8
+Brisbane City,"Esk, Queensland",64903,100846,84375,1.554,-16.3
+Brisbane City,Boonah,66376,85106,86289,1.282,1.4
+Brisbane City,Beaudesert,57702,69698,75013,1.208,7.6
+Brisbane City,Springfield Central,26843,33265,34896,1.239,4.9
+Toowoomba,Ipswich,79814,89571,103758,1.122,15.8
+Toowoomba,Gatton,32115,36754,41749,1.144,13.6
+Toowoomba,Surfers Paradise,152654,178941,198451,1.172,10.9
+Toowoomba,Coolangatta,169847,204032,220801,1.201,8.2
+Toowoomba,Beenleigh,124223,136894,161490,1.102,18.0
+Toowoomba,"Cleveland, Queensland",129546,148950,168409,1.15,13.1
+Toowoomba,"Redcliffe, Queensland",120365,156880,156474,1.303,-0.3
+Toowoomba,Caboolture,111935,170741,145515,1.525,-14.8
+Toowoomba,Caloundra,144455,214933,187792,1.488,-12.6
+Toowoomba,Maroochydore,151314,223032,196709,1.474,-11.8
+Toowoomba,Noosa Heads,171381,261280,222796,1.525,-14.7
+Toowoomba,Nambour,144031,226803,187240,1.575,-17.4
+Toowoomba,"Kilcoy, Queensland",91390,138249,118807,1.513,-14.1
+Toowoomba,"Esk, Queensland",58445,79687,75979,1.363,-4.7
+Toowoomba,Boonah,87340,132597,113542,1.518,-14.4
+Toowoomba,Beaudesert,113071,159382,146992,1.41,-7.8
+Toowoomba,Springfield Central,94664,109790,123063,1.16,12.1
+Ipswich,Gatton,47857,54661,62215,1.142,13.8
+Ipswich,Surfers Paradise,77893,93118,101261,1.195,8.7
+Ipswich,Coolangatta,98060,118209,127478,1.205,7.8
+Ipswich,Beenleigh,44867,51071,58327,1.138,14.2
+Ipswich,"Cleveland, Queensland",50853,63126,66109,1.241,4.7
+Ipswich,"Redcliffe, Queensland",55504,71057,72155,1.28,1.5
+Ipswich,Caboolture,62079,84918,80702,1.368,-5.0
+Ipswich,Caloundra,98199,129110,127658,1.315,-1.1
+Ipswich,Maroochydore,111782,137209,145317,1.227,5.9
+Ipswich,Noosa Heads,139102,175457,180833,1.261,3.1
+Ipswich,Nambour,111866,140980,145426,1.26,3.2
+Ipswich,"Kilcoy, Queensland",77534,98124,100794,1.266,2.7
+Ipswich,"Esk, Queensland",53551,64242,69617,1.2,8.4
+Ipswich,Boonah,42185,46550,54841,1.103,17.8
+Ipswich,Beaudesert,47450,73335,61684,1.546,-15.9
+Ipswich,Springfield Central,16093,19669,20920,1.222,6.4
+Gatton,Surfers Paradise,122683,144298,159488,1.176,10.5
+Gatton,Coolangatta,141010,169389,183313,1.201,8.2
+Gatton,Beenleigh,92538,102251,120299,1.105,17.7
+Gatton,"Cleveland, Queensland",97447,114307,126681,1.173,10.8
+Gatton,"Redcliffe, Queensland",90343,122237,117446,1.353,-3.9
+Gatton,Caboolture,85011,136098,110514,1.601,-18.8
+Gatton,Caloundra,119914,180290,155889,1.503,-13.5
+Gatton,Maroochydore,129082,188389,167806,1.459,-10.9
+Gatton,Noosa Heads,152151,226637,197796,1.49,-12.7
+Gatton,Nambour,123975,192160,161167,1.55,-16.1
+Gatton,"Kilcoy, Queensland",74345,103533,96649,1.393,-6.6
+Gatton,"Esk, Queensland",38448,44972,49983,1.17,11.1
+Gatton,Boonah,62969,97954,81860,1.556,-16.4
+Gatton,Beaudesert,85032,124739,110542,1.467,-11.4
+Gatton,Springfield Central,63080,75147,82004,1.191,9.1
+Surfers Paradise,Coolangatta,21936,30479,28517,1.389,-6.4
+Surfers Paradise,Beenleigh,38285,44534,49771,1.163,11.8
+Surfers Paradise,"Cleveland, Queensland",54791,72490,71228,1.323,-1.7
+Surfers Paradise,"Redcliffe, Queensland",91159,109508,118506,1.201,8.2
+Surfers Paradise,Caboolture,111923,126752,145500,1.132,14.8
+Surfers Paradise,Caloundra,136530,170945,177489,1.252,3.8
+Surfers Paradise,Maroochydore,152874,179043,198736,1.171,11.0
+Surfers Paradise,Noosa Heads,180807,217291,235049,1.202,8.2
+Surfers Paradise,Nambour,159433,182814,207262,1.147,13.4
+Surfers Paradise,"Kilcoy, Queensland",145144,176669,188688,1.217,6.8
+Surfers Paradise,"Esk, Queensland",129884,153940,168850,1.185,9.7
+Surfers Paradise,Boonah,71460,102967,92898,1.441,-9.8
+Surfers Paradise,Beaudesert,42026,65046,54633,1.548,-16.0
+Surfers Paradise,Springfield Central,61857,81642,80415,1.32,-1.5
+Coolangatta,Beenleigh,60189,69550,78246,1.156,12.5
+Coolangatta,"Cleveland, Queensland",76232,97505,99102,1.279,1.6
+Coolangatta,"Redcliffe, Queensland",112761,134523,146589,1.193,9.0
+Coolangatta,Caboolture,133754,151768,173880,1.135,14.6
+Coolangatta,Caloundra,157460,195960,204698,1.245,4.5
+Coolangatta,Maroochydore,173816,204059,225961,1.174,10.7
+Coolangatta,Noosa Heads,201526,242307,261984,1.202,8.1
+Coolangatta,Nambour,180792,207830,235029,1.15,13.1
+Coolangatta,"Kilcoy, Queensland",167000,201685,217101,1.208,7.6
+Coolangatta,"Esk, Queensland",150811,178956,196054,1.187,9.6
+Coolangatta,Boonah,84975,124203,110467,1.462,-11.1
+Coolangatta,Beaudesert,56864,86282,73924,1.517,-14.3
+Coolangatta,Springfield Central,82257,106657,106934,1.297,0.3
+Beenleigh,"Cleveland, Queensland",22025,30309,28632,1.376,-5.5
+Beenleigh,"Redcliffe, Queensland",55090,67328,71617,1.222,6.4
+Beenleigh,Caboolture,74522,84572,96879,1.135,14.6
+Beenleigh,Caloundra,102267,128764,132947,1.259,3.2
+Beenleigh,Maroochydore,118379,136863,153892,1.156,12.4
+Beenleigh,Noosa Heads,146725,175111,190743,1.193,8.9
+Beenleigh,Nambour,123573,140634,160645,1.138,14.2
+Beenleigh,"Kilcoy, Queensland",106873,134489,138935,1.258,3.3
+Beenleigh,"Esk, Queensland",93416,111760,121440,1.196,8.7
+Beenleigh,Boonah,58402,82388,75922,1.411,-7.8
+Beenleigh,Beaudesert,36462,44467,47401,1.22,6.6
+Beenleigh,Springfield Central,29569,39461,38439,1.335,-2.6
+"Cleveland, Queensland","Redcliffe, Queensland",36591,54155,47569,1.48,-12.2
+"Cleveland, Queensland",Caboolture,58242,71399,75715,1.226,6.0
+"Cleveland, Queensland",Caloundra,82000,115592,106600,1.41,-7.8
+"Cleveland, Queensland",Maroochydore,98299,123690,127788,1.258,3.3
+"Cleveland, Queensland",Noosa Heads,126428,161938,164356,1.281,1.5
+"Cleveland, Queensland",Nambour,104643,127461,136036,1.218,6.7
+"Cleveland, Queensland","Kilcoy, Queensland",95350,121316,123955,1.272,2.2
+"Cleveland, Queensland","Esk, Queensland",89277,123888,116060,1.388,-6.3
+"Cleveland, Queensland",Boonah,76305,108148,99196,1.417,-8.3
+"Cleveland, Queensland",Beaudesert,57889,75318,75256,1.301,-0.1
+"Cleveland, Queensland",Springfield Central,39935,51589,51916,1.292,0.6
+"Redcliffe, Queensland",Caboolture,22567,28440,29337,1.26,3.2
+"Redcliffe, Queensland",Caloundra,47723,72632,62040,1.522,-14.6
+"Redcliffe, Queensland",Maroochydore,63544,80731,82607,1.27,2.3
+"Redcliffe, Queensland",Noosa Heads,91955,118979,119542,1.294,0.5
+"Redcliffe, Queensland",Nambour,68545,84502,89108,1.233,5.5
+"Redcliffe, Queensland","Kilcoy, Queensland",63168,78357,82118,1.24,4.8
+"Redcliffe, Queensland","Esk, Queensland",68332,132094,88831,1.933,-32.8
+"Redcliffe, Queensland",Boonah,94379,116354,122692,1.233,5.4
+"Redcliffe, Queensland",Beaudesert,85475,102300,111117,1.197,8.6
+"Redcliffe, Queensland",Springfield Central,55080,64513,71604,1.171,11.0
+Caboolture,Caloundra,36656,49714,47653,1.356,-4.1
+Caboolture,Maroochydore,49707,57813,64619,1.163,11.8
+Caboolture,Noosa Heads,77294,96061,100483,1.243,4.6
+Caboolture,Nambour,50957,61584,66244,1.209,7.6
+Caboolture,"Kilcoy, Queensland",41740,49706,54262,1.191,9.2
+Caboolture,"Esk, Queensland",55139,107806,71681,1.955,-33.5
+Caboolture,Boonah,103954,130767,135140,1.258,3.3
+Caboolture,Beaudesert,100688,119927,130895,1.191,9.1
+Caboolture,Springfield Central,67123,78927,87259,1.176,10.6
+Caloundra,Maroochydore,16356,19643,21263,1.201,8.2
+Caloundra,Noosa Heads,44478,58145,57821,1.307,-0.6
+Caloundra,Nambour,25913,33573,33686,1.296,0.3
+Caloundra,"Kilcoy, Queensland",59158,73504,76905,1.243,4.6
+Caloundra,"Esk, Queensland",86062,131605,111880,1.529,-15.0
+Caloundra,Boonah,139554,174039,181421,1.247,4.2
+Caloundra,Beaudesert,133079,163199,173003,1.226,6.0
+Caloundra,Springfield Central,101357,122198,131765,1.206,7.8
+Maroochydore,Noosa Heads,28414,39940,36938,1.406,-7.5
+Maroochydore,Nambour,13797,16673,17935,1.209,7.6
+Maroochydore,"Kilcoy, Queensland",61772,85754,80303,1.388,-6.4
+Maroochydore,"Esk, Queensland",93088,143854,121015,1.545,-15.9
+Maroochydore,Boonah,153622,183553,199708,1.195,8.8
+Maroochydore,Beaudesert,148532,172713,193092,1.163,11.8
+Maroochydore,Springfield Central,116128,131712,150967,1.134,14.6
+Noosa Heads,Nambour,28274,38465,36756,1.36,-4.4
+Noosa Heads,"Kilcoy, Queensland",79992,122682,103990,1.534,-15.2
+Noosa Heads,"Esk, Queensland",114569,180782,148940,1.578,-17.6
+Noosa Heads,Boonah,181163,220481,235512,1.217,6.8
+Noosa Heads,Beaudesert,176874,209641,229936,1.185,9.7
+Noosa Heads,Springfield Central,144192,168641,187450,1.17,11.2
+Nambour,"Kilcoy, Queensland",52930,88884,68810,1.679,-22.6
+Nambour,"Esk, Queensland",86644,146984,112637,1.696,-23.4
+Nambour,Boonah,154040,186683,200252,1.212,7.3
+Nambour,Beaudesert,151582,175843,197057,1.16,12.1
+Nambour,Springfield Central,118040,134842,153453,1.142,13.8
+"Kilcoy, Queensland","Esk, Queensland",35900,58663,46670,1.634,-20.4
+"Kilcoy, Queensland",Boonah,117443,141855,152676,1.208,7.6
+"Kilcoy, Queensland",Beaudesert,124062,169641,161281,1.367,-4.9
+"Kilcoy, Queensland",Springfield Central,89428,118074,116256,1.32,-1.5
+"Esk, Queensland",Boonah,87791,107902,114129,1.229,5.8
+"Esk, Queensland",Beaudesert,100649,134465,130844,1.336,-2.7
+"Esk, Queensland",Springfield Central,68714,84120,89328,1.224,6.2
+Boonah,Beaudesert,29448,38372,38283,1.303,-0.2
+Boonah,Springfield Central,39579,60976,51452,1.541,-15.6
+Beaudesert,Springfield Central,34834,46794,45285,1.343,-3.2

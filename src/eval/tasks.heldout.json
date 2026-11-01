@@ -1,0 +1,1080 @@
+[
+  {
+    "prompt": "Is there a public charger I can use in Darwin city centre?",
+    "tools": [
+      {
+        "name": "geocode_place",
+        "input": {
+          "place": "Darwin"
+        }
+      }
+    ],
+    "output": {
+      "status": "out_of_scope",
+      "reason": "outside South East Queensland"
+    },
+    "label": {
+      "verdict": "declined_out_of_scope",
+      "tool": null,
+      "stated": {}
+    }
+  },
+  {
+    "prompt": "Where can I charge my EV near Adelaide Airport?",
+    "tools": [
+      {
+        "name": "geocode_place",
+        "input": {
+          "place": "Adelaide Airport"
+        }
+      }
+    ],
+    "output": {
+      "status": "out_of_scope",
+      "reason": "outside South East Queensland"
+    },
+    "label": {
+      "verdict": "declined_out_of_scope",
+      "tool": null,
+      "stated": {}
+    }
+  },
+  {
+    "prompt": "Can I get from Ipswich to Sydney on the 300 km of range I have left?",
+    "tools": [
+      {
+        "name": "assess_ev_trip_feasibility",
+        "input": {
+          "origin_lat": -27.6160323,
+          "origin_lon": 152.7608348,
+          "dest_lat": -33.8698439,
+          "dest_lon": 151.2082848,
+          "remaining_range_km": 300,
+          "explain": false
+        }
+      }
+    ],
+    "output": {
+      "status": "out_of_scope",
+      "reason": "destinations in Queensland"
+    },
+    "label": {
+      "verdict": "declined_out_of_scope",
+      "tool": null,
+      "stated": {
+        "remaining_range_km": 300
+      }
+    }
+  },
+  {
+    "prompt": "I'm in Caboolture with 250 km of range. Can I drive to Canberra?",
+    "tools": [
+      {
+        "name": "assess_ev_trip_feasibility",
+        "input": {
+          "origin_lat": -27.0839336,
+          "origin_lon": 152.9510863,
+          "dest_lat": -35.2975906,
+          "dest_lon": 149.1012676,
+          "remaining_range_km": 250,
+          "explain": false
+        }
+      }
+    ],
+    "output": {
+      "status": "out_of_scope",
+      "reason": "destinations in Queensland"
+    },
+    "label": {
+      "verdict": "declined_out_of_scope",
+      "tool": null,
+      "stated": {
+        "remaining_range_km": 250
+      }
+    }
+  },
+  {
+    "prompt": "My dashboard shows 0 km of range left. Can I drive from Cleveland to Gatton?",
+    "tools": [
+      {
+        "name": "assess_ev_trip_feasibility",
+        "input": {
+          "origin_lat": -27.5262987,
+          "origin_lon": 153.2667298,
+          "dest_lat": -27.5615314,
+          "dest_lon": 152.2791353,
+          "remaining_range_km": 0,
+          "explain": false
+        }
+      }
+    ],
+    "output": {
+      "status": "invalid_input",
+      "feasibility": null,
+      "reason": "must be a positive number of kilometres"
+    },
+    "label": {
+      "verdict": "declined_invalid_input",
+      "tool": null,
+      "stated": {
+        "remaining_range_km": 0
+      }
+    }
+  },
+  {
+    "prompt": "My car reports -12 kWh per 100 km thanks to regenerative braking. I have 100 km of range and want to go from Nambour to Ipswich.",
+    "tools": [
+      {
+        "name": "assess_ev_trip_feasibility",
+        "input": {
+          "origin_lat": -26.6257326,
+          "origin_lon": 152.959953,
+          "dest_lat": -27.6160323,
+          "dest_lon": 152.7608348,
+          "remaining_range_km": 100,
+          "consumption_kwh_per_100km": -12,
+          "explain": false
+        }
+      }
+    ],
+    "output": {
+      "status": "invalid_input",
+      "feasibility": null,
+      "reason": "consumption_kwh_per_100km"
+    },
+    "label": {
+      "verdict": "declined_invalid_input",
+      "tool": null,
+      "stated": {
+        "remaining_range_km": 100,
+        "consumption_kwh_per_100km": -12
+      }
+    }
+  },
+  {
+    "prompt": "Where is the closest public EV charger to Ipswich?",
+    "tools": [
+      {
+        "name": "geocode_place",
+        "input": {
+          "place": "Ipswich"
+        }
+      },
+      {
+        "name": "find_nearest_charger",
+        "input": {
+          "lat": -27.6160323,
+          "lon": 152.7608348,
+          "max_results": 1
+        }
+      }
+    ],
+    "output": {
+      "nearest": [
+        {
+          "name": "Springfield",
+          "distance_m": 15520
+        }
+      ],
+      "sources": [
+        "Queensland Government"
+      ]
+    },
+    "label": {
+      "verdict": "nearest_listed",
+      "tool": "find_nearest_charger",
+      "stated": {}
+    }
+  },
+  {
+    "prompt": "I'm in Caloundra. Where's the nearest place to charge my electric car?",
+    "tools": [
+      {
+        "name": "geocode_place",
+        "input": {
+          "place": "Caloundra"
+        }
+      },
+      {
+        "name": "find_nearest_charger",
+        "input": {
+          "lat": -26.7981633,
+          "lon": 153.1354434,
+          "max_results": 1
+        }
+      }
+    ],
+    "output": {
+      "nearest": [
+        {
+          "name": "Cooroy",
+          "distance_m": 47776
+        }
+      ],
+      "sources": [
+        "Queensland Government"
+      ]
+    },
+    "label": {
+      "verdict": "nearest_listed",
+      "tool": "find_nearest_charger",
+      "stated": {}
+    }
+  },
+  {
+    "prompt": "Find me the nearest EV charging station to Cleveland, Queensland.",
+    "tools": [
+      {
+        "name": "geocode_place",
+        "input": {
+          "place": "Cleveland, Queensland"
+        }
+      },
+      {
+        "name": "find_nearest_charger",
+        "input": {
+          "lat": -27.5262987,
+          "lon": 153.2667298,
+          "max_results": 1
+        }
+      }
+    ],
+    "output": {
+      "nearest": [
+        {
+          "name": "Brisbane",
+          "distance_m": 20225
+        }
+      ],
+      "sources": [
+        "Queensland Government"
+      ]
+    },
+    "label": {
+      "verdict": "nearest_listed",
+      "tool": "find_nearest_charger",
+      "stated": {}
+    }
+  },
+  {
+    "prompt": "I'm in Strathpine with 150 km of range left. Can I reach Coomera without charging?",
+    "tools": [
+      {
+        "name": "geocode_place",
+        "input": {
+          "place": "Strathpine"
+        }
+      },
+      {
+        "name": "geocode_place",
+        "input": {
+          "place": "Coomera"
+        }
+      },
+      {
+        "name": "assess_ev_trip_feasibility",
+        "input": {
+          "origin_lat": -27.3099861,
+          "origin_lon": 152.9905347,
+          "dest_lat": -27.8564881,
+          "dest_lon": 153.3203988,
+          "remaining_range_km": 150,
+          "explain": false
+        }
+      }
+    ],
+    "output": {
+      "feasibility": "feasible",
+      "trip": {
+        "estimated_road_m": 89593,
+        "usable_range_m": 135000,
+        "shortfall_m": 0
+      },
+      "sources": [
+        "Open Charge Map",
+        "Queensland Government"
+      ],
+      "recommended_stops": []
+    },
+    "label": {
+      "verdict": "feasible",
+      "tool": "assess_ev_trip_feasibility",
+      "stated": {
+        "remaining_range_km": 150
+      }
+    }
+  },
+  {
+    "prompt": "Redcliffe to Beaudesert with 180 km of range showing. Do I need to stop?",
+    "tools": [
+      {
+        "name": "geocode_place",
+        "input": {
+          "place": "Redcliffe, Queensland"
+        }
+      },
+      {
+        "name": "geocode_place",
+        "input": {
+          "place": "Beaudesert"
+        }
+      },
+      {
+        "name": "assess_ev_trip_feasibility",
+        "input": {
+          "origin_lat": -27.2268785,
+          "origin_lon": 153.1129973,
+          "dest_lat": -27.9885617,
+          "dest_lon": 152.9961186,
+          "remaining_range_km": 180,
+          "explain": false
+        }
+      }
+    ],
+    "output": {
+      "feasibility": "feasible",
+      "trip": {
+        "estimated_road_m": 111118,
+        "usable_range_m": 162000,
+        "shortfall_m": 0
+      },
+      "sources": [
+        "Open Charge Map",
+        "Queensland Government"
+      ],
+      "recommended_stops": []
+    },
+    "label": {
+      "verdict": "feasible",
+      "tool": "assess_ev_trip_feasibility",
+      "stated": {
+        "remaining_range_km": 180
+      }
+    }
+  },
+  {
+    "prompt": "I have 200 km left in a car that does 450 km on a full charge. Logan Central to Kilcoy - any need to charge?",
+    "tools": [
+      {
+        "name": "geocode_place",
+        "input": {
+          "place": "Logan Central"
+        }
+      },
+      {
+        "name": "geocode_place",
+        "input": {
+          "place": "Kilcoy, Queensland"
+        }
+      },
+      {
+        "name": "assess_ev_trip_feasibility",
+        "input": {
+          "origin_lat": -27.6412988,
+          "origin_lon": 153.1072741,
+          "dest_lat": -26.9417175,
+          "dest_lon": 152.561157,
+          "remaining_range_km": 200,
+          "full_range_km": 450,
+          "explain": false
+        }
+      }
+    ],
+    "output": {
+      "feasibility": "feasible",
+      "trip": {
+        "estimated_road_m": 123079,
+        "usable_range_m": 180000,
+        "shortfall_m": 0
+      },
+      "sources": [
+        "Open Charge Map",
+        "Queensland Government"
+      ],
+      "recommended_stops": []
+    },
+    "label": {
+      "verdict": "feasible",
+      "tool": "assess_ev_trip_feasibility",
+      "stated": {
+        "remaining_range_km": 200,
+        "full_range_km": 450
+      }
+    }
+  },
+  {
+    "prompt": "Gatton to Cleveland on 170 km of range: will I make it?",
+    "tools": [
+      {
+        "name": "geocode_place",
+        "input": {
+          "place": "Gatton"
+        }
+      },
+      {
+        "name": "geocode_place",
+        "input": {
+          "place": "Cleveland, Queensland"
+        }
+      },
+      {
+        "name": "assess_ev_trip_feasibility",
+        "input": {
+          "origin_lat": -27.5615314,
+          "origin_lon": 152.2791353,
+          "dest_lat": -27.5262987,
+          "dest_lon": 153.2667298,
+          "remaining_range_km": 170,
+          "explain": false
+        }
+      }
+    ],
+    "output": {
+      "feasibility": "feasible",
+      "trip": {
+        "estimated_road_m": 126681,
+        "usable_range_m": 153000,
+        "shortfall_m": 0
+      },
+      "sources": [
+        "Open Charge Map",
+        "Queensland Government"
+      ],
+      "recommended_stops": []
+    },
+    "label": {
+      "verdict": "feasible",
+      "tool": "assess_ev_trip_feasibility",
+      "stated": {
+        "remaining_range_km": 170
+      }
+    }
+  },
+  {
+    "prompt": "I'm leaving Caloundra for Toowoomba with 100 km of range in a car that does 350 km when full. Where should I charge?",
+    "tools": [
+      {
+        "name": "geocode_place",
+        "input": {
+          "place": "Caloundra"
+        }
+      },
+      {
+        "name": "geocode_place",
+        "input": {
+          "place": "Toowoomba"
+        }
+      },
+      {
+        "name": "assess_ev_trip_feasibility",
+        "input": {
+          "origin_lat": -26.7981633,
+          "origin_lon": 153.1354434,
+          "dest_lat": -27.5610193,
+          "dest_lon": 151.953351,
+          "remaining_range_km": 100,
+          "full_range_km": 350,
+          "explain": false
+        }
+      }
+    ],
+    "output": {
+      "feasibility": "requires_charging",
+      "trip": {
+        "estimated_road_m": 187792,
+        "usable_range_m": 90000,
+        "shortfall_m": 97792
+      },
+      "sources": [
+        "Open Charge Map",
+        "Queensland Government"
+      ],
+      "recommended_stops": [
+        {
+          "name": "Evie Networks Coochin Creek",
+          "power_kw": 350,
+          "detour_m": 274,
+          "charging_time_s": 197,
+          "added_time_s": 213,
+          "completes_trip_after_stop": true
+        }
+      ]
+    },
+    "label": {
+      "verdict": "requires_charging",
+      "tool": "assess_ev_trip_feasibility",
+      "stated": {
+        "remaining_range_km": 100,
+        "full_range_km": 350
+      }
+    }
+  },
+  {
+    "prompt": "Nambour to Ipswich with 90 km of range; my car does 400 km on a full battery. Where should I stop?",
+    "tools": [
+      {
+        "name": "geocode_place",
+        "input": {
+          "place": "Nambour"
+        }
+      },
+      {
+        "name": "geocode_place",
+        "input": {
+          "place": "Ipswich"
+        }
+      },
+      {
+        "name": "assess_ev_trip_feasibility",
+        "input": {
+          "origin_lat": -26.6257326,
+          "origin_lon": 152.959953,
+          "dest_lat": -27.6160323,
+          "dest_lon": 152.7608348,
+          "remaining_range_km": 90,
+          "full_range_km": 400,
+          "explain": false
+        }
+      }
+    ],
+    "output": {
+      "feasibility": "requires_charging",
+      "trip": {
+        "estimated_road_m": 145426,
+        "usable_range_m": 81000,
+        "shortfall_m": 64426
+      },
+      "sources": [
+        "Open Charge Map",
+        "Queensland Government"
+      ],
+      "recommended_stops": [
+        {
+          "name": "Evie Networks Coochin Creek",
+          "power_kw": 350,
+          "detour_m": 2452,
+          "charging_time_s": 129,
+          "added_time_s": 276,
+          "completes_trip_after_stop": true
+        }
+      ]
+    },
+    "label": {
+      "verdict": "requires_charging",
+      "tool": "assess_ev_trip_feasibility",
+      "stated": {
+        "remaining_range_km": 90,
+        "full_range_km": 400
+      }
+    }
+  },
+  {
+    "prompt": "Driving from Coolangatta to Caboolture with 110 km of range. Where should I charge?",
+    "tools": [
+      {
+        "name": "geocode_place",
+        "input": {
+          "place": "Coolangatta"
+        }
+      },
+      {
+        "name": "geocode_place",
+        "input": {
+          "place": "Caboolture"
+        }
+      },
+      {
+        "name": "assess_ev_trip_feasibility",
+        "input": {
+          "origin_lat": -28.1682934,
+          "origin_lon": 153.538753,
+          "dest_lat": -27.0839336,
+          "dest_lon": 152.9510863,
+          "remaining_range_km": 110,
+          "explain": false
+        }
+      }
+    ],
+    "output": {
+      "feasibility": "requires_charging",
+      "trip": {
+        "estimated_road_m": 173880,
+        "usable_range_m": 99000,
+        "shortfall_m": 74880
+      },
+      "sources": [
+        "Open Charge Map",
+        "Queensland Government"
+      ],
+      "recommended_stops": [
+        {
+          "name": "Coles Express Coomera",
+          "power_kw": 350,
+          "detour_m": 594,
+          "charging_time_s": 144,
+          "added_time_s": 180,
+          "completes_trip_after_stop": null
+        }
+      ]
+    },
+    "label": {
+      "verdict": "requires_charging",
+      "tool": "assess_ev_trip_feasibility",
+      "stated": {
+        "remaining_range_km": 110
+      }
+    }
+  },
+  {
+    "prompt": "My car has a CCS2 plug and 300 km of full range. I'm in Esk with 120 km left, heading to Coolangatta. Where should I charge?",
+    "tools": [
+      {
+        "name": "geocode_place",
+        "input": {
+          "place": "Esk, Queensland"
+        }
+      },
+      {
+        "name": "geocode_place",
+        "input": {
+          "place": "Coolangatta"
+        }
+      },
+      {
+        "name": "assess_ev_trip_feasibility",
+        "input": {
+          "origin_lat": -27.2398683,
+          "origin_lon": 152.4220194,
+          "dest_lat": -28.1682934,
+          "dest_lon": 153.538753,
+          "remaining_range_km": 120,
+          "full_range_km": 300,
+          "connector_type": "CCS2",
+          "explain": false
+        }
+      }
+    ],
+    "output": {
+      "feasibility": "requires_charging",
+      "trip": {
+        "estimated_road_m": 196054,
+        "usable_range_m": 108000,
+        "shortfall_m": 88054
+      },
+      "sources": [
+        "Open Charge Map",
+        "Queensland Government"
+      ],
+      "recommended_stops": [
+        {
+          "name": "Bundamba",
+          "power_kw": 350,
+          "detour_m": 21,
+          "charging_time_s": 166,
+          "added_time_s": 167,
+          "completes_trip_after_stop": true
+        }
+      ]
+    },
+    "label": {
+      "verdict": "requires_charging",
+      "tool": "assess_ev_trip_feasibility",
+      "stated": {
+        "remaining_range_km": 120,
+        "full_range_km": 300,
+        "connector_type": "CCS2"
+      }
+    }
+  },
+  {
+    "prompt": "Laidley to Maroochydore with 100 km left. The car charges at 50 kW at most and does 250 km on a full battery. Where do I stop?",
+    "tools": [
+      {
+        "name": "geocode_place",
+        "input": {
+          "place": "Laidley"
+        }
+      },
+      {
+        "name": "geocode_place",
+        "input": {
+          "place": "Maroochydore"
+        }
+      },
+      {
+        "name": "assess_ev_trip_feasibility",
+        "input": {
+          "origin_lat": -27.6395345,
+          "origin_lon": 152.4132894,
+          "dest_lat": -26.6556523,
+          "dest_lon": 153.0946684,
+          "remaining_range_km": 100,
+          "full_range_km": 250,
+          "vehicle_max_charge_kw": 50,
+          "explain": false
+        }
+      }
+    ],
+    "output": {
+      "feasibility": "requires_charging",
+      "trip": {
+        "estimated_road_m": 167059,
+        "usable_range_m": 90000,
+        "shortfall_m": 77059
+      },
+      "sources": [
+        "Open Charge Map",
+        "Queensland Government"
+      ],
+      "recommended_stops": [
+        {
+          "name": "Electric Highway - Esk",
+          "power_kw": 75,
+          "detour_m": 11932,
+          "charging_time_s": 1198,
+          "added_time_s": 1914,
+          "completes_trip_after_stop": true
+        }
+      ]
+    },
+    "label": {
+      "verdict": "requires_charging",
+      "tool": "assess_ev_trip_feasibility",
+      "stated": {
+        "remaining_range_km": 100,
+        "full_range_km": 250,
+        "vehicle_max_charge_kw": 50
+      }
+    }
+  },
+  {
+    "prompt": "I drive a CHAdeMO car that charges at up to 50 kW and does 200 km on a full charge. Springfield Central to Noosa Heads with 90 km left - where should I charge?",
+    "tools": [
+      {
+        "name": "geocode_place",
+        "input": {
+          "place": "Springfield Central"
+        }
+      },
+      {
+        "name": "geocode_place",
+        "input": {
+          "place": "Noosa Heads"
+        }
+      },
+      {
+        "name": "assess_ev_trip_feasibility",
+        "input": {
+          "origin_lat": -27.6861177,
+          "origin_lon": 152.9037832,
+          "dest_lat": -26.40014,
+          "dest_lon": 153.091049,
+          "remaining_range_km": 90,
+          "full_range_km": 200,
+          "connector_type": "CHAdeMO",
+          "vehicle_max_charge_kw": 50,
+          "explain": false
+        }
+      }
+    ],
+    "output": {
+      "feasibility": "requires_charging",
+      "trip": {
+        "estimated_road_m": 187450,
+        "usable_range_m": 81000,
+        "shortfall_m": 106450
+      },
+      "sources": [
+        "Open Charge Map",
+        "Queensland Government"
+      ],
+      "recommended_stops": [
+        {
+          "name": "Springfield QESH",
+          "power_kw": 50,
+          "detour_m": 270,
+          "charging_time_s": 1436,
+          "added_time_s": 1452,
+          "completes_trip_after_stop": false
+        }
+      ]
+    },
+    "label": {
+      "verdict": "requires_charging",
+      "tool": "assess_ev_trip_feasibility",
+      "stated": {
+        "remaining_range_km": 90,
+        "full_range_km": 200,
+        "connector_type": "CHAdeMO",
+        "vehicle_max_charge_kw": 50
+      }
+    }
+  },
+  {
+    "prompt": "My large SUV uses about 22 kWh per 100 km and does 450 km when full. Maroochydore to Beaudesert with 140 km of range - where should I charge?",
+    "tools": [
+      {
+        "name": "geocode_place",
+        "input": {
+          "place": "Maroochydore"
+        }
+      },
+      {
+        "name": "geocode_place",
+        "input": {
+          "place": "Beaudesert"
+        }
+      },
+      {
+        "name": "assess_ev_trip_feasibility",
+        "input": {
+          "origin_lat": -26.6556523,
+          "origin_lon": 153.0946684,
+          "dest_lat": -27.9885617,
+          "dest_lon": 152.9961186,
+          "remaining_range_km": 140,
+          "full_range_km": 450,
+          "consumption_kwh_per_100km": 22,
+          "explain": false
+        }
+      }
+    ],
+    "output": {
+      "feasibility": "requires_charging",
+      "trip": {
+        "estimated_road_m": 193092,
+        "usable_range_m": 126000,
+        "shortfall_m": 67092
+      },
+      "sources": [
+        "Open Charge Map",
+        "Queensland Government"
+      ],
+      "recommended_stops": [
+        {
+          "name": "Evie Networks Coochin Creek",
+          "power_kw": 350,
+          "detour_m": 1630,
+          "charging_time_s": 163,
+          "added_time_s": 261,
+          "completes_trip_after_stop": true
+        }
+      ]
+    },
+    "label": {
+      "verdict": "requires_charging",
+      "tool": "assess_ev_trip_feasibility",
+      "stated": {
+        "remaining_range_km": 140,
+        "full_range_km": 450,
+        "consumption_kwh_per_100km": 22
+      }
+    }
+  },
+  {
+    "prompt": "Mount Tamborine to Caboolture with only 60 km of range in a car that does 300 km on a full charge. Can I make it?",
+    "tools": [
+      {
+        "name": "geocode_place",
+        "input": {
+          "place": "Mount Tamborine"
+        }
+      },
+      {
+        "name": "geocode_place",
+        "input": {
+          "place": "Caboolture"
+        }
+      },
+      {
+        "name": "assess_ev_trip_feasibility",
+        "input": {
+          "origin_lat": -27.9285031,
+          "origin_lon": 153.184441,
+          "dest_lat": -27.0839336,
+          "dest_lon": 152.9510863,
+          "remaining_range_km": 60,
+          "full_range_km": 300,
+          "explain": false
+        }
+      }
+    ],
+    "output": {
+      "feasibility": "requires_charging",
+      "trip": {
+        "estimated_road_m": 125698,
+        "usable_range_m": 54000,
+        "shortfall_m": 71698
+      },
+      "sources": [
+        "Open Charge Map",
+        "Queensland Government"
+      ],
+      "recommended_stops": [
+        {
+          "name": "27 - 49 Browns Plains Road",
+          "power_kw": 120,
+          "detour_m": 1345,
+          "charging_time_s": 413,
+          "added_time_s": 494,
+          "completes_trip_after_stop": true
+        }
+      ]
+    },
+    "label": {
+      "verdict": "requires_charging",
+      "tool": "assess_ev_trip_feasibility",
+      "stated": {
+        "remaining_range_km": 60,
+        "full_range_km": 300
+      }
+    }
+  },
+  {
+    "prompt": "I'm in Kilcoy with 15 km of range left and need to get to Logan Central.",
+    "tools": [
+      {
+        "name": "geocode_place",
+        "input": {
+          "place": "Kilcoy, Queensland"
+        }
+      },
+      {
+        "name": "geocode_place",
+        "input": {
+          "place": "Logan Central"
+        }
+      },
+      {
+        "name": "assess_ev_trip_feasibility",
+        "input": {
+          "origin_lat": -26.9417175,
+          "origin_lon": 152.561157,
+          "dest_lat": -27.6412988,
+          "dest_lon": 153.1072741,
+          "remaining_range_km": 15,
+          "explain": false
+        }
+      }
+    ],
+    "output": {
+      "feasibility": "infeasible",
+      "trip": {
+        "estimated_road_m": 123079,
+        "usable_range_m": 13500,
+        "shortfall_m": 109579
+      },
+      "sources": [
+        "Open Charge Map",
+        "Queensland Government"
+      ],
+      "reason": "No charging station is reachable",
+      "recommended_stops": []
+    },
+    "label": {
+      "verdict": "infeasible",
+      "tool": "assess_ev_trip_feasibility",
+      "stated": {
+        "remaining_range_km": 15
+      }
+    }
+  },
+  {
+    "prompt": "I'm in Kenilworth with 25 km of range left and need to get to Caboolture.",
+    "tools": [
+      {
+        "name": "geocode_place",
+        "input": {
+          "place": "Kenilworth, Queensland"
+        }
+      },
+      {
+        "name": "geocode_place",
+        "input": {
+          "place": "Caboolture"
+        }
+      },
+      {
+        "name": "assess_ev_trip_feasibility",
+        "input": {
+          "origin_lat": -26.6352315,
+          "origin_lon": 152.6166379,
+          "dest_lat": -27.0839336,
+          "dest_lon": 152.9510863,
+          "remaining_range_km": 25,
+          "explain": false
+        }
+      }
+    ],
+    "output": {
+      "feasibility": "infeasible",
+      "trip": {
+        "estimated_road_m": 77892,
+        "usable_range_m": 22500,
+        "shortfall_m": 55392
+      },
+      "sources": [
+        "Open Charge Map",
+        "Queensland Government"
+      ],
+      "reason": "No charging station is reachable",
+      "recommended_stops": []
+    },
+    "label": {
+      "verdict": "infeasible",
+      "tool": "assess_ev_trip_feasibility",
+      "stated": {
+        "remaining_range_km": 25
+      }
+    }
+  },
+  {
+    "prompt": "Crows Nest to Ipswich, but the car only has 20 km of range left.",
+    "tools": [
+      {
+        "name": "geocode_place",
+        "input": {
+          "place": "Crows Nest, Queensland"
+        }
+      },
+      {
+        "name": "geocode_place",
+        "input": {
+          "place": "Ipswich"
+        }
+      },
+      {
+        "name": "assess_ev_trip_feasibility",
+        "input": {
+          "origin_lat": -27.2612975,
+          "origin_lon": 152.0555164,
+          "dest_lat": -27.6160323,
+          "dest_lon": 152.7608348,
+          "remaining_range_km": 20,
+          "explain": false
+        }
+      }
+    ],
+    "output": {
+      "feasibility": "infeasible",
+      "trip": {
+        "estimated_road_m": 104005,
+        "usable_range_m": 18000,
+        "shortfall_m": 86005
+      },
+      "sources": [
+        "Open Charge Map",
+        "Queensland Government"
+      ],
+      "reason": "No charging station is reachable",
+      "recommended_stops": []
+    },
+    "label": {
+      "verdict": "infeasible",
+      "tool": "assess_ev_trip_feasibility",
+      "stated": {
+        "remaining_range_km": 20
+      }
+    }
+  }
+]
