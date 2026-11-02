@@ -514,7 +514,6 @@ def assess_ev_trip_feasibility(
     sources = [data.OCM_LICENCE, data.QLD_LICENCE] if have_ocm else [data.QLD_LICENCE]
     return respond(payload, sources=sources)
 
-# TODO: add your remaining tools here, up to five including geocode_place.
 
 
 if __name__ == "__main__":

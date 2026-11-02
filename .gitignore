@@ -15,3 +15,8 @@ wandb/
 
 # Cost log and W&B files, kept locally for the report
 logs/
+
+# Local working files, not part of the project
+CLAUDE.md
+results/**/audit.md
+results/**/audit.csv

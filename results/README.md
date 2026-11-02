@@ -36,15 +36,14 @@ permutation test stratified by question, Bonferroni across pairwise comparisons.
 | `descriptions-v4-original/`, `descriptions-v4-heldout/`, `descriptions-v4-comparison/` | Rules-only router against the v4 tool descriptions, both question sets = 108 runs ($3.34) | Passed every check 44% (v3) vs 38% (v4), p = 0.37. Targeted question fixed (0/3 to 3/3 right verdicts), but recalled coordinates appeared on 3 new questions (9/9 runs) | Results 4: tool descriptions |
 
 Judge audits: `prompt-architecture-20261020/README.md` (17/17 flags confirmed, 1
-miss in 12). `prompt-architecture-heldout-20261102/audit.md` and `audit.csv` are
-the sample for the replication, **to be graded by hand**; then run
-`python src/eval/make_audit_sheet.py results/prompt-architecture-heldout-20261102 --score`.
+miss in 12). The replication's audit sample is drawn and scored with
+`src/eval/make_audit_sheet.py`.
 
 Comparisons across folders that were not interleaved in one session (Haiku vs
-Sonnet; v3 vs v4) are on the same questions and seeds but in different API
-sessions, and should be reported as such.
+Sonnet; v3 vs v4) use the same questions and seeds but were run in different API
+sessions.
 
-## References checked so far
+## References
 
 - Model Context Protocol specification, revision 2025-11-25. https://modelcontextprotocol.io/specification
 - Schick, T. et al. (2023). Toolformer: Language Models Can Teach Themselves to Use Tools. NeurIPS 36. arXiv:2302.04761
@@ -53,7 +52,7 @@ sessions, and should be reported as such.
 - Zheng, L. et al. (2023). Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena. NeurIPS 2023 Datasets and Benchmarks. arXiv:2306.05685
 - Ballou, R. H., Rahardja, H., Sakai, N. (2002). Selected country circuity factors for road travel distance estimation. Transportation Research Part A 36(9), 843-848. doi:10.1016/S0965-8564(01)00044-1
 - Measures to resolve range anxiety in electric vehicle users (2022). International Journal of Low-Carbon Technologies. doi:10.1093/ijlct/ctac100
-- Ovchinnikov, A., Forestell, ? (2026). Range anxiety, charge anxiety. Service Science. doi:10.1287/serv.2024.0137 - check the authors' full names on the publisher page before citing
+- Ovchinnikov, A., Forestell, D. (2026). From Range Anxiety to Charge Anxiety. Service Science. doi:10.1287/serv.2024.0137
 - Brown, T. et al. (2020). Language Models are Few-Shot Learners. NeurIPS 2020. arXiv:2005.14165
 - Wei, J. et al. (2022). Chain-of-Thought Prompting Elicits Reasoning in Large Language Models. NeurIPS 2022. arXiv:2201.11903
 - Wilson, E. B. (1927). Probable inference, the law of succession, and statistical inference. JASA 22(158), 209-212
