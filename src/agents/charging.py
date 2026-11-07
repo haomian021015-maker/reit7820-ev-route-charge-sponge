@@ -23,10 +23,11 @@ from pydantic import Field
 import common
 import data
 import llm                                 # llm.ask() writes prose about your results
+from explanation_check import doubled
 from smac import check_identity, guard, haversine_m, in_seq, metres, out_of_scope, respond, seconds
 
 AGENT_NAME = "smac-charging-tripfeasibility"
-VERSION = "0.3.0"
+VERSION = "0.4.0"
 
 check_identity(AGENT_NAME, VERSION)
 mcp = MCPServer(name=AGENT_NAME, version=VERSION)
@@ -466,7 +467,7 @@ def assess_ev_trip_feasibility(
         first = stops[0] if stops else None
         facts = [
             f"Verdict: {feasibility}.",
-            f"Estimated road distance {trip_road_m / 1000:.0f} km (straight line x {ROAD_FACTOR}); "
+            f"Estimated road distance {trip_road_m / 1000:.0f} km, road winding already included; "
             f"usable range {usable_m / 1000:.0f} km after holding back {margin_pct}%.",
         ]
         if shortfall_m:
@@ -489,16 +490,20 @@ def assess_ev_trip_feasibility(
             facts.append(payload["reason"])
         facts.append("Live availability and pricing are not published.")
         try:
-            payload["explanation"] = llm.ask(
+            text = llm.ask(
                 system=(
                     "You explain electric vehicle range results to drivers in Queensland. "
-                    "Use only the facts you are given; every figure has already been calculated. "
+                    "Use only the facts you are given. Every figure has already been calculated, so repeat "
+                    "it as given: never multiply, adjust or recompute one. "
                     "'km remain to drive' is distance still to travel, not charge left in the battery. "
                     "Charging times are minimums. Never invent live availability, prices or any detail "
                     "you were not given; say so if it matters. At most four sentences."
                 ),
                 user=" ".join(facts),
             )
+            # Told not to, a model can still multiply the road distance by the factor
+            # a second time. The facts themselves then stand in for its prose.
+            payload["explanation"] = " ".join(facts) if doubled(text, payload) else text
         except Exception as exc:  # noqa: BLE001
             # llm.ask() raises when a key is present but rejected. Every figure above
             # is already computed, so only the commentary is lost - report the fault

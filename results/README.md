@@ -11,6 +11,7 @@ this repository, and can be re-run. Costs are Claude API spend.
 | `src/eval/tasks.heldout.json`, `build_heldout_tasks.py` | 24 new cases written for the replication, expected values derived from the data | 24/24 pass on v3 and v4 | Evaluation: functional tests |
 | `src/eval/derive_ground_truth.py` | Expected values re-derived without importing the agent | 7/7 original trip cases agree | Method: ground truth |
 | `handshake_report.json` | Course conformance test against the public zone | 6/6 checks | Implementation: deployment |
+| `explanation-check/`, `check_explanations.py` | Whether the agent's written explanation keeps to its own figures | 108/366 saved explanations (30%) apply the road factor a second time; the structured figures are unaffected. Agent 0.4.0 (not deployed) refuses such text and returns the computed facts: all 108 replaced when the saved explanations are fed back through the tool. The reworded prompt has not been measured on a model | Results: agent correctness |
 
 ## Data and assumptions
 
@@ -35,9 +36,12 @@ permutation test stratified by question, Bonferroni across pairwise comparisons.
 | `prompt-architecture-sonnet-20261102/` | Sonnet 5.5 as router, held-out questions, rules only and + examples = 144 runs ($5.89) | 82% / 93% (p = 0.011). In a pilot, Sonnet 5.5 declined all 4 runs of the + procedure prompt (`stop_reason: refusal`), so that condition was not run | Results 3: generalisation across models |
 | `descriptions-v4-original/`, `descriptions-v4-heldout/`, `descriptions-v4-comparison/` | Rules-only router against the v4 tool descriptions, both question sets = 108 runs ($3.34) | Passed every check 44% (v3) vs 38% (v4), p = 0.37. Targeted question fixed (0/3 to 3/3 right verdicts), but recalled coordinates appeared on 3 new questions (9/9 runs) | Results 4: tool descriptions |
 
-Judge audits: `prompt-architecture-20261020/README.md` (17/17 flags confirmed, 1
-miss in 12). The replication's audit sample is drawn and scored with
-`src/eval/make_audit_sheet.py`.
+Judge audits are drawn and scored with `src/eval/make_audit_sheet.py`; each folder's
+`audit_result.md` holds the result. Experiment 1: 12 runs, verdict 12/12, faithful
+12/12, flags 7/7, missed 0/12. Replication: 12 runs, verdict 12/12, faithful 12/12,
+flags 6/6, missed 0/12. One replication run (few-shot, case 8, repeat 1) was first read
+as faithful and changed after the station snapshot showed a public charger 1.2 km from
+Caloundra, which supports the judge's flag.
 
 Comparisons across folders that were not interleaved in one session (Haiku vs
 Sonnet; v3 vs v4) use the same questions and seeds but were run in different API

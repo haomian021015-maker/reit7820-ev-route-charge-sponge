@@ -65,13 +65,12 @@ over zero-shot (+25 points, p = 0.046) is suggestive, not established.
 
 ## Checking the judge
 
-- Pilot: all 8 flags checked by hand against the tool output; all 8 correct.
-- Main run: 12 answers sampled at random (4 per condition, seed 11) and checked by hand.
-  All 9 flags were correct. On whether an answer was faithful, I agreed with the judge
-  on 11 of 12; the one disagreement is a missed flag - scaffold Q11 repeat 1 claims the
-  tool "would produce meaningless results" at zero consumption, a guess about its
-  behaviour (it in fact rejects the value) - and it favours the scaffold condition.
-- So far, then, every flag the judge raised was right (17/17), and it missed 1 in 12.
+- Hand audit: 12 runs sampled with `make_audit_sheet.py` (4 per condition, seed 11).
+  Verdict 12/12, faithful 12/12, flags confirmed 7/7, missed 0/12 (`audit_result.md`).
+- An earlier AI-assisted check of a different sample is not counted in those figures.
+  It found one missed flag: scaffold Q11 repeat 1 claims the tool "would produce
+  meaningless results" at zero consumption, a guess about its behaviour (it in fact
+  rejects the value). That miss favours the scaffold condition.
 
 ## Sensitivity
 
